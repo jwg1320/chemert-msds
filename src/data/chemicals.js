@@ -451,4 +451,451 @@ export const chemicals = [
     "pH보다 피부흡수 독성 우선",
   ],
 },
+{
+  id: 7,
+  nameKo: "실란",
+  nameEn: "Silane",
+  formula: "SiH4",
+  cas: "7803-62-5",
+  aliases: ["실란", "SiH4", "Silane", "모노실란"],
+  process: "증착 / CVD",
+  state: "무색 기체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["🔥 인화성", "💥 폭발위험", "🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "자연발화성 우선",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "5 ppm", source: "ACGIH/제조사 SDS 대표값" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
+  },
+
+  physical: {
+    density: "공기보다 가벼움",
+    vaporPressure: "가스",
+    boilingPoint: "-112°C",
+    flashPoint: "자연발화성 가스",
+  },
+
+  flammability: {
+    flashPoint: "자연발화성",
+    autoIgnition: "매우 낮음",
+    lel: "약 1.4%",
+    uel: "약 96%",
+  },
+
+  mainHazards: [
+    "자연발화성",
+    "공기 접촉 시 화재 가능",
+    "폭발범위 넓음",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물 제독보다 누출원 차단 우선",
+      "습기와 반응 가능성 고려",
+    ],
+    decon: [
+      "누출원 차단 및 불활성화 우선",
+      "물 분사보다 화재·폭발 조건 관리 우선",
+    ],
+  },
+
+  incompatible: ["공기", "산화제", "할로겐"],
+
+  neutralization: {
+    direction: ["중화 대상보다 차단·퍼지·연소관리 우선"],
+    waterUse: "일반 제독 목적의 물 사용 부적합",
+    neutralizerNeed: "일반 중화제 대상 아님",
+  },
+
+  ppe: ["공기호흡기", "방염 보호구", "가스 검지기"],
+
+  cautions: [
+    "누출 자체보다 점화·폭발 조건 우선 고려",
+    "공기 유입 여부 중요",
+  ],
+},
+
+{
+  id: 8,
+  nameKo: "포스핀",
+  nameEn: "Phosphine",
+  formula: "PH3",
+  cas: "7803-51-2",
+  aliases: ["포스핀", "PH3", "Phosphine"],
+  process: "도핑가스",
+  state: "무색 기체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["☠️ 급성독성", "🔥 인화성", "🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "독성·가연성 우선",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "0.3 ppm", source: "OSHA/NIOSH 대표값" },
+    stel: { value: "1 ppm", source: "NIOSH" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "50 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 약간 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-87.7°C",
+    flashPoint: "가연성 가스",
+  },
+
+  flammability: {
+    flashPoint: "가연성 가스",
+    autoIgnition: "제품 SDS 확인",
+    lel: "약 1.8%",
+    uel: "제품 SDS 확인",
+  },
+
+  mainHazards: [
+    "고독성",
+    "가연성",
+    "반도체 도핑가스",
+    "저농도 노출 위험",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물 제독보다 누출원 차단 및 환기 우선",
+    ],
+    decon: [
+      "가스 누출은 차단·배기·검지 우선",
+      "오염 표면은 환기 후 기준에 따라 세척",
+    ],
+  },
+
+  incompatible: ["산화제", "공기", "할로겐"],
+
+  neutralization: {
+    direction: ["가스 처리장치·스크러버 처리 우선"],
+    waterUse: "일반적인 물 제독 대상 아님",
+    neutralizerNeed: "전용 가스 처리 기준 우선",
+  },
+
+  ppe: ["공기호흡기", "화학보호복", "가스 검지기"],
+
+  cautions: [
+    "냄새 의존 금지",
+    "STEL이 낮아 극저농도 관리 필요",
+  ],
+},
+
+{
+  id: 9,
+  nameKo: "아르신",
+  nameEn: "Arsine",
+  formula: "AsH3",
+  cas: "7784-42-1",
+  aliases: ["아르신", "AsH3", "Arsine"],
+  process: "도핑가스",
+  state: "무색 기체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["☠️ 급성독성", "🔥 인화성", "🫁 건강유해"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "초고독성 우선",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "0.05 ppm", source: "OSHA" },
+    stel: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "3 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-62.5°C",
+    flashPoint: "가연성 가스",
+  },
+
+  flammability: {
+    flashPoint: "가연성 가스",
+    autoIgnition: "제품 SDS 확인",
+    lel: "약 5%",
+    uel: "약 78%",
+  },
+
+  mainHazards: [
+    "초고독성",
+    "용혈성 독성",
+    "가연성",
+    "극저농도 위험",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물 제독보다 누출원 차단·검지 우선",
+    ],
+    decon: [
+      "가스 누출은 차단·배기 우선",
+      "오염 가능 구역은 검지 후 처리",
+    ],
+  },
+
+  incompatible: ["산화제", "할로겐", "공기"],
+
+  neutralization: {
+    direction: ["전용 가스 처리장치 우선"],
+    waterUse: "일반 물 제독 대상 아님",
+    neutralizerNeed: "가스 처리/스크러버 기준 우선",
+  },
+
+  ppe: ["공기호흡기", "화학보호복", "가스 검지기"],
+
+  cautions: [
+    "IDLH가 매우 낮아 극저농도도 위험",
+    "냄새 판단 금지",
+  ],
+},
+
+{
+  id: 10,
+  nameKo: "디보레인",
+  nameEn: "Diborane",
+  formula: "B2H6",
+  cas: "19287-45-7",
+  aliases: ["디보레인", "B2H6", "Diborane"],
+  process: "도핑가스",
+  state: "무색 기체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["☠️ 급성독성", "🔥 인화성", "🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "독성·가연성 우선",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "0.1 ppm", source: "OSHA" },
+    stel: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "15 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "가스",
+    vaporPressure: "가스",
+    boilingPoint: "-92.5°C",
+    flashPoint: "가연성 가스",
+  },
+
+  flammability: {
+    flashPoint: "가연성 가스",
+    autoIgnition: "제품 SDS 확인",
+    lel: "제품 SDS 확인",
+    uel: "제품 SDS 확인",
+  },
+
+  mainHazards: [
+    "고독성",
+    "가연성",
+    "공기 중 반응성",
+    "도핑가스",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물과 반응 가능성 고려",
+      "가스 누출은 물 제독보다 차단 우선",
+    ],
+    decon: [
+      "차단·배기·검지 우선",
+      "오염 표면은 안정화 후 세척",
+    ],
+  },
+
+  incompatible: ["공기", "산화제", "할로겐"],
+
+  neutralization: {
+    direction: ["전용 가스 처리장치 우선"],
+    waterUse: "일반 물 제독 대상 아님",
+    neutralizerNeed: "스크러버/가스 처리 기준 우선",
+  },
+
+  ppe: ["공기호흡기", "화학보호복", "가스 검지기"],
+
+  cautions: [
+    "저농도 독성 위험",
+    "가연성 조건 동시 고려",
+  ],
+},
+
+{
+  id: 11,
+  nameKo: "육불화텅스텐",
+  nameEn: "Tungsten Hexafluoride",
+  formula: "WF6",
+  cas: "7783-82-6",
+  aliases: ["육불화텅스텐", "WF6", "Tungsten hexafluoride"],
+  process: "금속증착 / W CVD",
+  state: "무색 기체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["🧪 부식성", "☠️ 급성독성", "🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "수분 접촉",
+      value: "강산성 생성물",
+      note: "HF 생성 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    stel: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    ceiling: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "높음",
+    boilingPoint: "약 17°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "수분 반응 시 HF 생성 가능",
+    "강한 부식성",
+    "흡입 독성",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물/습기와 반응해 HF 생성 가능",
+      "부식성 미스트 발생 가능",
+    ],
+    decon: [
+      "건식 차단·격리 우선",
+      "물 사용 전 HF 생성 가능성 고려",
+      "잔류물은 HF 대응 기준 적용 검토",
+    ],
+  },
+
+  incompatible: ["물", "습기", "강염기"],
+
+  neutralization: {
+    direction: ["생성 HF에 대한 칼슘계 중화 방향 검토"],
+    waterUse: "직접 물 사용 시 HF 생성 및 확산 고려 필요",
+    neutralizerNeed: "HF 생성 가능성 때문에 전용 중화제 검토 필요",
+  },
+
+  ppe: ["공기호흡기", "내산 장갑", "화학보호복"],
+
+  cautions: [
+    "WF6 자체보다 수분 반응 생성 HF 위험 고려",
+    "물 제독 전 반응성 판단 필요",
+  ],
+},
+
+{
+  id: 12,
+  nameKo: "삼불화염소",
+  nameEn: "Chlorine Trifluoride",
+  formula: "ClF3",
+  cas: "7790-91-2",
+  aliases: ["삼불화염소", "ClF3", "Chlorine trifluoride"],
+  process: "Chamber Cleaning / 특수가스",
+  state: "무색~연황색 기체 또는 액체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["⭕ 산화성", "🧪 부식성", "☠️ 급성독성"],
+
+  ph: [
+    {
+      concentration: "수분 접촉",
+      value: "강산성 생성물",
+      note: "HF/HCl 계열 생성 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    stel: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    ceiling: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "높음",
+    boilingPoint: "약 12°C",
+    flashPoint: "초강력 산화성",
+  },
+
+  flammability: {
+    flashPoint: "불연이나 초강산화성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "초강력 산화제",
+    "물·유기물과 격렬 반응 가능",
+    "부식성",
+    "화재·폭발 위험",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물과 격렬히 반응 가능",
+      "HF/HCl 등 부식성 생성물 가능",
+      "직접 살수 금지 수준으로 검토 필요",
+    ],
+    decon: [
+      "초기 물 제독보다 격리·차단·전용 처리 우선",
+      "잔류물 처리는 전문 절차 필요",
+    ],
+  },
+
+  incompatible: ["물", "유기물", "가연물", "환원제"],
+
+  neutralization: {
+    direction: ["전용 처리 절차 우선", "생성 산성물질 중화는 안정화 후 검토"],
+    waterUse: "초기 직접 물 사용 부적합 가능성이 큼",
+    neutralizerNeed: "전용 중화/처리 절차 필수 검토",
+  },
+
+  ppe: ["공기호흡기", "특수 화학보호복", "내화학 장갑"],
+
+  cautions: [
+    "일반 산화제보다 훨씬 강한 반응성",
+    "물 제독 판단에 매우 신중 필요",
+  ],
+},
 ];
