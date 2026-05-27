@@ -898,4 +898,880 @@ export const chemicals = [
     "물 제독 판단에 매우 신중 필요",
   ],
 },
+{
+  id: 13,
+  nameKo: "삼불화질소",
+  nameEn: "Nitrogen Trifluoride",
+  formula: "NF3",
+  cas: "7783-54-2",
+  aliases: ["NF3", "삼불화질소", "Nitrogen trifluoride"],
+  process: "Chamber Cleaning",
+  state: "무색 기체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["⭕ 산화성", "🧯 가스실린더"],
+
+  ph: [{ concentration: "가스", value: "해당 없음", note: "산화성 가스" }],
+
+  exposure: {
+    twa: { value: "10 ppm", source: "ACGIH 대표값" },
+    stel: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-129°C",
+    flashPoint: "비가연성 / 산화성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: ["산화성 가스", "고온/플라즈마 조건 반응성", "질식 위험"],
+
+  waterReactivity: {
+    hazards: ["물과 직접 반응성은 낮은 편이나 분해 생성물 주의"],
+    decon: ["누출 차단·환기 우선", "물 제독보다 가스 처리 우선"],
+  },
+
+  incompatible: ["가연물", "환원제", "고온"],
+
+  neutralization: {
+    direction: ["중화보다 차단·배기·가스 처리 우선"],
+    waterUse: "물 사용 효과 제한적",
+    neutralizerNeed: "전용 가스 처리장치 우선",
+  },
+
+  ppe: ["공기호흡기", "가스 검지기"],
+  cautions: ["산화성 가스로 가연물 접촉 주의"],
+},
+
+{
+  id: 14,
+  nameKo: "플루오린",
+  nameEn: "Fluorine",
+  formula: "F2",
+  cas: "7782-41-4",
+  aliases: ["F2", "플루오린", "플루오르", "Fluorine"],
+  process: "특수가스 / 산화성 가스",
+  state: "연황색 기체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["⭕ 산화성", "☠️ 급성독성", "🧪 부식성"],
+
+  ph: [{ concentration: "수분 접촉", value: "산성화", note: "HF 생성 가능" }],
+
+  exposure: {
+    twa: { value: "0.1 ppm", source: "OSHA 대표값" },
+    stel: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    ceiling: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    idlh: { value: "25 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-188°C",
+    flashPoint: "강산화성 가스",
+  },
+
+  flammability: {
+    flashPoint: "불연이나 강산화성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: ["극강 산화성", "부식성", "수분 접촉 시 HF 생성 가능", "가연물 반응 위험"],
+
+  waterReactivity: {
+    hazards: ["물과 반응해 산성/부식성 생성물 가능", "강한 산화 반응 가능"],
+    decon: ["가스 차단·배기 우선", "물 사용은 반응성 및 HF 생성 고려"],
+  },
+
+  incompatible: ["유기물", "가연물", "환원제", "물/습기"],
+
+  neutralization: {
+    direction: ["전용 가스 처리 및 생성 HF 중화 검토"],
+    waterUse: "초기 직접 살수는 반응성 고려 필요",
+    neutralizerNeed: "전용 처리 후 산성 생성물 중화 검토",
+  },
+
+  ppe: ["공기호흡기", "화학보호복", "내산 장갑"],
+  cautions: ["물반응성과 HF 생성 가능성을 반드시 고려"],
+},
+{
+  id: 15,
+  nameKo: "염소",
+  nameEn: "Chlorine",
+  formula: "Cl2",
+  cas: "7782-50-5",
+  aliases: ["Cl2", "염소", "염소가스"],
+  process: "Utility / 수처리",
+  state: "황록색 기체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["☠️ 급성독성", "🧪 부식성"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "수분 접촉 시 산성",
+      note: "습한 환경 자극 증가",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "0.5 ppm", source: "OSHA" },
+    stel: { value: "1 ppm", source: "ACGIH" },
+    ceiling: { value: "1 ppm", source: "NIOSH" },
+    idlh: { value: "10 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-34°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "강한 호흡기 자극",
+    "저지대 체류 가능",
+    "부식성 가스",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "수분과 반응해 산성화 가능",
+    ],
+    decon: [
+      "가스 차단 및 환기 우선",
+      "물 사용 시 산성화 고려",
+    ],
+  },
+
+  incompatible: [
+    "암모니아",
+    "환원제",
+    "유기물",
+  ],
+
+  neutralization: {
+    direction: ["환원성 처리 방향 검토"],
+    waterUse: "물 사용 시 산성 확산 고려",
+    neutralizerNeed: "전용 처리 절차 검토",
+  },
+
+  ppe: [
+    "공기호흡기",
+    "화학보호복",
+  ],
+
+  cautions: [
+    "공기보다 무거워 저지대 체류 가능",
+  ],
+},
+
+{
+  id: 16,
+  nameKo: "오존",
+  nameEn: "Ozone",
+  formula: "O3",
+  cas: "10028-15-6",
+  aliases: ["O3", "오존"],
+  process: "산화 / 세정",
+  state: "청색 기체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["⭕ 산화성", "🫁 건강유해"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "강산화성 우선",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "0.1 ppm", source: "OSHA" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "0.3 ppm", source: "NIOSH" },
+    idlh: { value: "5 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-112°C",
+    flashPoint: "산화성 가스",
+  },
+
+  flammability: {
+    flashPoint: "산화성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "강산화성",
+    "호흡기 자극",
+    "재질 열화 가능",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "수중에서도 산화 반응 가능",
+    ],
+    decon: [
+      "환기 및 차단 우선",
+      "오존 분해 우선",
+    ],
+  },
+
+  incompatible: [
+    "유기물",
+    "환원제",
+    "가연물",
+  ],
+
+  neutralization: {
+    direction: ["분해·환기 우선"],
+    waterUse: "물 사용 효과 제한적",
+    neutralizerNeed: "오존 분해 처리 우선",
+  },
+
+  ppe: [
+    "공기호흡기",
+    "보안면",
+  ],
+
+  cautions: [
+    "냄새만으로 안전 판단 금지",
+  ],
+},
+
+{
+  id: 17,
+  nameKo: "수소",
+  nameEn: "Hydrogen",
+  formula: "H2",
+  cas: "1333-74-0",
+  aliases: ["H2", "수소"],
+  process: "Utility / 반응가스",
+  state: "무색 기체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["🔥 인화성", "💥 폭발위험"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "폭발성 우선",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "단순 질식성", source: "OSHA" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "단순 질식성", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 매우 가벼움",
+    vaporPressure: "가스",
+    boilingPoint: "-253°C",
+    flashPoint: "가연성 가스",
+  },
+
+  flammability: {
+    flashPoint: "가연성",
+    autoIgnition: "500°C",
+    lel: "4%",
+    uel: "75%",
+  },
+
+  mainHazards: [
+    "폭발범위 매우 넓음",
+    "정전기 점화 위험",
+    "밀폐공간 질식 위험",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물반응성은 낮음",
+    ],
+    decon: [
+      "누출 차단 및 점화원 제거 우선",
+    ],
+  },
+
+  incompatible: [
+    "산화제",
+    "점화원",
+  ],
+
+  neutralization: {
+    direction: ["중화 대상 아님"],
+    waterUse: "물 사용 효과 제한적",
+    neutralizerNeed: "가스 차단 우선",
+  },
+
+  ppe: [
+    "방염 보호구",
+    "가스 검지기",
+  ],
+
+  cautions: [
+    "폭발 하한 관리 매우 중요",
+  ],
+},
+
+{
+  id: 18,
+  nameKo: "아산화질소",
+  nameEn: "Nitrous Oxide",
+  formula: "N2O",
+  cas: "10024-97-2",
+  aliases: ["N2O", "아산화질소"],
+  process: "반응가스",
+  state: "무색 기체",
+  hazardLevel: "주의",
+  ghsPictograms: ["⭕ 산화성", "🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "산화성",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "25 ppm", source: "NIOSH 대표값" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "800 ppm", source: "대표 참고값" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-88°C",
+    flashPoint: "비가연성 / 산화성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "산화성",
+    "질식 위험",
+    "고농도 중추신경 영향 가능",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물반응성 낮음",
+    ],
+    decon: [
+      "차단 및 환기 우선",
+    ],
+  },
+
+  incompatible: [
+    "가연물",
+    "환원제",
+  ],
+
+  neutralization: {
+    direction: ["가스 차단 우선"],
+    waterUse: "물 사용 효과 제한적",
+    neutralizerNeed: "중화 대상 아님",
+  },
+
+  ppe: [
+    "공기호흡기",
+    "가스 검지기",
+  ],
+
+  cautions: [
+    "산화성 가스로 가연물 접촉 주의",
+  ],
+},
+
+{
+  id: 19,
+  nameKo: "디클로로실란",
+  nameEn: "Dichlorosilane",
+  formula: "SiH2Cl2",
+  cas: "4109-96-0",
+  aliases: ["DCS", "Dichlorosilane"],
+  process: "증착 / CVD",
+  state: "무색 기체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["🔥 인화성", "🧪 부식성"],
+
+  ph: [
+    {
+      concentration: "수분 접촉",
+      value: "산성 생성 가능",
+      note: "HCl 생성 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    stel: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    ceiling: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "8°C",
+    flashPoint: "가연성",
+  },
+
+  flammability: {
+    flashPoint: "가연성",
+    autoIgnition: "제품 SDS 확인",
+    lel: "제품 SDS 확인",
+    uel: "제품 SDS 확인",
+  },
+
+  mainHazards: [
+    "가연성",
+    "수분 접촉 시 HCl 생성 가능",
+    "반응성 가스",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물과 반응해 HCl 생성 가능",
+    ],
+    decon: [
+      "건식 차단 우선",
+      "물 사용 전 반응성 검토",
+    ],
+  },
+
+  incompatible: [
+    "물",
+    "습기",
+    "산화제",
+  ],
+
+  neutralization: {
+    direction: ["생성 HCl 중화 검토"],
+    waterUse: "직접 물 사용 시 반응성 고려",
+    neutralizerNeed: "산성 생성물 중화 필요 가능",
+  },
+
+  ppe: [
+    "공기호흡기",
+    "화학보호복",
+  ],
+
+  cautions: [
+    "수분 반응성 우선 고려",
+  ],
+},
+
+{
+  id: 20,
+  nameKo: "삼염화실란",
+  nameEn: "Trichlorosilane",
+  formula: "SiHCl3",
+  cas: "10025-78-2",
+  aliases: ["TCS", "Trichlorosilane"],
+  process: "증착 / Poly-Si",
+  state: "무색 액체 또는 기체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["🔥 인화성", "🧪 부식성"],
+
+  ph: [
+    {
+      concentration: "수분 접촉",
+      value: "산성 생성 가능",
+      note: "HCl 생성 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "5 ppm", source: "대표 SDS 참고값" },
+    stel: { value: "10 ppm", source: "대표 SDS 참고값" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
+  },
+
+  physical: {
+    density: "1.34 g/cm³",
+    vaporPressure: "높음",
+    boilingPoint: "31°C",
+    flashPoint: "-18°C",
+  },
+
+  flammability: {
+    flashPoint: "-18°C",
+    autoIgnition: "제품 SDS 확인",
+    lel: "6%",
+    uel: "90%",
+  },
+
+  mainHazards: [
+    "가연성",
+    "수분 반응 시 HCl 생성 가능",
+    "폭발 가능성",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물과 격렬 반응 가능",
+      "HCl 생성 가능",
+    ],
+    decon: [
+      "건식 차단 우선",
+      "물 사용 전 반응성 검토",
+    ],
+  },
+
+  incompatible: [
+    "물",
+    "습기",
+    "산화제",
+  ],
+
+  neutralization: {
+    direction: ["생성 HCl 중화 검토"],
+    waterUse: "초기 직접 물 사용 신중 판단",
+    neutralizerNeed: "산성 생성물 중화 가능성 고려",
+  },
+
+  ppe: [
+    "공기호흡기",
+    "화학보호복",
+  ],
+
+  cautions: [
+    "물반응성과 인화성 동시 고려",
+  ],
+},
+
+{
+  id: 21,
+  nameKo: "TEOS",
+  nameEn: "Tetraethyl Orthosilicate",
+  formula: "Si(OC2H5)4",
+  cas: "78-10-4",
+  aliases: ["TEOS"],
+  process: "산화막 증착",
+  state: "무색 액체",
+  hazardLevel: "주의",
+  ghsPictograms: ["🔥 인화성", "❗ 경고"],
+
+  ph: [
+    {
+      concentration: "액체",
+      value: "해당 없음",
+      note: "가수분해 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "10 ppm", source: "대표 SDS 참고값" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
+  },
+
+  physical: {
+    density: "0.93 g/cm³",
+    vaporPressure: "낮음",
+    boilingPoint: "168°C",
+    flashPoint: "45°C",
+  },
+
+  flammability: {
+    flashPoint: "45°C",
+    autoIgnition: "제품 SDS 확인",
+    lel: "제품 SDS 확인",
+    uel: "제품 SDS 확인",
+  },
+
+  mainHazards: [
+    "인화성 액체",
+    "증기 흡입 자극 가능",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "가수분해 가능",
+    ],
+    decon: [
+      "흡착 및 회수 우선",
+    ],
+  },
+
+  incompatible: [
+    "산화제",
+  ],
+
+  neutralization: {
+    direction: ["흡착 및 회수 우선"],
+    waterUse: "물 사용 가능하나 확산 고려",
+    neutralizerNeed: "일반 중화 대상 아님",
+  },
+
+  ppe: [
+    "유기증기용 호흡보호구",
+    "보안경",
+  ],
+
+  cautions: [
+    "점화원 관리 필요",
+  ],
+},
+
+{
+  id: 22,
+  nameKo: "사불화규소",
+  nameEn: "Silicon Tetrafluoride",
+  formula: "SiF4",
+  cas: "7783-61-1",
+  aliases: ["SiF4"],
+  process: "Etch / 반응가스",
+  state: "무색 기체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["🧪 부식성", "☠️ 급성독성"],
+
+  ph: [
+    {
+      concentration: "수분 접촉",
+      value: "산성 생성 가능",
+      note: "HF 생성 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "2.5 ppm", source: "대표 SDS 참고값" },
+    stel: { value: "5 ppm", source: "대표 SDS 참고값" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-86°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "수분 반응 시 HF 생성 가능",
+    "부식성",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물과 반응해 HF 생성 가능",
+    ],
+    decon: [
+      "건식 차단 우선",
+    ],
+  },
+
+  incompatible: [
+    "물",
+    "습기",
+  ],
+
+  neutralization: {
+    direction: ["HF 생성물 중화 검토"],
+    waterUse: "직접 물 사용 시 HF 생성 고려",
+    neutralizerNeed: "칼슘계 중화 방향 검토",
+  },
+
+  ppe: [
+    "공기호흡기",
+    "내산 장갑",
+  ],
+
+  cautions: [
+    "HF 생성 가능성 우선 고려",
+  ],
+},
+
+{
+  id: 23,
+  nameKo: "사불화탄소",
+  nameEn: "Carbon Tetrafluoride",
+  formula: "CF4",
+  cas: "75-73-0",
+  aliases: ["CF4"],
+  process: "Etch Gas",
+  state: "무색 기체",
+  hazardLevel: "주의",
+  ghsPictograms: ["🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "질식 위험 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "1000 ppm", source: "대표 SDS 참고값" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "단순 질식성", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-128°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "질식 위험",
+    "밀폐공간 산소결핍 가능",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물반응성 낮음",
+    ],
+    decon: [
+      "환기 우선",
+    ],
+  },
+
+  incompatible: [
+    "고온",
+  ],
+
+  neutralization: {
+    direction: ["가스 배기 우선"],
+    waterUse: "물 사용 효과 제한적",
+    neutralizerNeed: "중화 대상 아님",
+  },
+
+  ppe: [
+    "공기호흡기",
+  ],
+
+  cautions: [
+    "산소결핍 위험 고려",
+  ],
+},
+
+{
+  id: 24,
+  nameKo: "육불화에탄",
+  nameEn: "Hexafluoroethane",
+  formula: "C2F6",
+  cas: "76-16-4",
+  aliases: ["C2F6"],
+  process: "Etch Gas",
+  state: "무색 기체",
+  hazardLevel: "주의",
+  ghsPictograms: ["🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "질식 위험 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "1000 ppm", source: "대표 SDS 참고값" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "단순 질식성", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-78°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "질식 위험",
+    "산소결핍 가능",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물반응성 낮음",
+    ],
+    decon: [
+      "환기 우선",
+    ],
+  },
+
+  incompatible: [
+    "고온",
+  ],
+
+  neutralization: {
+    direction: ["가스 배기 우선"],
+    waterUse: "물 사용 효과 제한적",
+    neutralizerNeed: "중화 대상 아님",
+  },
+
+  ppe: [
+    "공기호흡기",
+  ],
+
+  cautions: [
+    "밀폐공간 질식 위험 고려",
+  ],
+},
 ];
