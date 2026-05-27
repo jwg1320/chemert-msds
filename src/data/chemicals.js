@@ -1774,4 +1774,689 @@ export const chemicals = [
     "밀폐공간 질식 위험 고려",
   ],
 },
+{
+  id: 25,
+  nameKo: "수산화나트륨",
+  nameEn: "Sodium Hydroxide",
+  formula: "NaOH",
+  cas: "1310-73-2",
+  aliases: ["NaOH", "가성소다"],
+  process: "폐수 / 중화 / 세정",
+  state: "백색 고체 또는 수용액",
+  hazardLevel: "고위험",
+  ghsPictograms: ["🧪 부식성"],
+
+  ph: [
+    {
+      concentration: "50%",
+      value: "강염기성",
+      note: "강한 부식성",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "2 mg/m³", source: "OSHA Ceiling" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "2 mg/m³", source: "OSHA" },
+    idlh: { value: "10 mg/m³", source: "NIOSH 대표값" },
+  },
+
+  physical: {
+    density: "2.13 g/cm³",
+    vaporPressure: "낮음",
+    boilingPoint: "1388°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "강염기성",
+    "심한 피부 화상",
+    "물 접촉 시 발열 가능",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물 희석 시 발열 가능",
+    ],
+    decon: [
+      "대량 물 세척 가능",
+      "인체 제독 우선",
+    ],
+  },
+
+  incompatible: [
+    "산",
+    "알루미늄",
+  ],
+
+  neutralization: {
+    direction: ["산성 중화 검토"],
+    waterUse: "물 사용 가능",
+    neutralizerNeed: "산성 중화제 검토 가능",
+  },
+
+  ppe: [
+    "내화학 장갑",
+    "보안면",
+  ],
+
+  cautions: [
+    "눈 손상 위험 큼",
+  ],
+},
+
+{
+  id: 26,
+  nameKo: "PAC",
+  nameEn: "Polyaluminum Chloride",
+  formula: "PAC",
+  cas: "1327-41-9",
+  aliases: ["PAC", "폴리염화알루미늄"],
+  process: "폐수처리",
+  state: "황색 액체",
+  hazardLevel: "주의",
+  ghsPictograms: ["❗ 경고"],
+
+  ph: [
+    {
+      concentration: "원액",
+      value: "약산성",
+      note: "제품별 상이",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "설정 없음", source: "-" },
+  },
+
+  physical: {
+    density: "약 1.3 g/cm³",
+    vaporPressure: "낮음",
+    boilingPoint: "제품별 상이",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "피부·눈 자극 가능",
+    "응집제",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물과 혼합 사용",
+    ],
+    decon: [
+      "물 세척 가능",
+    ],
+  },
+
+  incompatible: [
+    "강염기",
+  ],
+
+  neutralization: {
+    direction: ["중화보다는 희석·세척"],
+    waterUse: "물 사용 가능",
+    neutralizerNeed: "일반 중화 불필요",
+  },
+
+  ppe: [
+    "보안경",
+    "장갑",
+  ],
+
+  cautions: [
+    "미끄럼 위험",
+  ],
+},
+
+{
+  id: 27,
+  nameKo: "PAM",
+  nameEn: "Polyacrylamide",
+  formula: "PAM",
+  cas: "9003-05-8",
+  aliases: ["PAM", "폴리아크릴아마이드"],
+  process: "폐수처리",
+  state: "백색 분말",
+  hazardLevel: "주의",
+  ghsPictograms: ["❗ 경고"],
+
+  ph: [
+    {
+      concentration: "용액",
+      value: "중성 부근",
+      note: "제품별 상이",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "설정 없음", source: "-" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "설정 없음", source: "-" },
+  },
+
+  physical: {
+    density: "약 1.3 g/cm³",
+    vaporPressure: "해당 없음",
+    boilingPoint: "해당 없음",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "분진 흡입 자극 가능",
+    "미끄럼 위험",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물과 혼합 시 미끄러움 증가",
+    ],
+    decon: [
+      "물 세척 가능",
+    ],
+  },
+
+  incompatible: [
+    "강산화제",
+  ],
+
+  neutralization: {
+    direction: ["중화 대상 아님"],
+    waterUse: "물 세척 가능",
+    neutralizerNeed: "일반 중화 불필요",
+  },
+
+  ppe: [
+    "보안경",
+    "방진마스크",
+  ],
+
+  cautions: [
+    "바닥 미끄럼 주의",
+  ],
+},
+
+{
+  id: 28,
+  nameKo: "차아염소산나트륨",
+  nameEn: "Sodium Hypochlorite",
+  formula: "NaOCl",
+  cas: "7681-52-9",
+  aliases: ["NaOCl", "락스"],
+  process: "폐수 / 살균",
+  state: "황색 액체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["🧪 부식성", "🌊 환경유해"],
+
+  ph: [
+    {
+      concentration: "원액",
+      value: "강염기성",
+      note: "염소 발생 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "설정 없음", source: "-" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "설정 없음", source: "-" },
+  },
+
+  physical: {
+    density: "1.2 g/cm³",
+    vaporPressure: "낮음",
+    boilingPoint: "분해 가능",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "산 혼합 시 염소가스 발생 가능",
+    "부식성",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "산과 반응 시 Cl2 발생 가능",
+    ],
+    decon: [
+      "물 세척 가능",
+      "산 접촉 차단 우선",
+    ],
+  },
+
+  incompatible: [
+    "산",
+    "암모니아",
+  ],
+
+  neutralization: {
+    direction: ["환원성 처리 검토"],
+    waterUse: "물 사용 가능",
+    neutralizerNeed: "산 접촉 금지",
+  },
+
+  ppe: [
+    "보안면",
+    "내화학 장갑",
+  ],
+
+  cautions: [
+    "산 혼합 금지",
+  ],
+},
+
+{
+  id: 29,
+  nameKo: "과산화수소",
+  nameEn: "Hydrogen Peroxide",
+  formula: "H2O2",
+  cas: "7722-84-1",
+  aliases: ["H2O2", "과산화수소"],
+  process: "세정 / 산화",
+  state: "무색 액체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["⭕ 산화성", "🧪 부식성"],
+
+  ph: [
+    {
+      concentration: "35%",
+      value: "약산성",
+      note: "산화성 우선",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "1 ppm", source: "OSHA" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "1 ppm", source: "NIOSH" },
+    idlh: { value: "75 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "1.39 g/cm³",
+    vaporPressure: "5 mmHg",
+    boilingPoint: "141°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "강산화성",
+    "유기물 반응 가능",
+    "산소 발생 가능",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "오염 시 급격 분해 가능",
+    ],
+    decon: [
+      "오염 제거 후 세척",
+    ],
+  },
+
+  incompatible: [
+    "유기물",
+    "금속",
+  ],
+
+  neutralization: {
+    direction: ["분해·희석 관리 우선"],
+    waterUse: "물 사용 가능",
+    neutralizerNeed: "일반 중화보다 분해 관리 우선",
+  },
+
+  ppe: [
+    "보안면",
+    "내화학 장갑",
+  ],
+
+  cautions: [
+    "밀폐 시 압력 상승 가능",
+  ],
+},
+
+{
+  id: 30,
+  nameKo: "에틸렌글리콜",
+  nameEn: "Ethylene Glycol",
+  formula: "C2H6O2",
+  cas: "107-21-1",
+  aliases: ["EG", "부동액"],
+  process: "공조 / Chiller",
+  state: "무색 액체",
+  hazardLevel: "주의",
+  ghsPictograms: ["❗ 경고"],
+
+  ph: [
+    {
+      concentration: "원액",
+      value: "중성 부근",
+      note: "독성 주의",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "50 ppm", source: "대표 SDS 참고값" },
+    stel: { value: "100 ppm", source: "대표 SDS 참고값" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
+  },
+
+  physical: {
+    density: "1.11 g/cm³",
+    vaporPressure: "0.06 mmHg",
+    boilingPoint: "197°C",
+    flashPoint: "111°C",
+  },
+
+  flammability: {
+    flashPoint: "111°C",
+    autoIgnition: "410°C",
+    lel: "3.2%",
+    uel: "15.3%",
+  },
+
+  mainHazards: [
+    "섭취 독성",
+    "고온 시 인화 가능",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물 혼합 가능",
+    ],
+    decon: [
+      "흡착 후 물 세척",
+    ],
+  },
+
+  incompatible: [
+    "강산화제",
+  ],
+
+  neutralization: {
+    direction: ["흡착·회수 우선"],
+    waterUse: "물 사용 가능",
+    neutralizerNeed: "일반 중화 불필요",
+  },
+
+  ppe: [
+    "보안경",
+    "장갑",
+  ],
+
+  cautions: [
+    "누출 시 미끄럼 위험",
+  ],
+},
+
+{
+  id: 31,
+  nameKo: "프로필렌글리콜",
+  nameEn: "Propylene Glycol",
+  formula: "C3H8O2",
+  cas: "57-55-6",
+  aliases: ["PG", "프로필렌글리콜"],
+  process: "공조 / Chiller",
+  state: "무색 액체",
+  hazardLevel: "주의",
+  ghsPictograms: ["❗ 경고"],
+
+  ph: [
+    {
+      concentration: "원액",
+      value: "중성 부근",
+      note: "저독성 부동액",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "10 mg/m³", source: "대표 SDS 참고값" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "설정 없음", source: "-" },
+  },
+
+  physical: {
+    density: "1.03 g/cm³",
+    vaporPressure: "0.1 mmHg",
+    boilingPoint: "188°C",
+    flashPoint: "99°C",
+  },
+
+  flammability: {
+    flashPoint: "99°C",
+    autoIgnition: "371°C",
+    lel: "2.6%",
+    uel: "12.5%",
+  },
+
+  mainHazards: [
+    "고온 시 인화 가능",
+    "미끄럼 위험",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물 혼합 가능",
+    ],
+    decon: [
+      "흡착 후 물 세척",
+    ],
+  },
+
+  incompatible: [
+    "강산화제",
+  ],
+
+  neutralization: {
+    direction: ["흡착·회수 우선"],
+    waterUse: "물 사용 가능",
+    neutralizerNeed: "일반 중화 불필요",
+  },
+
+  ppe: [
+    "보안경",
+    "장갑",
+  ],
+
+  cautions: [
+    "바닥 미끄럼 주의",
+  ],
+},
+
+{
+  id: 32,
+  nameKo: "메탄올",
+  nameEn: "Methanol",
+  formula: "CH3OH",
+  cas: "67-56-1",
+  aliases: ["메탄올", "Methanol"],
+  process: "세정 / 용제",
+  state: "무색 액체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["🔥 인화성", "☠️ 급성독성"],
+
+  ph: [
+    {
+      concentration: "원액",
+      value: "중성",
+      note: "독성·인화성 우선",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "200 ppm", source: "OSHA" },
+    stel: { value: "250 ppm", source: "ACGIH" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "6000 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "0.79 g/cm³",
+    vaporPressure: "97 mmHg",
+    boilingPoint: "65°C",
+    flashPoint: "11°C",
+  },
+
+  flammability: {
+    flashPoint: "11°C",
+    autoIgnition: "464°C",
+    lel: "6%",
+    uel: "36%",
+  },
+
+  mainHazards: [
+    "고인화성",
+    "시신경 독성",
+    "흡입 독성",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물 혼합 가능",
+    ],
+    decon: [
+      "흡착·환기 우선",
+    ],
+  },
+
+  incompatible: [
+    "산화제",
+    "점화원",
+  ],
+
+  neutralization: {
+    direction: ["흡착 및 회수 우선"],
+    waterUse: "물 사용 가능하나 인화성 고려",
+    neutralizerNeed: "일반 중화 대상 아님",
+  },
+
+  ppe: [
+    "유기증기용 호흡보호구",
+    "방염 보호구",
+  ],
+
+  cautions: [
+    "정전기·점화원 관리 중요",
+  ],
+},
+
+{
+  id: 33,
+  nameKo: "아세톤",
+  nameEn: "Acetone",
+  formula: "C3H6O",
+  cas: "67-64-1",
+  aliases: ["Acetone", "아세톤"],
+  process: "세정 / 용제",
+  state: "무색 액체",
+  hazardLevel: "주의",
+  ghsPictograms: ["🔥 인화성"],
+
+  ph: [
+    {
+      concentration: "원액",
+      value: "중성",
+      note: "인화성 우선",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "250 ppm", source: "OSHA" },
+    stel: { value: "500 ppm", source: "ACGIH" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "2500 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "0.79 g/cm³",
+    vaporPressure: "180 mmHg",
+    boilingPoint: "56°C",
+    flashPoint: "-20°C",
+  },
+
+  flammability: {
+    flashPoint: "-20°C",
+    autoIgnition: "465°C",
+    lel: "2.6%",
+    uel: "12.8%",
+  },
+
+  mainHazards: [
+    "고인화성",
+    "증기 흡입 자극",
+  ],
+
+  waterReactivity: {
+    hazards: [
+      "물 혼합 가능",
+    ],
+    decon: [
+      "흡착 및 환기 우선",
+    ],
+  },
+
+  incompatible: [
+    "산화제",
+    "점화원",
+  ],
+
+  neutralization: {
+    direction: ["흡착·회수 우선"],
+    waterUse: "물 사용 가능",
+    neutralizerNeed: "일반 중화 대상 아님",
+  },
+
+  ppe: [
+    "유기증기용 호흡보호구",
+    "방염 보호구",
+  ],
+
+  cautions: [
+    "LEL 관리 중요",
+  ],
+},
+
 ];
