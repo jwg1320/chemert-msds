@@ -3,30 +3,30 @@ import {
   Search,
   ShieldCheck,
   AlertTriangle,
-  FileText,
   Droplets,
   FlaskConical,
   Flame,
   BadgeAlert,
+  Activity,
 } from "lucide-react";
 
 import { chemicals } from "./data/chemicals";
 
-const hazardColor = {
-  "매우 위험": "#ef4444",
-  고위험: "#f97316",
-  주의: "#eab308",
+const levelColor = {
+  "매우 위험": "#dc2626",
+  고위험: "#ea580c",
+  주의: "#ca8a04",
 };
 
 export default function App() {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(chemicals[0]);
 
-  const results = useMemo(() => {
+  const filtered = useMemo(() => {
     if (!query) return chemicals;
 
     return chemicals.filter((c) => {
-      const searchText = `
+      const text = `
         ${c.nameKo}
         ${c.nameEn}
         ${c.formula}
@@ -34,203 +34,211 @@ export default function App() {
         ${c.aliases.join(" ")}
       `.toLowerCase();
 
-      return searchText.includes(query.toLowerCase());
+      return text.includes(query.toLowerCase());
     });
   }, [query]);
 
   return (
     <div style={styles.page}>
       <div style={styles.container}>
-        <Header />
+        <header style={styles.header}>
+          <div style={styles.titleWrap}>
+            <ShieldCheck size={28} />
+            <div>
+              <div style={styles.title}>ERT CHEM</div>
+              <div style={styles.subtitle}>
+                반도체 화학물질 대응 플랫폼
+              </div>
+            </div>
+          </div>
 
-        <div style={styles.layout}>
-          <aside>
-            <SearchBox query={query} setQuery={setQuery} />
+          <div style={styles.searchBox}>
+            <Search size={20} color="#64748b" />
 
-            {results.map((chemical) => (
-              <button
-                key={chemical.id}
-                onClick={() => setSelected(chemical)}
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="HF / 불산 / CAS 검색"
+              style={styles.input}
+            />
+          </div>
+        </header>
+
+        <div style={styles.horizontalScroll}>
+          {filtered.map((chemical) => (
+            <button
+              key={chemical.id}
+              onClick={() => setSelected(chemical)}
+              style={{
+                ...styles.chemicalCard,
+                border:
+                  selected.id === chemical.id
+                    ? "2px solid #0f172a"
+                    : "1px solid #e2e8f0",
+              }}
+            >
+              <div style={styles.chemicalName}>{chemical.nameKo}</div>
+
+              <div style={styles.chemicalSub}>
+                {chemical.formula}
+              </div>
+
+              <div
                 style={{
-                  ...styles.resultCard,
-                  border:
-                    selected.id === chemical.id
-                      ? "2px solid #0f172a"
-                      : "1px solid #e2e8f0",
+                  ...styles.levelBadge,
+                  background: levelColor[chemical.hazardLevel],
                 }}
               >
-                <div style={styles.resultTop}>
-                  <div>
-                    <div style={styles.resultName}>{chemical.nameKo}</div>
-                    <div style={styles.subText}>{chemical.nameEn}</div>
-                  </div>
-
-                  <div
-                    style={{
-                      ...styles.hazardBadge,
-                      background: hazardColor[chemical.hazardLevel],
-                    }}
-                  >
-                    {chemical.hazardLevel}
-                  </div>
-                </div>
-
-                <div style={styles.process}>{chemical.process}</div>
-              </button>
-            ))}
-          </aside>
-
-          <main>
-            <ChemicalHeader selected={selected} />
-
-            <Section title="기본 정보" icon={<FileText size={20} />}>
-              <Grid>
-                <InfoBox title="화학식" value={selected.formula} />
-                <InfoBox title="CAS No." value={selected.cas} />
-                <InfoBox title="상태" value={selected.state} />
-                <InfoBox title="공정" value={selected.process} />
-              </Grid>
-            </Section>
-
-            <Section title="GHS 경고표지" icon={<BadgeAlert size={20} />}>
-              <PillWrap items={selected.ghsPictograms} />
-            </Section>
-
-            <Section title="pH 정보" icon={<Droplets size={20} />}>
-              {selected.ph.map((p, index) => (
-                <InfoBox
-                  key={index}
-                  title={`${p.concentration}`}
-                  value={`${p.value} / ${p.note}`}
-                />
-              ))}
-            </Section>
-
-            <Section title="노출 기준" icon={<AlertTriangle size={20} />}>
-              <InfoLine
-                title="TWA"
-                value={`${selected.exposure.twa.value} (${selected.exposure.twa.source})`}
-              />
-              <InfoLine
-                title="STEL"
-                value={`${selected.exposure.stel.value} (${selected.exposure.stel.source})`}
-              />
-              <InfoLine
-                title="Ceiling"
-                value={`${selected.exposure.ceiling.value} (${selected.exposure.ceiling.source})`}
-              />
-              <InfoLine
-                title="IDLH"
-                value={`${selected.exposure.idlh.value} (${selected.exposure.idlh.source})`}
-              />
-            </Section>
-
-            <Section title="물리·화학적 특성" icon={<Droplets size={20} />}>
-              <InfoLine title="밀도" value={selected.physical.density} />
-              <InfoLine title="증기압" value={selected.physical.vaporPressure} />
-              <InfoLine title="끓는점" value={selected.physical.boilingPoint} />
-              <InfoLine title="인화점" value={selected.physical.flashPoint} />
-            </Section>
-
-            <Section title="인화·폭발 특성" icon={<Flame size={20} />}>
-              <InfoLine title="인화점" value={selected.flammability.flashPoint} />
-              <InfoLine
-                title="자연발화온도"
-                value={selected.flammability.autoIgnition}
-              />
-              <InfoLine title="LEL / 폭발하한" value={selected.flammability.lel} />
-              <InfoLine title="UEL / 폭발상한" value={selected.flammability.uel} />
-            </Section>
-
-            <Section title="주요 위험성" icon={<AlertTriangle size={20} />}>
-              <List items={selected.mainHazards} />
-            </Section>
-
-            <Section title="물 반응성" icon={<Droplets size={20} />}>
-              <List items={selected.waterReactivity.hazards} />
-            </Section>
-
-            <Section title="제독 방향" icon={<Droplets size={20} />}>
-              <List items={selected.waterReactivity.decon} />
-            </Section>
-
-            <Section title="반응성 / 혼합 주의" icon={<FlaskConical size={20} />}>
-              <PillWrap items={selected.incompatible} />
-            </Section>
-
-            <Section title="중화 방향" icon={<FlaskConical size={20} />}>
-              <List items={selected.neutralization.direction} />
-
-              <div style={styles.noteBox}>
-                <div style={styles.noteTitle}>물 사용 판단</div>
-                <div>{selected.neutralization.waterUse}</div>
+                {chemical.hazardLevel}
               </div>
-
-              <div style={styles.noteBox}>
-                <div style={styles.noteTitle}>중화제 필요성</div>
-                <div>{selected.neutralization.neutralizerNeed}</div>
-              </div>
-            </Section>
-
-            <Section title="권장 보호구" icon={<ShieldCheck size={20} />}>
-              <PillWrap items={selected.ppe} />
-            </Section>
-
-            <Section title="대응 주의사항" icon={<FileText size={20} />}>
-              <List items={selected.cautions} />
-            </Section>
-          </main>
+            </button>
+          ))}
         </div>
-      </div>
-    </div>
-  );
-}
 
-function Header() {
-  return (
-    <div style={styles.header}>
-      <div style={styles.headerTitle}>
-        <ShieldCheck />
-        <h1>반도체 화학물질 검색 시스템</h1>
-      </div>
-      <p style={styles.headerText}>
-        STEL/TWA · GHS · 물 반응성 · 제독 · 중화 방향 · 인화/폭발 특성 조회
-      </p>
-    </div>
-  );
-}
+        <div style={styles.detailCard}>
+          <div style={styles.topInfo}>
+            <div>
+              <div style={styles.bigName}>{selected.nameKo}</div>
 
-function SearchBox({ query, setQuery }) {
-  return (
-    <div style={styles.searchCard}>
-      <div style={styles.searchBox}>
-        <Search size={20} />
-        <input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="HF, 불산, CAS No."
-          style={styles.input}
-        />
-      </div>
-    </div>
-  );
-}
+              <div style={styles.engName}>
+                {selected.nameEn}
+              </div>
 
-function ChemicalHeader({ selected }) {
-  return (
-    <div style={styles.detailHeader}>
-      <div>
-        <div style={styles.chemicalName}>{selected.nameKo}</div>
-        <div style={styles.subText}>{selected.nameEn}</div>
-      </div>
+              <div style={styles.cas}>
+                CAS No. {selected.cas}
+              </div>
+            </div>
 
-      <div
-        style={{
-          ...styles.bigHazardBadge,
-          background: hazardColor[selected.hazardLevel],
-        }}
-      >
-        {selected.hazardLevel}
+            <div
+              style={{
+                ...styles.bigBadge,
+                background: levelColor[selected.hazardLevel],
+              }}
+            >
+              {selected.hazardLevel}
+            </div>
+          </div>
+
+          <Section
+            title="GHS 경고표지"
+            icon={<BadgeAlert size={18} />}
+          >
+            <TagWrap items={selected.ghsPictograms} />
+          </Section>
+
+          <Section title="기본 정보" icon={<Activity size={18} />}>
+            <InfoLine title="화학식" value={selected.formula} />
+            <InfoLine title="상태" value={selected.state} />
+            <InfoLine title="공정" value={selected.process} />
+          </Section>
+
+          <Section title="노출 기준" icon={<AlertTriangle size={18} />}>
+            <InfoLine
+              title="TWA"
+              value={`${selected.exposure.twa.value}`}
+            />
+
+            <InfoLine
+              title="STEL"
+              value={`${selected.exposure.stel.value}`}
+            />
+
+            <InfoLine
+              title="Ceiling"
+              value={`${selected.exposure.ceiling.value}`}
+            />
+
+            <InfoLine
+              title="IDLH"
+              value={`${selected.exposure.idlh.value}`}
+            />
+          </Section>
+
+          <Section title="물리·화학 특성" icon={<Droplets size={18} />}>
+            <InfoLine
+              title="밀도"
+              value={selected.physical.density}
+            />
+
+            <InfoLine
+              title="증기압"
+              value={selected.physical.vaporPressure}
+            />
+
+            <InfoLine
+              title="끓는점"
+              value={selected.physical.boilingPoint}
+            />
+
+            <InfoLine
+              title="인화점"
+              value={selected.physical.flashPoint}
+            />
+          </Section>
+
+          <Section title="인화·폭발 특성" icon={<Flame size={18} />}>
+            <InfoLine
+              title="인화점"
+              value={selected.flammability.flashPoint}
+            />
+
+            <InfoLine
+              title="자연발화"
+              value={selected.flammability.autoIgnition}
+            />
+
+            <InfoLine
+              title="LEL"
+              value={selected.flammability.lel}
+            />
+
+            <InfoLine
+              title="UEL"
+              value={selected.flammability.uel}
+            />
+          </Section>
+
+          <Section title="주요 위험성" icon={<AlertTriangle size={18} />}>
+            <BulletList items={selected.mainHazards} />
+          </Section>
+
+          <Section title="물 반응성" icon={<Droplets size={18} />}>
+            <BulletList items={selected.waterReactivity.hazards} />
+          </Section>
+
+          <Section title="제독 방향" icon={<Droplets size={18} />}>
+            <BulletList items={selected.waterReactivity.decon} />
+          </Section>
+
+          <Section
+            title="반응성 / 혼합 주의"
+            icon={<FlaskConical size={18} />}
+          >
+            <TagWrap items={selected.incompatible} />
+          </Section>
+
+          <Section title="중화 방향" icon={<FlaskConical size={18} />}>
+            <BulletList items={selected.neutralization.direction} />
+
+            <NoteBox
+              title="물 사용 판단"
+              value={selected.neutralization.waterUse}
+            />
+
+            <NoteBox
+              title="중화제 필요성"
+              value={selected.neutralization.neutralizerNeed}
+            />
+          </Section>
+
+          <Section title="권장 보호구" icon={<ShieldCheck size={18} />}>
+            <TagWrap items={selected.ppe} />
+          </Section>
+
+          <Section title="대응 주의사항" icon={<AlertTriangle size={18} />}>
+            <BulletList items={selected.cautions} />
+          </Section>
+        </div>
       </div>
     </div>
   );
@@ -241,22 +249,10 @@ function Section({ title, icon, children }) {
     <div style={styles.section}>
       <div style={styles.sectionTitle}>
         {icon}
-        <h2>{title}</h2>
+        <span>{title}</span>
       </div>
+
       {children}
-    </div>
-  );
-}
-
-function Grid({ children }) {
-  return <div style={styles.grid}>{children}</div>;
-}
-
-function InfoBox({ title, value }) {
-  return (
-    <div style={styles.infoBox}>
-      <div style={styles.infoTitle}>{title}</div>
-      <div style={styles.infoValue}>{value}</div>
     </div>
   );
 }
@@ -264,17 +260,17 @@ function InfoBox({ title, value }) {
 function InfoLine({ title, value }) {
   return (
     <div style={styles.infoLine}>
-      <div style={styles.infoLineTitle}>{title}</div>
-      <div style={styles.infoLineValue}>{value}</div>
+      <span style={styles.infoTitle}>{title}</span>
+      <span style={styles.infoValue}>{value}</span>
     </div>
   );
 }
 
-function List({ items }) {
+function BulletList({ items }) {
   return (
     <div>
       {items.map((item, index) => (
-        <div key={index} style={styles.listItem}>
+        <div key={index} style={styles.bullet}>
           <span>•</span>
           <span>{item}</span>
         </div>
@@ -283,14 +279,23 @@ function List({ items }) {
   );
 }
 
-function PillWrap({ items }) {
+function TagWrap({ items }) {
   return (
-    <div style={styles.pillWrap}>
+    <div style={styles.tagWrap}>
       {items.map((item, index) => (
-        <span key={index} style={styles.pill}>
+        <div key={index} style={styles.tag}>
           {item}
-        </span>
+        </div>
       ))}
+    </div>
+  );
+}
+
+function NoteBox({ title, value }) {
+  return (
+    <div style={styles.noteBox}>
+      <div style={styles.noteTitle}>{title}</div>
+      <div style={styles.noteValue}>{value}</div>
     </div>
   );
 }
@@ -299,224 +304,213 @@ const styles = {
   page: {
     minHeight: "100vh",
     background: "#f1f5f9",
-    padding: 20,
+    padding: 12,
     fontFamily:
-      "Arial, Pretendard, -apple-system, BlinkMacSystemFont, sans-serif",
+      "Pretendard, -apple-system, BlinkMacSystemFont, sans-serif",
     color: "#0f172a",
   },
 
   container: {
-    maxWidth: 1500,
+    maxWidth: 700,
     margin: "0 auto",
   },
 
   header: {
     background: "white",
-    borderRadius: 25,
-    padding: 30,
-    marginBottom: 20,
+    borderRadius: 24,
+    padding: 18,
+    marginBottom: 14,
     boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
+    position: "sticky",
+    top: 8,
+    zIndex: 100,
   },
 
-  headerTitle: {
+  titleWrap: {
     display: "flex",
     alignItems: "center",
     gap: 10,
+    marginBottom: 16,
   },
 
-  headerText: {
-    color: "#475569",
-    marginTop: 10,
+  title: {
+    fontSize: 24,
+    fontWeight: 800,
   },
 
-  layout: {
-    display: "grid",
-    gridTemplateColumns: "350px 1fr",
-    gap: 20,
-  },
-
-  searchCard: {
-    background: "white",
-    borderRadius: 25,
-    padding: 20,
-    marginBottom: 20,
-    boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
+  subtitle: {
+    fontSize: 13,
+    color: "#64748b",
+    marginTop: 3,
   },
 
   searchBox: {
     display: "flex",
     alignItems: "center",
     gap: 10,
-    border: "1px solid #d4d4d8",
-    borderRadius: 15,
-    padding: 12,
+    background: "#f8fafc",
+    border: "1px solid #e2e8f0",
+    borderRadius: 16,
+    padding: "14px 16px",
   },
 
   input: {
     border: "none",
     outline: "none",
+    background: "transparent",
     width: "100%",
     fontSize: 16,
-    background: "transparent",
   },
 
-  resultCard: {
-    width: "100%",
+  horizontalScroll: {
+    display: "flex",
+    gap: 12,
+    overflowX: "auto",
+    paddingBottom: 10,
+    marginBottom: 16,
+  },
+
+  chemicalCard: {
+    minWidth: 120,
     background: "white",
     borderRadius: 20,
-    padding: 20,
-    marginBottom: 10,
-    textAlign: "left",
+    padding: 16,
     cursor: "pointer",
-    boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
-  },
-
-  resultTop: {
-    display: "flex",
-    justifyContent: "space-between",
-    gap: 10,
-  },
-
-  resultName: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-
-  subText: {
-    color: "#64748b",
-    marginTop: 5,
-  },
-
-  process: {
-    marginTop: 10,
-    color: "#475569",
-  },
-
-  hazardBadge: {
-    color: "white",
-    padding: "5px 10px",
-    borderRadius: 10,
-    height: 30,
-    fontSize: 14,
-    whiteSpace: "nowrap",
-  },
-
-  bigHazardBadge: {
-    color: "white",
-    padding: "10px 15px",
-    borderRadius: 15,
-    height: "fit-content",
-    whiteSpace: "nowrap",
-  },
-
-  detailHeader: {
-    background: "white",
-    borderRadius: 25,
-    padding: 30,
-    marginBottom: 20,
-    display: "flex",
-    justifyContent: "space-between",
-    gap: 20,
+    textAlign: "left",
     boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
   },
 
   chemicalName: {
-    fontSize: 34,
-    fontWeight: "bold",
+    fontSize: 18,
+    fontWeight: 700,
+    marginBottom: 5,
+  },
+
+  chemicalSub: {
+    color: "#64748b",
+    marginBottom: 10,
+    fontSize: 14,
+  },
+
+  levelBadge: {
+    color: "white",
+    borderRadius: 999,
+    padding: "6px 10px",
+    fontSize: 12,
+    width: "fit-content",
+    fontWeight: 700,
+  },
+
+  detailCard: {
+    background: "white",
+    borderRadius: 24,
+    padding: 18,
+    boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
+  },
+
+  topInfo: {
+    display: "flex",
+    justifyContent: "space-between",
+    gap: 12,
+    marginBottom: 24,
+  },
+
+  bigName: {
+    fontSize: 32,
+    fontWeight: 800,
+  },
+
+  engName: {
+    color: "#64748b",
+    marginTop: 6,
+    fontSize: 15,
+  },
+
+  cas: {
+    marginTop: 8,
+    fontSize: 13,
+    color: "#94a3b8",
+  },
+
+  bigBadge: {
+    color: "white",
+    borderRadius: 18,
+    padding: "10px 14px",
+    height: "fit-content",
+    fontWeight: 700,
+    whiteSpace: "nowrap",
   },
 
   section: {
-    background: "white",
-    borderRadius: 25,
-    padding: 30,
-    marginBottom: 20,
-    boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
+    marginBottom: 26,
   },
 
   sectionTitle: {
     display: "flex",
     alignItems: "center",
-    gap: 10,
-    marginBottom: 20,
-  },
-
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(2, 1fr)",
-    gap: 15,
-  },
-
-  infoBox: {
-    background: "#f8fafc",
-    padding: 15,
-    borderRadius: 15,
-    border: "1px solid #e2e8f0",
-    marginBottom: 10,
-  },
-
-  infoTitle: {
-    color: "#64748b",
-    fontSize: 14,
-    marginBottom: 5,
-  },
-
-  infoValue: {
-    fontWeight: "bold",
-    lineHeight: 1.5,
+    gap: 8,
+    fontSize: 18,
+    fontWeight: 700,
+    marginBottom: 14,
   },
 
   infoLine: {
     display: "flex",
     justifyContent: "space-between",
-    gap: 20,
-    marginBottom: 15,
-    paddingBottom: 10,
+    gap: 16,
+    padding: "12px 0",
     borderBottom: "1px solid #e2e8f0",
   },
 
-  infoLineTitle: {
+  infoTitle: {
     color: "#64748b",
-    minWidth: 120,
+    fontWeight: 600,
+    minWidth: 90,
   },
 
-  infoLineValue: {
-    fontWeight: "bold",
+  infoValue: {
     textAlign: "right",
+    fontWeight: 700,
     lineHeight: 1.5,
   },
 
-  listItem: {
+  bullet: {
     display: "flex",
     gap: 10,
-    marginBottom: 10,
+    marginBottom: 12,
     lineHeight: 1.6,
   },
 
-  pillWrap: {
+  tagWrap: {
     display: "flex",
     flexWrap: "wrap",
     gap: 10,
   },
 
-  pill: {
-    background: "#f1f5f9",
+  tag: {
+    background: "#f8fafc",
     border: "1px solid #e2e8f0",
-    padding: "8px 12px",
+    padding: "10px 14px",
     borderRadius: 999,
     fontSize: 14,
+    fontWeight: 600,
   },
 
   noteBox: {
     background: "#f8fafc",
     border: "1px solid #e2e8f0",
-    borderRadius: 15,
-    padding: 15,
-    marginTop: 15,
-    lineHeight: 1.6,
+    borderRadius: 18,
+    padding: 16,
+    marginTop: 14,
   },
 
   noteTitle: {
-    fontWeight: "bold",
+    fontWeight: 700,
     marginBottom: 8,
+  },
+
+  noteValue: {
+    lineHeight: 1.6,
+    color: "#334155",
   },
 };
