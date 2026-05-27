@@ -8,6 +8,10 @@ import {
   Flame,
   BadgeAlert,
   Activity,
+  Wind,
+  ArrowDown,
+  Waves,
+  Skull,
 } from "lucide-react";
 
 import { chemicals } from "./data/chemicals";
@@ -31,12 +35,14 @@ export default function App() {
         ${c.nameEn}
         ${c.formula}
         ${c.cas}
-        ${c.aliases.join(" ")}
+        ${(c.aliases || []).join(" ")}
       `.toLowerCase();
 
       return text.includes(query.toLowerCase());
     });
   }, [query]);
+
+  const flags = getFlags(selected);
 
   return (
     <div style={styles.page}>
@@ -46,15 +52,12 @@ export default function App() {
             <ShieldCheck size={28} />
             <div>
               <div style={styles.title}>ERT CHEM</div>
-              <div style={styles.subtitle}>
-                반도체 화학물질 대응 플랫폼
-              </div>
+              <div style={styles.subtitle}>반도체 화학물질 대응 플랫폼</div>
             </div>
           </div>
 
           <div style={styles.searchBox}>
             <Search size={20} color="#64748b" />
-
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -78,15 +81,11 @@ export default function App() {
               }}
             >
               <div style={styles.chemicalName}>{chemical.nameKo}</div>
-
-              <div style={styles.chemicalSub}>
-                {chemical.formula}
-              </div>
-
+              <div style={styles.chemicalSub}>{chemical.formula}</div>
               <div
                 style={{
                   ...styles.levelBadge,
-                  background: levelColor[chemical.hazardLevel],
+                  background: levelColor[chemical.hazardLevel] || "#64748b",
                 }}
               >
                 {chemical.hazardLevel}
@@ -99,31 +98,26 @@ export default function App() {
           <div style={styles.topInfo}>
             <div>
               <div style={styles.bigName}>{selected.nameKo}</div>
-
-              <div style={styles.engName}>
-                {selected.nameEn}
-              </div>
-
-              <div style={styles.cas}>
-                CAS No. {selected.cas}
-              </div>
+              <div style={styles.engName}>{selected.nameEn}</div>
+              <div style={styles.cas}>CAS No. {selected.cas}</div>
             </div>
 
             <div
               style={{
                 ...styles.bigBadge,
-                background: levelColor[selected.hazardLevel],
+                background: levelColor[selected.hazardLevel] || "#64748b",
               }}
             >
               {selected.hazardLevel}
             </div>
           </div>
 
-          <Section
-            title="GHS 경고표지"
-            icon={<BadgeAlert size={18} />}
-          >
-            <TagWrap items={selected.ghsPictograms} />
+          <Section title="현장 핵심 경고" icon={<AlertTriangle size={18} />}>
+            <CriticalFlags flags={flags} />
+          </Section>
+
+          <Section title="GHS 경고표지" icon={<BadgeAlert size={18} />}>
+            <TagWrap items={selected.ghsPictograms || []} />
           </Section>
 
           <Section title="기본 정보" icon={<Activity size={18} />}>
@@ -132,113 +126,194 @@ export default function App() {
             <InfoLine title="공정" value={selected.process} />
           </Section>
 
-          <Section title="노출 기준" icon={<AlertTriangle size={18} />}>
-            <InfoLine
-              title="TWA"
-              value={`${selected.exposure.twa.value}`}
-            />
-
-            <InfoLine
-              title="STEL"
-              value={`${selected.exposure.stel.value}`}
-            />
-
-            <InfoLine
-              title="Ceiling"
-              value={`${selected.exposure.ceiling.value}`}
-            />
-
-            <InfoLine
-              title="IDLH"
-              value={`${selected.exposure.idlh.value}`}
-            />
+          <Section title="노출 기준" icon={<Skull size={18} />}>
+            <ExposureLine title="TWA" item={selected.exposure?.twa} />
+            <ExposureLine title="STEL" item={selected.exposure?.stel} />
+            <ExposureLine title="Ceiling" item={selected.exposure?.ceiling} />
+            <ExposureLine title="IDLH" item={selected.exposure?.idlh} />
           </Section>
 
           <Section title="물리·화학 특성" icon={<Droplets size={18} />}>
-            <InfoLine
-              title="밀도"
-              value={selected.physical.density}
-            />
-
-            <InfoLine
-              title="증기압"
-              value={selected.physical.vaporPressure}
-            />
-
-            <InfoLine
-              title="끓는점"
-              value={selected.physical.boilingPoint}
-            />
-
-            <InfoLine
-              title="인화점"
-              value={selected.physical.flashPoint}
-            />
+            <InfoLine title="밀도" value={selected.physical?.density} />
+            <InfoLine title="증기압" value={selected.physical?.vaporPressure} />
+            <InfoLine title="끓는점" value={selected.physical?.boilingPoint} />
+            <InfoLine title="인화점" value={selected.physical?.flashPoint} />
           </Section>
 
           <Section title="인화·폭발 특성" icon={<Flame size={18} />}>
-            <InfoLine
-              title="인화점"
-              value={selected.flammability.flashPoint}
-            />
-
-            <InfoLine
-              title="자연발화"
-              value={selected.flammability.autoIgnition}
-            />
-
-            <InfoLine
-              title="LEL"
-              value={selected.flammability.lel}
-            />
-
-            <InfoLine
-              title="UEL"
-              value={selected.flammability.uel}
-            />
+            <InfoLine title="인화점" value={selected.flammability?.flashPoint} />
+            <InfoLine title="자연발화" value={selected.flammability?.autoIgnition} />
+            <InfoLine title="LEL" value={selected.flammability?.lel} />
+            <InfoLine title="UEL" value={selected.flammability?.uel} />
           </Section>
 
           <Section title="주요 위험성" icon={<AlertTriangle size={18} />}>
-            <BulletList items={selected.mainHazards} />
+            <BulletList items={selected.mainHazards || []} />
           </Section>
 
-          <Section title="물 반응성" icon={<Droplets size={18} />}>
-            <BulletList items={selected.waterReactivity.hazards} />
+          <Section title="물 반응성" icon={<Waves size={18} />}>
+            <WaterJudge value={flags.waterUse} />
+            <BulletList items={selected.waterReactivity?.hazards || []} />
           </Section>
 
           <Section title="제독 방향" icon={<Droplets size={18} />}>
-            <BulletList items={selected.waterReactivity.decon} />
+            <BulletList items={selected.waterReactivity?.decon || []} />
           </Section>
 
-          <Section
-            title="반응성 / 혼합 주의"
-            icon={<FlaskConical size={18} />}
-          >
-            <TagWrap items={selected.incompatible} />
+          <Section title="반응성 / 혼합 주의" icon={<FlaskConical size={18} />}>
+            <TagWrap items={selected.incompatible || []} />
           </Section>
 
           <Section title="중화 방향" icon={<FlaskConical size={18} />}>
-            <BulletList items={selected.neutralization.direction} />
+            <BulletList items={selected.neutralization?.direction || []} />
 
             <NoteBox
               title="물 사용 판단"
-              value={selected.neutralization.waterUse}
+              value={selected.neutralization?.waterUse}
             />
 
             <NoteBox
               title="중화제 필요성"
-              value={selected.neutralization.neutralizerNeed}
+              value={selected.neutralization?.neutralizerNeed}
             />
           </Section>
 
           <Section title="권장 보호구" icon={<ShieldCheck size={18} />}>
-            <TagWrap items={selected.ppe} />
+            <TagWrap items={selected.ppe || []} />
           </Section>
 
           <Section title="대응 주의사항" icon={<AlertTriangle size={18} />}>
-            <BulletList items={selected.cautions} />
+            <BulletList items={selected.cautions || []} />
           </Section>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function getFlags(c) {
+  const allText = JSON.stringify(c || {}).toLowerCase();
+
+  const has = (words) =>
+    words.some((w) => allText.includes(w.toLowerCase()));
+
+  const ghs = (c.ghsPictograms || []).join(" ");
+
+  const isOxidizer = ghs.includes("산화성") || has(["산화성", "oxidizer"]);
+  const isFlammable = ghs.includes("인화성") || has(["인화성", "가연성", "폭발", "lel", "uel"]);
+  const hfGeneration = has(["hf 생성", "HF 생성", "불산 생성"]);
+  const scba = has(["공기호흡기", "SCBA"]);
+  const lowArea = has(["공기보다 무거움", "저지대", "바닥", "pit", "PIT", "트렌치"]);
+  const waterText = `${c.neutralization?.waterUse || ""} ${
+    c.waterReactivity?.hazards?.join(" ") || ""
+  } ${c.waterReactivity?.decon?.join(" ") || ""}`;
+
+  let waterUse = "주의";
+  if (
+    waterText.includes("금지") ||
+    waterText.includes("부적합") ||
+    waterText.includes("직접 물 사용 부적합") ||
+    waterText.includes("살수 금지")
+  ) {
+    waterUse = "금지";
+  } else if (
+    waterText.includes("가능") ||
+    waterText.includes("물 세척") ||
+    waterText.includes("대량 물")
+  ) {
+    waterUse = "가능";
+  }
+
+  return {
+    waterUse,
+    lowArea,
+    oxidizerAndFlammable: isOxidizer && isFlammable,
+    hfGeneration,
+    scba,
+  };
+}
+
+function CriticalFlags({ flags }) {
+  const items = [];
+
+  items.push({
+    label: `물 사용: ${flags.waterUse}`,
+    icon: <Droplets size={16} />,
+    type:
+      flags.waterUse === "금지"
+        ? "danger"
+        : flags.waterUse === "주의"
+        ? "warn"
+        : "safe",
+  });
+
+  if (flags.lowArea) {
+    items.push({
+      label: "저지대 체류 가능",
+      icon: <ArrowDown size={16} />,
+      type: "danger",
+    });
+  }
+
+  if (flags.oxidizerAndFlammable) {
+    items.push({
+      label: "산화성+인화성 동시 주의",
+      icon: <Flame size={16} />,
+      type: "danger",
+    });
+  }
+
+  if (flags.hfGeneration) {
+    items.push({
+      label: "HF 생성 가능",
+      icon: <FlaskConical size={16} />,
+      type: "danger",
+    });
+  }
+
+  if (flags.scba) {
+    items.push({
+      label: "SCBA 권고",
+      icon: <Wind size={16} />,
+      type: "danger",
+    });
+  }
+
+  return (
+    <div style={styles.flagWrap}>
+      {items.map((item, index) => (
+        <div
+          key={index}
+          style={{
+            ...styles.flag,
+            ...(item.type === "danger"
+              ? styles.flagDanger
+              : item.type === "warn"
+              ? styles.flagWarn
+              : styles.flagSafe),
+          }}
+        >
+          {item.icon}
+          <span>{item.label}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function WaterJudge({ value }) {
+  const style =
+    value === "금지"
+      ? styles.waterDanger
+      : value === "주의"
+      ? styles.waterWarn
+      : styles.waterSafe;
+
+  return (
+    <div style={{ ...styles.waterJudge, ...style }}>
+      <strong>물 사용 판단: {value}</strong>
+      <div style={styles.waterJudgeText}>
+        가능이어도 비산·발열·2차 오염 가능성은 별도 확인 필요
       </div>
     </div>
   );
@@ -251,7 +326,6 @@ function Section({ title, icon, children }) {
         {icon}
         <span>{title}</span>
       </div>
-
       {children}
     </div>
   );
@@ -261,7 +335,22 @@ function InfoLine({ title, value }) {
   return (
     <div style={styles.infoLine}>
       <span style={styles.infoTitle}>{title}</span>
-      <span style={styles.infoValue}>{value}</span>
+      <span style={styles.infoValue}>{value || "정보 없음"}</span>
+    </div>
+  );
+}
+
+function ExposureLine({ title, item }) {
+  if (!item) return <InfoLine title={title} value="정보 없음" />;
+
+  return (
+    <div style={styles.exposureBox}>
+      <div style={styles.exposureTop}>
+        <span style={styles.infoTitle}>{title}</span>
+        <span style={styles.infoValue}>{item.value}</span>
+      </div>
+      <div style={styles.exposureSource}>출처/기준: {item.source || "-"}</div>
+      {item.note && <div style={styles.exposureNote}>{item.note}</div>}
     </div>
   );
 }
@@ -295,7 +384,7 @@ function NoteBox({ title, value }) {
   return (
     <div style={styles.noteBox}>
       <div style={styles.noteTitle}>{title}</div>
-      <div style={styles.noteValue}>{value}</div>
+      <div style={styles.noteValue}>{value || "정보 없음"}</div>
     </div>
   );
 }
@@ -305,13 +394,12 @@ const styles = {
     minHeight: "100vh",
     background: "#f1f5f9",
     padding: 12,
-    fontFamily:
-      "Pretendard, -apple-system, BlinkMacSystemFont, sans-serif",
+    fontFamily: "Pretendard, -apple-system, BlinkMacSystemFont, sans-serif",
     color: "#0f172a",
   },
 
   container: {
-    maxWidth: 700,
+    maxWidth: 760,
     margin: "0 auto",
   },
 
@@ -474,6 +562,33 @@ const styles = {
     lineHeight: 1.5,
   },
 
+  exposureBox: {
+    background: "#f8fafc",
+    border: "1px solid #e2e8f0",
+    borderRadius: 16,
+    padding: 14,
+    marginBottom: 12,
+  },
+
+  exposureTop: {
+    display: "flex",
+    justifyContent: "space-between",
+    gap: 12,
+    marginBottom: 8,
+  },
+
+  exposureSource: {
+    fontSize: 13,
+    color: "#64748b",
+    marginBottom: 4,
+  },
+
+  exposureNote: {
+    fontSize: 12,
+    color: "#94a3b8",
+    lineHeight: 1.5,
+  },
+
   bullet: {
     display: "flex",
     gap: 10,
@@ -512,5 +627,70 @@ const styles = {
   noteValue: {
     lineHeight: 1.6,
     color: "#334155",
+  },
+
+  flagWrap: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: 10,
+  },
+
+  flag: {
+    display: "flex",
+    alignItems: "center",
+    gap: 6,
+    borderRadius: 999,
+    padding: "9px 12px",
+    fontSize: 13,
+    fontWeight: 800,
+  },
+
+  flagDanger: {
+    background: "#fee2e2",
+    color: "#991b1b",
+    border: "1px solid #fecaca",
+  },
+
+  flagWarn: {
+    background: "#fef3c7",
+    color: "#92400e",
+    border: "1px solid #fde68a",
+  },
+
+  flagSafe: {
+    background: "#dcfce7",
+    color: "#166534",
+    border: "1px solid #bbf7d0",
+  },
+
+  waterJudge: {
+    borderRadius: 16,
+    padding: 14,
+    marginBottom: 14,
+    border: "1px solid",
+  },
+
+  waterDanger: {
+    background: "#fee2e2",
+    color: "#991b1b",
+    borderColor: "#fecaca",
+  },
+
+  waterWarn: {
+    background: "#fef3c7",
+    color: "#92400e",
+    borderColor: "#fde68a",
+  },
+
+  waterSafe: {
+    background: "#dcfce7",
+    color: "#166534",
+    borderColor: "#bbf7d0",
+  },
+
+  waterJudgeText: {
+    marginTop: 6,
+    fontSize: 12,
+    lineHeight: 1.5,
   },
 };
