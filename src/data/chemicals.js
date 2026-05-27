@@ -2458,5 +2458,1061 @@ export const chemicals = [
     "LEL 관리 중요",
   ],
 },
+{
+  id: 34,
+  nameKo: "이소프로필알코올",
+  nameEn: "Isopropyl Alcohol",
+  formula: "C3H8O",
+  cas: "67-63-0",
+  aliases: ["IPA", "이소프로판올"],
+  process: "세정 / 용제",
+  state: "무색 액체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["🔥 인화성", "❗ 경고"],
 
+  ph: [
+    {
+      concentration: "원액",
+      value: "중성",
+      note: "인화성 우선",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "200 ppm", source: "OSHA" },
+    stel: { value: "400 ppm", source: "ACGIH" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "2000 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "0.79 g/cm³",
+    vaporPressure: "45 mmHg",
+    boilingPoint: "82°C",
+    flashPoint: "12°C",
+  },
+
+  flammability: {
+    flashPoint: "12°C",
+    autoIgnition: "399°C",
+    lel: "2%",
+    uel: "12%",
+  },
+
+  mainHazards: [
+    "고인화성",
+    "정전기 점화 가능",
+    "증기 흡입 자극",
+  ],
+
+  waterReactivity: {
+    hazards: ["물 혼합 가능"],
+    decon: ["흡착 및 환기 우선"],
+  },
+
+  incompatible: ["산화제", "점화원"],
+
+  neutralization: {
+    direction: ["흡착·회수 우선"],
+    waterUse: "물 사용 가능",
+    neutralizerNeed: "일반 중화 대상 아님",
+  },
+
+  ppe: ["유기증기용 호흡보호구", "방염 보호구"],
+
+  cautions: [
+    "LEL 도달 가능성 주의",
+  ],
+},
+
+{
+  id: 35,
+  nameKo: "질소",
+  nameEn: "Nitrogen",
+  formula: "N2",
+  cas: "7727-37-9",
+  aliases: ["N2", "질소"],
+  process: "퍼지 / Utility",
+  state: "무색 기체",
+  hazardLevel: "주의",
+  ghsPictograms: ["🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "산소결핍 위험",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "단순 질식성", source: "NIOSH" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "단순 질식성", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 약간 가벼움",
+    vaporPressure: "가스",
+    boilingPoint: "-196°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "산소결핍",
+    "밀폐공간 질식 위험",
+  ],
+
+  waterReactivity: {
+    hazards: ["물반응성 낮음"],
+    decon: ["환기 우선"],
+  },
+
+  incompatible: [],
+
+  neutralization: {
+    direction: ["중화 대상 아님"],
+    waterUse: "물 사용 효과 없음",
+    neutralizerNeed: "산소농도 관리 우선",
+  },
+
+  ppe: ["산소농도측정기", "공기호흡기"],
+
+  cautions: [
+    "무취·무색이라 감지 어려움",
+  ],
+},
+
+{
+  id: 36,
+  nameKo: "헬륨",
+  nameEn: "Helium",
+  formula: "He",
+  cas: "7440-59-7",
+  aliases: ["He", "헬륨"],
+  process: "Leak Test / Utility",
+  state: "무색 기체",
+  hazardLevel: "주의",
+  ghsPictograms: ["🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "질식 위험 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "단순 질식성", source: "NIOSH" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "단순 질식성", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 매우 가벼움",
+    vaporPressure: "가스",
+    boilingPoint: "-269°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "산소결핍",
+    "고압가스 위험",
+  ],
+
+  waterReactivity: {
+    hazards: ["반응성 낮음"],
+    decon: ["환기 우선"],
+  },
+
+  incompatible: [],
+
+  neutralization: {
+    direction: ["중화 대상 아님"],
+    waterUse: "효과 없음",
+    neutralizerNeed: "환기 우선",
+  },
+
+  ppe: ["산소농도측정기"],
+
+  cautions: [
+    "밀폐공간 산소결핍 주의",
+  ],
+},
+
+{
+  id: 37,
+  nameKo: "아르곤",
+  nameEn: "Argon",
+  formula: "Ar",
+  cas: "7440-37-1",
+  aliases: ["Ar", "아르곤"],
+  process: "퍼지 / 용접 / Utility",
+  state: "무색 기체",
+  hazardLevel: "주의",
+  ghsPictograms: ["🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "질식 위험",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "단순 질식성", source: "NIOSH" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "단순 질식성", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-186°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "저지대 산소결핍",
+    "밀폐공간 질식 위험",
+  ],
+
+  waterReactivity: {
+    hazards: ["반응성 낮음"],
+    decon: ["환기 우선"],
+  },
+
+  incompatible: [],
+
+  neutralization: {
+    direction: ["중화 대상 아님"],
+    waterUse: "효과 없음",
+    neutralizerNeed: "산소농도 관리 우선",
+  },
+
+  ppe: ["산소농도측정기", "공기호흡기"],
+
+  cautions: [
+    "저지대 체류 가능",
+  ],
+},
+
+{
+  id: 38,
+  nameKo: "산소",
+  nameEn: "Oxygen",
+  formula: "O2",
+  cas: "7782-44-7",
+  aliases: ["O2", "산소"],
+  process: "Utility",
+  state: "무색 기체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["⭕ 산화성", "🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "산화성",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "해당 없음", source: "-" },
+    stel: { value: "해당 없음", source: "-" },
+    ceiling: { value: "해당 없음", source: "-" },
+    idlh: { value: "해당 없음", source: "-" },
+  },
+
+  physical: {
+    density: "공기보다 약간 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-183°C",
+    flashPoint: "산화성",
+  },
+
+  flammability: {
+    flashPoint: "산화성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "연소 촉진",
+    "산소농도 증가 시 화재 위험 급증",
+  ],
+
+  waterReactivity: {
+    hazards: ["반응성 낮음"],
+    decon: ["차단 및 환기 우선"],
+  },
+
+  incompatible: ["가연물", "유류"],
+
+  neutralization: {
+    direction: ["산소농도 저감 우선"],
+    waterUse: "일반적 사용 가능",
+    neutralizerNeed: "중화 대상 아님",
+  },
+
+  ppe: ["방염 보호구"],
+
+  cautions: [
+    "산소농도 상승 시 화재폭발 위험 증가",
+  ],
+},
+
+{
+  id: 39,
+  nameKo: "이산화탄소",
+  nameEn: "Carbon Dioxide",
+  formula: "CO2",
+  cas: "124-38-9",
+  aliases: ["CO2", "이산화탄소"],
+  process: "소화설비 / Utility",
+  state: "무색 기체",
+  hazardLevel: "주의",
+  ghsPictograms: ["🧯 가스실린더"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "약산성 가능",
+      note: "고농도 질식 위험",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "5000 ppm", source: "OSHA" },
+    stel: { value: "30000 ppm", source: "ACGIH" },
+    ceiling: { value: "40000 ppm", source: "NIOSH" },
+    idlh: { value: "40000 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-78°C (승화)",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "산소결핍",
+    "저지대 체류 가능",
+  ],
+
+  waterReactivity: {
+    hazards: ["물에 녹아 약산성 가능"],
+    decon: ["환기 우선"],
+  },
+
+  incompatible: [],
+
+  neutralization: {
+    direction: ["환기 및 산소농도 확보"],
+    waterUse: "효과 제한적",
+    neutralizerNeed: "중화 대상 아님",
+  },
+
+  ppe: ["공기호흡기"],
+
+  cautions: [
+    "밀폐공간 질식 위험",
+  ],
+},
+
+{
+  id: 40,
+  nameKo: "일산화탄소",
+  nameEn: "Carbon Monoxide",
+  formula: "CO",
+  cas: "630-08-0",
+  aliases: ["CO", "일산화탄소"],
+  process: "연소 / Utility",
+  state: "무색 기체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["☠️ 급성독성", "🔥 인화성"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "해당 없음",
+      note: "혈액 독성",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "25 ppm", source: "OSHA" },
+    stel: { value: "200 ppm", source: "대표 참고값" },
+    ceiling: { value: "200 ppm", source: "NIOSH" },
+    idlh: { value: "1200 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 약간 가벼움",
+    vaporPressure: "가스",
+    boilingPoint: "-191°C",
+    flashPoint: "가연성",
+  },
+
+  flammability: {
+    flashPoint: "가연성",
+    autoIgnition: "609°C",
+    lel: "12.5%",
+    uel: "74%",
+  },
+
+  mainHazards: [
+    "헤모글로빈 결합 독성",
+    "무취·무색",
+    "가연성",
+  ],
+
+  waterReactivity: {
+    hazards: ["반응성 낮음"],
+    decon: ["환기 및 차단 우선"],
+  },
+
+  incompatible: ["산화제", "점화원"],
+
+  neutralization: {
+    direction: ["환기 및 연소 차단"],
+    waterUse: "효과 제한적",
+    neutralizerNeed: "중화 대상 아님",
+  },
+
+  ppe: ["공기호흡기", "CO 측정기"],
+
+  cautions: [
+    "무취라 감지 어려움",
+  ],
+},
+
+{
+  id: 41,
+  nameKo: "황화수소",
+  nameEn: "Hydrogen Sulfide",
+  formula: "H2S",
+  cas: "7783-06-4",
+  aliases: ["H2S", "황화수소"],
+  process: "폐수 / Utility",
+  state: "무색 기체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["☠️ 급성독성", "🔥 인화성"],
+
+  ph: [
+    {
+      concentration: "가스",
+      value: "약산성 가능",
+      note: "고독성",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "1 ppm", source: "ACGIH" },
+    stel: { value: "5 ppm", source: "ACGIH" },
+    ceiling: { value: "10 ppm", source: "NIOSH" },
+    idlh: { value: "100 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-60°C",
+    flashPoint: "가연성",
+  },
+
+  flammability: {
+    flashPoint: "가연성",
+    autoIgnition: "260°C",
+    lel: "4%",
+    uel: "44%",
+  },
+
+  mainHazards: [
+    "후각 마비 가능",
+    "고독성",
+    "저지대 체류",
+  ],
+
+  waterReactivity: {
+    hazards: ["산성 조건 발생 가능"],
+    decon: ["환기·차단 우선"],
+  },
+
+  incompatible: ["산화제"],
+
+  neutralization: {
+    direction: ["가스 차단 및 스크러빙"],
+    waterUse: "일부 가능",
+    neutralizerNeed: "전용 처리 검토",
+  },
+
+  ppe: ["공기호흡기", "H2S 측정기"],
+
+  cautions: [
+    "냄새 사라져도 안전 의미 아님",
+  ],
+},
+
+{
+  id: 42,
+  nameKo: "이산화황",
+  nameEn: "Sulfur Dioxide",
+  formula: "SO2",
+  cas: "7446-09-5",
+  aliases: ["SO2", "이산화황"],
+  process: "연소 / Utility",
+  state: "무색 기체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["☠️ 급성독성", "🧪 부식성"],
+
+  ph: [
+    {
+      concentration: "수분 접촉",
+      value: "산성",
+      note: "자극성 가스",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "2 ppm", source: "OSHA" },
+    stel: { value: "5 ppm", source: "ACGIH" },
+    ceiling: { value: "5 ppm", source: "NIOSH" },
+    idlh: { value: "100 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "공기보다 무거움",
+    vaporPressure: "가스",
+    boilingPoint: "-10°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "호흡기 자극",
+    "산성 가스",
+    "저지대 체류 가능",
+  ],
+
+  waterReactivity: {
+    hazards: ["물과 반응해 산성화 가능"],
+    decon: ["환기 및 물 세척 가능"],
+  },
+
+  incompatible: ["산화제"],
+
+  neutralization: {
+    direction: ["알칼리 흡수 검토"],
+    waterUse: "물 사용 가능",
+    neutralizerNeed: "알칼리 중화 검토",
+  },
+
+  ppe: ["공기호흡기", "내산 장갑"],
+
+  cautions: [
+    "저지대 체류 가능",
+  ],
+},
+
+{
+  id: 43,
+  nameKo: "불화암모늄",
+  nameEn: "Ammonium Fluoride",
+  formula: "NH4F",
+  cas: "12125-01-8",
+  aliases: ["NH4F", "불화암모늄"],
+  process: "Etch / 세정",
+  state: "백색 고체 또는 수용액",
+  hazardLevel: "고위험",
+  ghsPictograms: ["☠️ 급성독성", "🧪 부식성"],
+
+  ph: [
+    {
+      concentration: "용액",
+      value: "산성",
+      note: "HF 위험 고려",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "2.5 mg/m³", source: "대표 SDS 참고값" },
+    stel: { value: "5 mg/m³", source: "대표 SDS 참고값" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
+  },
+
+  physical: {
+    density: "1.0 g/cm³ 이상",
+    vaporPressure: "낮음",
+    boilingPoint: "분해 가능",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "HF 유사 위험성",
+    "피부 침투 독성 가능",
+  ],
+
+  waterReactivity: {
+    hazards: ["수용성"],
+    decon: ["대량 물 세척 가능"],
+  },
+
+  incompatible: ["강산"],
+
+  neutralization: {
+    direction: ["칼슘계 중화 검토"],
+    waterUse: "물 세척 가능",
+    neutralizerNeed: "불소계 중화 검토",
+  },
+
+  ppe: ["공기호흡기", "내산 장갑"],
+
+  cautions: [
+    "HF 유사 대응 고려",
+  ],
+},
+{
+  id: 44,
+  nameKo: "붕산",
+  nameEn: "Boric Acid",
+  formula: "H3BO3",
+  cas: "10043-35-3",
+  aliases: ["붕산", "Boric Acid"],
+  process: "폐수 / 화학처리",
+  state: "백색 고체",
+  hazardLevel: "주의",
+  ghsPictograms: ["❗ 경고"],
+
+  ph: [
+    {
+      concentration: "용액",
+      value: "약산성",
+      note: "저농도 자극 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "10 mg/m³", source: "대표 SDS 참고값" },
+    stel: { value: "설정 없음", source: "-" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "설정 없음", source: "-" },
+  },
+
+  physical: {
+    density: "1.43 g/cm³",
+    vaporPressure: "낮음",
+    boilingPoint: "분해",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "분진 자극 가능",
+  ],
+
+  waterReactivity: {
+    hazards: ["수용성"],
+    decon: ["물 세척 가능"],
+  },
+
+  incompatible: ["강염기"],
+
+  neutralization: {
+    direction: ["일반 희석 및 세척"],
+    waterUse: "가능",
+    neutralizerNeed: "일반 중화 불필요",
+  },
+
+  ppe: ["보안경", "장갑"],
+
+  cautions: [
+    "분진 흡입 주의",
+  ],
+},
+
+{
+  id: 45,
+  nameKo: "불화수소암모늄",
+  nameEn: "Ammonium Bifluoride",
+  formula: "NH4HF2",
+  cas: "1341-49-7",
+  aliases: ["ABF", "불화수소암모늄"],
+  process: "Etch / 세정",
+  state: "백색 고체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["☠️ 급성독성", "🧪 부식성"],
+
+  ph: [
+    {
+      concentration: "용액",
+      value: "산성",
+      note: "HF 생성 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "2.5 mg/m³", source: "대표 SDS 참고값" },
+    stel: { value: "5 mg/m³", source: "대표 SDS 참고값" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
+  },
+
+  physical: {
+    density: "1.5 g/cm³",
+    vaporPressure: "낮음",
+    boilingPoint: "분해",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "HF 유사 위험성",
+    "피부 침투 독성 가능",
+  ],
+
+  waterReactivity: {
+    hazards: ["물에 용해됨"],
+    decon: ["대량 물 세척 가능"],
+  },
+
+  incompatible: ["강산", "금속"],
+
+  neutralization: {
+    direction: ["칼슘계 중화 검토"],
+    waterUse: "가능",
+    neutralizerNeed: "불소계 중화 검토",
+  },
+
+  ppe: ["공기호흡기", "내산 장갑"],
+
+  cautions: [
+    "HF 대응 수준 고려",
+  ],
+},
+
+{
+  id: 46,
+  nameKo: "인산",
+  nameEn: "Phosphoric Acid",
+  formula: "H3PO4",
+  cas: "7664-38-2",
+  aliases: ["인산", "H3PO4"],
+  process: "세정 / Etch",
+  state: "무색 액체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["🧪 부식성"],
+
+  ph: [
+    {
+      concentration: "85%",
+      value: "강산성",
+      note: "부식성",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "1 mg/m³", source: "OSHA" },
+    stel: { value: "3 mg/m³", source: "ACGIH" },
+    ceiling: { value: "3 mg/m³", source: "NIOSH" },
+    idlh: { value: "1000 mg/m³", source: "대표 참고값" },
+  },
+
+  physical: {
+    density: "1.88 g/cm³",
+    vaporPressure: "낮음",
+    boilingPoint: "158°C",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "부식성",
+    "산 미스트 가능",
+  ],
+
+  waterReactivity: {
+    hazards: ["희석 시 발열 가능"],
+    decon: ["물 세척 가능"],
+  },
+
+  incompatible: ["강염기"],
+
+  neutralization: {
+    direction: ["알칼리 중화 검토"],
+    waterUse: "가능",
+    neutralizerNeed: "중화 가능",
+  },
+
+  ppe: ["내산 장갑", "보안면"],
+
+  cautions: [
+    "산 미스트 흡입 주의",
+  ],
+},
+
+{
+  id: 47,
+  nameKo: "초산",
+  nameEn: "Acetic Acid",
+  formula: "CH3COOH",
+  cas: "64-19-7",
+  aliases: ["초산", "빙초산"],
+  process: "세정 / 화학공정",
+  state: "무색 액체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["🔥 인화성", "🧪 부식성"],
+
+  ph: [
+    {
+      concentration: "빙초산",
+      value: "강산성",
+      note: "자극성 증기",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "10 ppm", source: "OSHA" },
+    stel: { value: "15 ppm", source: "ACGIH" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "50 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "1.05 g/cm³",
+    vaporPressure: "11 mmHg",
+    boilingPoint: "118°C",
+    flashPoint: "39°C",
+  },
+
+  flammability: {
+    flashPoint: "39°C",
+    autoIgnition: "427°C",
+    lel: "4%",
+    uel: "19%",
+  },
+
+  mainHazards: [
+    "자극성 증기",
+    "인화성",
+  ],
+
+  waterReactivity: {
+    hazards: ["물 혼합 가능"],
+    decon: ["흡착 후 물 세척"],
+  },
+
+  incompatible: ["산화제"],
+
+  neutralization: {
+    direction: ["알칼리 중화 가능"],
+    waterUse: "가능",
+    neutralizerNeed: "중화 가능",
+  },
+
+  ppe: ["유기증기용 호흡보호구", "보안면"],
+
+  cautions: [
+    "증기 흡입 주의",
+  ],
+},
+
+{
+  id: 48,
+  nameKo: "과불화암모늄",
+  nameEn: "Ammonium Fluoride Mixture",
+  formula: "NH4F 계열",
+  cas: "혼합물",
+  aliases: ["BOE", "Buffered Oxide Etch"],
+  process: "Etch",
+  state: "액체",
+  hazardLevel: "매우 위험",
+  ghsPictograms: ["☠️ 급성독성", "🧪 부식성"],
+
+  ph: [
+    {
+      concentration: "BOE",
+      value: "산성",
+      note: "HF 포함 가능",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "HF 기준 적용 검토", source: "대표 SDS 참고값" },
+    stel: { value: "HF 기준 적용 검토", source: "대표 SDS 참고값" },
+    ceiling: { value: "HF 기준 적용 검토", source: "대표 SDS 참고값" },
+    idlh: { value: "HF 기준 적용 검토", source: "대표 SDS 참고값" },
+  },
+
+  physical: {
+    density: "제품별 상이",
+    vaporPressure: "제품별 상이",
+    boilingPoint: "제품별 상이",
+    flashPoint: "비가연성",
+  },
+
+  flammability: {
+    flashPoint: "비가연성",
+    autoIgnition: "해당 없음",
+    lel: "해당 없음",
+    uel: "해당 없음",
+  },
+
+  mainHazards: [
+    "HF 계열 위험성",
+    "피부 침투 독성 가능",
+  ],
+
+  waterReactivity: {
+    hazards: ["수용성"],
+    decon: ["대량 물 세척 가능"],
+  },
+
+  incompatible: ["강염기"],
+
+  neutralization: {
+    direction: ["칼슘계 중화 검토"],
+    waterUse: "가능",
+    neutralizerNeed: "불소계 중화 검토",
+  },
+
+  ppe: ["공기호흡기", "내산 장갑"],
+
+  cautions: [
+    "HF 대응 수준 고려",
+  ],
+},
+
+{
+  id: 49,
+  nameKo: "크실렌",
+  nameEn: "Xylene",
+  formula: "C8H10",
+  cas: "1330-20-7",
+  aliases: ["Xylene", "자일렌"],
+  process: "용제 / 세정",
+  state: "무색 액체",
+  hazardLevel: "고위험",
+  ghsPictograms: ["🔥 인화성", "❗ 경고"],
+
+  ph: [
+    {
+      concentration: "원액",
+      value: "중성",
+      note: "유기용제",
+    },
+  ],
+
+  exposure: {
+    twa: { value: "100 ppm", source: "OSHA" },
+    stel: { value: "150 ppm", source: "ACGIH" },
+    ceiling: { value: "설정 없음", source: "-" },
+    idlh: { value: "900 ppm", source: "NIOSH" },
+  },
+
+  physical: {
+    density: "0.86 g/cm³",
+    vaporPressure: "8 mmHg",
+    boilingPoint: "138°C",
+    flashPoint: "27°C",
+  },
+
+  flammability: {
+    flashPoint: "27°C",
+    autoIgnition: "465°C",
+    lel: "1%",
+    uel: "7%",
+  },
+
+  mainHazards: [
+    "인화성",
+    "중추신경계 영향 가능",
+  ],
+
+  waterReactivity: {
+    hazards: ["물에 잘 안녹음"],
+    decon: ["흡착·환기 우선"],
+  },
+
+  incompatible: ["산화제", "점화원"],
+
+  neutralization: {
+    direction: ["흡착·회수 우선"],
+    waterUse: "확산 가능성 고려",
+    neutralizerNeed: "일반 중화 대상 아님",
+  },
+
+  ppe: ["유기증기용 호흡보호구", "방염 보호구"],
+
+  cautions: [
+    "정전기 점화 주의",
+  ],
+},
 ];
