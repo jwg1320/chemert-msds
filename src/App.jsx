@@ -26,9 +26,14 @@ const levelColor = {
 export default function App() {
   const PASSWORD = "13114";
 
-  const [isAuthed, setIsAuthed] = useState(
-    localStorage.getItem("ertchem_auth") === "true"
-  );
+  const AUTH_TIME_LIMIT = 30 * 60 * 1000; // 30분
+
+  const [isAuthed, setIsAuthed] = useState(() => {
+  const savedTime = Number(localStorage.getItem("ertchem_auth_time"));
+  const now = Date.now();
+
+  return savedTime && now - savedTime < AUTH_TIME_LIMIT;
+  });
   const [password, setPassword] = useState("");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(chemicals[0]);
@@ -60,7 +65,7 @@ export default function App() {
           <button
             onClick={() => {
               if (password === PASSWORD) {
-                localStorage.setItem("ertchem_auth", "true");
+                localStorage.setItem("ertchem_auth_time", String(Date.now()));
                 setIsAuthed(true);
               } else {
                 alert("비밀번호가 틀렸습니다.");
@@ -254,34 +259,14 @@ function TopSummary({ selected }) {
   const state = selected.stateCategory || selected.state || "정보 없음";
 
   return (
-    <div>
-      {/* pH */}
-      <div
-        style={{
-          ...styles.summaryBox,
-          marginBottom: 10,
-        }}
-      >
+    <div style={styles.summaryArea}>
+      <div style={styles.phWideBox}>
         <div style={styles.summaryTitle}>pH</div>
-
-        <div
-          style={{
-            fontSize: 22,
-            fontWeight: 800,
-          }}
-        >
-          {phValue}
-        </div>
+        <div style={styles.phValue}>{phValue}</div>
       </div>
 
-      {/* 성상 + NFPA */}
       <div style={styles.summaryGrid2}>
-        <SummaryBox
-          title="성상"
-          value={state}
-          sub={selected.state}
-        />
-
+        <SummaryBox title="성상" value={state} sub={selected.state} />
         <NfpaBox nfpa={selected.nfpa} />
       </div>
     </div>
@@ -697,6 +682,34 @@ const styles = {
     border: "1px solid #e2e8f0",
     borderRadius: 16,
     padding: 13,
+    minWidth: 0,
+  },
+
+  summaryGrid2: {
+    display: "grid",
+    gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
+    gap: 10,
+  },
+
+  summaryArea: {
+    marginBottom: 24,
+  },
+
+  phWideBox: {
+    background: "#f8fafc",
+    border: "1px solid #e2e8f0",
+    borderRadius: 16,
+    padding: "10px 13px",
+    marginBottom: 10,
+  },
+
+  phValue: {
+    fontSize: "clamp(15px, 4vw, 20px)",
+    fontWeight: 800,
+    lineHeight: 1.25,
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   },
 
   nfpaBox: {
@@ -704,6 +717,7 @@ const styles = {
     border: "1px solid #fecaca",
     borderRadius: 16,
     padding: 13,
+    minWidth: 0,
   },
 
   summaryTitle: {
