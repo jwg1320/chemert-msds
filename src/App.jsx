@@ -61,8 +61,15 @@ export default function App() {
             onChange={(e) => setPassword(e.target.value)}
             style={{
               ...styles.input,
+              width: "100%",
+              boxSizing: "border-box",
+              background: "#f8fafc",
               color: "#000",
-              }}
+              border: "1px solid #cbd5e1",
+              borderRadius: 14,
+              padding: 14,
+              marginBottom: 16,
+            }}
           />
 
           <button
@@ -594,7 +601,6 @@ const styles = {
     background: "transparent",
     width: "100%",
     fontSize: 15,
-    backgroundColor: "#fff",
     color: "#000",
   },
 
