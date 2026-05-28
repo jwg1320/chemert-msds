@@ -23,9 +23,94 @@ const levelColor = {
 };
 
 export default function App() {
+  const PASSWORD = "13114";
+
+const [isAuthed, setIsAuthed] = useState(
+  localStorage.getItem("ertchem_auth") === "true"
+);
+
+const [password, setPassword] = useState("");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(chemicals[0]);
+  if (!isAuthed) {
+  return (
+    <div style={styles.page}>
+      <div
+        style={{
+          ...styles.detailCard,
+          maxWidth: 420,
+          margin: "80px auto",
+          textAlign: "center",
+        }}
+      >
+        <div style={{ marginBottom: 20 }}>
+          <ShieldCheck size={48} />
+        </div>
 
+        <div
+          style={{
+            fontSize: 28,
+            fontWeight: 800,
+            marginBottom: 10,
+          }}
+        >
+          ERT CHEM
+        </div>
+
+        <div
+          style={{
+            color: "#64748b",
+            marginBottom: 24,
+            lineHeight: 1.6,
+          }}
+        >
+          내부 전용 시스템입니다.
+          <br />
+          비밀번호를 입력하세요.
+        </div>
+
+        <input
+          type="password"
+          placeholder="비밀번호 입력"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          style={{
+            ...styles.input,
+            background: "#f8fafc",
+            border: "1px solid #cbd5e1",
+            borderRadius: 14,
+            padding: 14,
+            marginBottom: 16,
+          }}
+        />
+
+        <button
+          onClick={() => {
+            if (password === PASSWORD) {
+              localStorage.setItem("ertchem_auth", "true");
+              setIsAuthed(true);
+            } else {
+              alert("비밀번호가 틀렸습니다.");
+            }
+          }}
+          style={{
+            width: "100%",
+            background: "#0f172a",
+            color: "white",
+            border: "none",
+            borderRadius: 14,
+            padding: 14,
+            fontSize: 16,
+            fontWeight: 700,
+            cursor: "pointer",
+          }}
+        >
+          접속
+        </button>
+      </div>
+    </div>
+  );
+}
   const filtered = useMemo(() => {
     if (!query) return chemicals;
 
