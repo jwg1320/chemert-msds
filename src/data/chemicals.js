@@ -3058,71 +3058,6 @@ export const chemicals = [
 
 {
   id: 43,
-  nameKo: "불화암모늄",
-  nameEn: "Ammonium Fluoride",
-  formula: "NH4F",
-  cas: "12125-01-8",
-  aliases: ["NH4F", "불화암모늄"],
-  process: "Etch / 세정",
-  state: "백색 고체 또는 수용액",
-  hazardLevel: "고위험",
-  ghsPictograms: ["☠️ 급성독성", "🧪 부식성"],
-
-  ph: [
-    {
-      concentration: "용액",
-      value: "산성",
-      note: "HF 위험 고려",
-    },
-  ],
-
-  exposure: {
-    twa: { value: "2.5 mg/m³", source: "대표 SDS 참고값" },
-    stel: { value: "5 mg/m³", source: "대표 SDS 참고값" },
-    ceiling: { value: "설정 없음", source: "-" },
-    idlh: { value: "제품 SDS 확인", source: "제조사 SDS" },
-  },
-
-  physical: {
-    density: "1.0 g/cm³ 이상",
-    vaporPressure: "낮음",
-    boilingPoint: "분해 가능",
-    flashPoint: "비가연성",
-  },
-
-  flammability: {
-    flashPoint: "비가연성",
-    autoIgnition: "해당 없음",
-    lel: "해당 없음",
-    uel: "해당 없음",
-  },
-
-  mainHazards: [
-    "HF 유사 위험성",
-    "피부 침투 독성 가능",
-  ],
-
-  waterReactivity: {
-    hazards: ["수용성"],
-    decon: ["대량 물 세척 가능"],
-  },
-
-  incompatible: ["강산"],
-
-  neutralization: {
-    direction: ["칼슘계 중화 검토"],
-    waterUse: "물 세척 가능",
-    neutralizerNeed: "불소계 중화 검토",
-  },
-
-  ppe: ["공기호흡기", "내산 장갑"],
-
-  cautions: [
-    "HF 유사 대응 고려",
-  ],
-},
-{
-  id: 44,
   nameKo: "붕산",
   nameEn: "Boric Acid",
   formula: "H3BO3",
@@ -3185,9 +3120,8 @@ export const chemicals = [
     "분진 흡입 주의",
   ],
 },
-
 {
-  id: 45,
+  id: 44,
   nameKo: "불화수소암모늄",
   nameEn: "Ammonium Bifluoride",
   formula: "NH4HF2",
@@ -3253,7 +3187,7 @@ export const chemicals = [
 },
 
 {
-  id: 46,
+  id: 45,
   nameKo: "인산",
   nameEn: "Phosphoric Acid",
   formula: "H3PO4",
@@ -3319,7 +3253,7 @@ export const chemicals = [
 },
 
 {
-  id: 47,
+  id: 46,
   nameKo: "초산",
   nameEn: "Acetic Acid",
   formula: "CH3COOH",
@@ -3385,7 +3319,7 @@ export const chemicals = [
 },
 
 {
-  id: 48,
+  id: 47,
   nameKo: "과불화암모늄",
   nameEn: "Ammonium Fluoride Mixture",
   formula: "NH4F 계열",
@@ -3451,7 +3385,7 @@ export const chemicals = [
 },
 
 {
-  id: 49,
+  id: 48,
   nameKo: "크실렌",
   nameEn: "Xylene",
   formula: "C8H10",
@@ -3516,7 +3450,7 @@ export const chemicals = [
   ],
 },
 {
-  id: 50,
+  id: 49,
   nameKo: "황화나트륨",
   nameEn: "Sodium Sulfide",
   formula: "Na2S",
@@ -3593,7 +3527,7 @@ export const chemicals = [
 },
 
 {
-  id: 51,
+  id: 50,
   nameKo: "황산제일철",
   nameEn: "Ferrous Sulfate",
   formula: "FeSO4",
@@ -3668,7 +3602,7 @@ export const chemicals = [
 },
 
 {
-  id: 52,
+  id: 51,
   nameKo: "염화제이철",
   nameEn: "Ferric Chloride",
   formula: "FeCl3",
@@ -3744,7 +3678,7 @@ export const chemicals = [
 },
 
 {
-  id: 53,
+  id: 52,
   nameKo: "수산화칼슘",
   nameEn: "Calcium Hydroxide",
   formula: "Ca(OH)2",
@@ -3819,7 +3753,7 @@ export const chemicals = [
 },
 
 {
-  id: 54,
+  id: 53,
   nameKo: "EDTA",
   nameEn: "Ethylenediaminetetraacetic Acid",
   formula: "C10H16N2O8",
@@ -3894,7 +3828,7 @@ export const chemicals = [
 },
 
 {
-  id: 55,
+  id: 54,
   nameKo: "과망간산칼륨",
   nameEn: "Potassium Permanganate",
   formula: "KMnO4",
@@ -3970,7 +3904,7 @@ export const chemicals = [
 },
 
 {
-  id: 56,
+  id: 55,
   nameKo: "차아황산나트륨",
   nameEn: "Sodium Bisulfite",
   formula: "NaHSO3",
@@ -4046,7 +3980,7 @@ export const chemicals = [
 },
 
 {
-  id: 57,
+  id: 56,
   nameKo: "활성탄 슬러리",
   nameEn: "Activated Carbon Slurry",
   formula: "혼합물",
@@ -4121,83 +4055,7 @@ export const chemicals = [
 },
 
 {
-  id: 58,
-  nameKo: "암모니아 냉매",
-  nameEn: "Ammonia Refrigerant",
-  formula: "NH3",
-  cas: "7664-41-7",
-  aliases: ["R717", "암모니아 냉매"],
-  process: "산업냉동",
-  state: "무색 기체",
-  hazardLevel: "매우 위험",
-  ghsPictograms: ["☠️ 급성독성", "🔥 인화성"],
-
-  ph: [
-    {
-      concentration: "수용액",
-      value: "강염기성",
-      note: "자극성 매우 강함",
-    },
-  ],
-
-  exposure: {
-    twa: { value: "25 ppm", source: "OSHA" },
-    stel: { value: "35 ppm", source: "ACGIH" },
-    ceiling: { value: "50 ppm", source: "NIOSH" },
-    idlh: { value: "300 ppm", source: "NIOSH" },
-  },
-
-  physical: {
-    density: "공기보다 가벼움",
-    vaporPressure: "가스",
-    boilingPoint: "-33°C",
-    flashPoint: "가연성",
-  },
-
-  flammability: {
-    flashPoint: "가연성",
-    autoIgnition: "651°C",
-    lel: "15%",
-    uel: "28%",
-  },
-
-  mainHazards: [
-    "강한 호흡기 자극",
-    "산업냉동 핵심 냉매",
-  ],
-
-  waterReactivity: {
-    hazards: [
-      "물에 잘 용해됨",
-    ],
-    decon: [
-      "대량 물 희석 가능",
-    ],
-  },
-
-  incompatible: [
-    "산",
-    "염소",
-  ],
-
-  neutralization: {
-    direction: ["물 희석 가능"],
-    waterUse: "가능",
-    neutralizerNeed: "산 접촉 주의",
-  },
-
-  ppe: [
-    "공기호흡기",
-    "내화학 장갑",
-  ],
-
-  cautions: [
-    "고농도 흡입 위험",
-  ],
-},
-
-{
-  id: 59,
+  id: 57,
   nameKo: "리튬브로마이드",
   nameEn: "Lithium Bromide",
   formula: "LiBr",
@@ -4271,7 +4129,7 @@ export const chemicals = [
   ],
 },
 {
-  id: 60,
+  id: 58,
   nameKo: "R-123",
   nameEn: "HCFC-123",
   formula: "C2HCl2F3",
@@ -4337,7 +4195,7 @@ export const chemicals = [
 },
 
 {
-  id: 61,
+  id: 59,
   nameKo: "R-134a",
   nameEn: "HFC-134a",
   formula: "C2H2F4",
@@ -4403,7 +4261,7 @@ export const chemicals = [
 },
 
 {
-  id: 62,
+  id: 60,
   nameKo: "R-410A",
   nameEn: "R-410A",
   formula: "혼합냉매",
@@ -4469,7 +4327,7 @@ export const chemicals = [
 },
 
 {
-  id: 63,
+  id: 61,
   nameKo: "염화나트륨",
   nameEn: "Sodium Chloride",
   formula: "NaCl",
@@ -4534,7 +4392,7 @@ export const chemicals = [
 },
 
 {
-  id: 64,
+  id: 62,
   nameKo: "황산나트륨",
   nameEn: "Sodium Sulfate",
   formula: "Na2SO4",
@@ -4599,7 +4457,7 @@ export const chemicals = [
 },
 
 {
-  id: 65,
+  id: 63,
   nameKo: "구연산",
   nameEn: "Citric Acid",
   formula: "C6H8O7",
@@ -4665,7 +4523,7 @@ export const chemicals = [
 },
 
 {
-  id: 66,
+  id: 64,
   nameKo: "질산암모늄",
   nameEn: "Ammonium Nitrate",
   formula: "NH4NO3",
@@ -4731,7 +4589,7 @@ export const chemicals = [
 },
 
 {
-  id: 67,
+  id: 65,
   nameKo: "수산화암모늄",
   nameEn: "Ammonium Hydroxide",
   formula: "NH4OH",
@@ -4797,7 +4655,7 @@ export const chemicals = [
 },
 
 {
-  id: 68,
+  id: 66,
   nameKo: "폴리염화비닐 접착제",
   nameEn: "PVC Cement",
   formula: "혼합물",
@@ -4863,7 +4721,7 @@ export const chemicals = [
 },
 
 {
-  id: 69,
+  id: 67,
   nameKo: "테트라하이드로푸란",
   nameEn: "Tetrahydrofuran",
   formula: "C4H8O",
@@ -4928,7 +4786,7 @@ export const chemicals = [
   ],
 },
 {
-  id: 70,
+  id: 78,
   nameKo: "과초산",
   nameEn: "Peracetic Acid",
   formula: "C2H4O3",
@@ -5006,7 +4864,7 @@ export const chemicals = [
 },
 
 {
-  id: 71,
+  id: 69,
   nameKo: "포름알데히드",
   nameEn: "Formaldehyde",
   formula: "CH2O",
@@ -5083,7 +4941,7 @@ export const chemicals = [
 },
 
 {
-  id: 72,
+  id: 70,
   nameKo: "메틸에틸케톤",
   nameEn: "Methyl Ethyl Ketone",
   formula: "C4H8O",
@@ -5159,7 +5017,7 @@ export const chemicals = [
 },
 
 {
-  id: 73,
+  id: 71,
   nameKo: "톨루엔",
   nameEn: "Toluene",
   formula: "C7H8",
@@ -5235,7 +5093,7 @@ export const chemicals = [
 },
 
 {
-  id: 74,
+  id: 72,
   nameKo: "디메틸설폭사이드",
   nameEn: "Dimethyl Sulfoxide",
   formula: "C2H6OS",
@@ -5310,7 +5168,7 @@ export const chemicals = [
 },
 
 {
-  id: 75,
+  id: 73,
   nameKo: "NMP",
   nameEn: "N-Methyl-2-pyrrolidone",
   formula: "C5H9NO",
@@ -5385,7 +5243,7 @@ export const chemicals = [
 },
 
 {
-  id: 76,
+  id: 74,
   nameKo: "디메틸아세트아마이드",
   nameEn: "Dimethylacetamide",
   formula: "C4H9NO",
@@ -5460,7 +5318,7 @@ export const chemicals = [
 },
 
 {
-  id: 77,
+  id: 75,
   nameKo: "디메틸포름아마이드",
   nameEn: "Dimethylformamide",
   formula: "C3H7NO",
@@ -5536,7 +5394,7 @@ export const chemicals = [
 },
 
 {
-  id: 78,
+  id: 76,
   nameKo: "과염소산",
   nameEn: "Perchloric Acid",
   formula: "HClO4",
@@ -5612,7 +5470,7 @@ export const chemicals = [
   ],
 },
 {
-  id: 79,
+  id: 77,
   nameKo: "과산화벤조일",
   nameEn: "Benzoyl Peroxide",
   formula: "C14H10O4",
@@ -5690,7 +5548,7 @@ export const chemicals = [
 },
 
 {
-  id: 80,
+  id: 78,
   nameKo: "에틸렌글리콜",
   nameEn: "Ethylene Glycol",
   formula: "C2H6O2",
@@ -5765,7 +5623,7 @@ export const chemicals = [
 },
 
 {
-  id: 81,
+  id: 79,
   nameKo: "프로필렌글리콜",
   nameEn: "Propylene Glycol",
   formula: "C3H8O2",
@@ -5838,7 +5696,7 @@ export const chemicals = [
 },
 
 {
-  id: 82,
+  id: 80,
   nameKo: "메탄올",
   nameEn: "Methanol",
   formula: "CH4O",
@@ -5914,7 +5772,7 @@ export const chemicals = [
 },
 
 {
-  id: 83,
+  id: 81,
   nameKo: "아세톤",
   nameEn: "Acetone",
   formula: "C3H6O",
@@ -5988,85 +5846,8 @@ export const chemicals = [
     "증기 폭발 위험",
   ],
 },
-
 {
-  id: 84,
-  nameKo: "오존",
-  nameEn: "Ozone",
-  formula: "O3",
-  cas: "10028-15-6",
-  aliases: ["O3"],
-  process: "UPW / 산화",
-  state: "청색 기체",
-  hazardLevel: "매우 위험",
-  ghsPictograms: ["⭕ 산화성", "☠️ 급성독성"],
-
-  ph: [
-    {
-      concentration: "가스",
-      value: "해당 없음",
-      note: "강산화성",
-    },
-  ],
-
-  exposure: {
-    twa: { value: "0.1 ppm", source: "OSHA" },
-    stel: { value: "0.3 ppm", source: "대표 참고값" },
-    ceiling: { value: "0.1 ppm", source: "NIOSH 참고" },
-    idlh: { value: "5 ppm", source: "NIOSH" },
-  },
-
-  physical: {
-    density: "공기보다 무거움",
-    vaporPressure: "가스",
-    boilingPoint: "-112°C",
-    flashPoint: "산화성",
-  },
-
-  flammability: {
-    flashPoint: "산화성",
-    autoIgnition: "해당 없음",
-    lel: "해당 없음",
-    uel: "해당 없음",
-  },
-
-  mainHazards: [
-    "강산화성",
-    "호흡기 손상",
-    "저지대 체류 가능",
-  ],
-
-  waterReactivity: {
-    hazards: [
-      "강산화 반응 가능",
-    ],
-    decon: [
-      "환기 우선",
-    ],
-  },
-
-  incompatible: [
-    "유기물",
-    "가연물",
-  ],
-
-  neutralization: {
-    direction: ["환기 및 차단"],
-    waterUse: "주의",
-    neutralizerNeed: "산화성 관리",
-  },
-
-  ppe: [
-    "공기호흡기",
-  ],
-
-  cautions: [
-    "저농도에서도 자극 강함",
-  ],
-},
-
-{
-  id: 85,
+  id: 82,
   nameKo: "브롬",
   nameEn: "Bromine",
   formula: "Br2",
@@ -6143,7 +5924,7 @@ export const chemicals = [
 },
 
 {
-  id: 86,
+  id: 83,
   nameKo: "질산은",
   nameEn: "Silver Nitrate",
   formula: "AgNO3",
@@ -6219,7 +6000,7 @@ export const chemicals = [
 },
 
 {
-  id: 87,
+  id: 84,
   nameKo: "질산구리",
   nameEn: "Copper Nitrate",
   formula: "Cu(NO3)2",
