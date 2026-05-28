@@ -118,7 +118,11 @@ export default function App() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="HF / 불산 / CAS 검색"
-                style={styles.input}
+                style={{
+                  ...styles.input,
+                  backgroundColor: "#fff",
+                  color: "#000",
+                  }}
               />
             </div>
           </header>
@@ -588,6 +592,8 @@ const styles = {
     background: "transparent",
     width: "100%",
     fontSize: 15,
+    backgroundColor: "#fff",
+    color: "#000",
   },
 
   chemicalStickyList: {
