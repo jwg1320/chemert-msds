@@ -2551,7 +2551,7 @@ export const chemicals = [
       "health": "3",
       "flammability": "0",
       "instability": "0",
-      "special": ""
+      "special": "설정 없음 (공정 확인)"
     }
   },
   {
@@ -2616,7 +2616,7 @@ export const chemicals = [
       "health": "3",
       "flammability": "0",
       "instability": "0",
-      "special": ""
+      "special": "설정 없음 (공정 확인)"
     }
   },
   {
@@ -2647,9 +2647,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "2",
+      "flammability": "3",
+      "instability": "1",
       "special": "-"
     }
   },
@@ -2680,9 +2680,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "3",
+      "flammability": "3",
+      "instability": "1",
       "special": "-"
     }
   },
@@ -2711,9 +2711,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "0",
+      "flammability": "1",
+      "instability": "0",
       "special": "-"
     }
   },
@@ -2743,9 +2743,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "2",
+      "flammability": "3",
+      "instability": "1",
       "special": "-"
     }
   },
@@ -2776,9 +2776,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "2",
+      "flammability": "3",
+      "instability": "0",
       "special": "-"
     }
   },
@@ -2808,9 +2808,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "2",
+      "flammability": "3",
+      "instability": "0",
       "special": "-"
     }
   },
@@ -2840,10 +2840,10 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
-      "special": "-"
+      "health": "3",
+      "flammability": "0",
+      "instability": "2",
+      "special": "W"
     }
   },
   {
@@ -2870,9 +2870,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "3",
+      "flammability": "1",
+      "instability": "0",
       "special": "-"
     }
   },
@@ -2902,10 +2902,10 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
-      "special": "-"
+      "health": "3",
+      "flammability": "0",
+      "instability": "2",
+      "special": "W"
     }
   },
   {
@@ -2933,10 +2933,10 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
-      "special": "-"
+      "health": "4",
+      "flammability": "0",
+      "instability": "1",
+      "special": "W"
     }
   },
   {
@@ -2965,9 +2965,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "4",
+      "flammability": "4",
+      "instability": "3",
       "special": "-"
     }
   },
@@ -2998,9 +2998,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "3",
+      "flammability": "4",
+      "instability": "0",
       "special": "-"
     }
   },
@@ -3031,10 +3031,10 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
-      "special": "-"
+      "health": "4",
+      "flammability": "0",
+      "instability": "2",
+      "special": "W"
     }
   },
   {
@@ -3063,9 +3063,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "1",
+      "flammability": "2",
+      "instability": "0",
       "special": "-"
     }
   },
@@ -3095,9 +3095,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "3",
+      "flammability": "3",
+      "instability": "1",
       "special": "-"
     }
   },
@@ -3126,9 +3126,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "1",
+      "flammability": "0",
+      "instability": "0",
       "special": "-"
     }
   },
@@ -3159,9 +3159,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "1",
+      "flammability": "0",
+      "instability": "0",
       "special": "-"
     }
   },
@@ -3191,10 +3191,10 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
-      "special": "-"
+      "health": "3",
+      "flammability": "0",
+      "instability": "2",
+      "special": "W"
     }
   },
   {
@@ -3221,9 +3221,9 @@ export const chemicals = [
       }
     ],
     "nfpa": {
-      "health": "-",
-      "flammability": "-",
-      "instability": "-",
+      "health": "0",
+      "flammability": "1",
+      "instability": "0",
       "special": "-"
     }
   }
