@@ -59,7 +59,10 @@ export default function App() {
             placeholder="비밀번호 입력"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            style={styles.loginInput}
+            style={{
+              ...styles.input,
+              color: "#000",
+              }}
           />
 
           <button
@@ -120,7 +123,6 @@ export default function App() {
                 placeholder="HF / 불산 / CAS 검색"
                 style={{
                   ...styles.input,
-                  backgroundColor: "#fff",
                   color: "#000",
                   }}
               />
