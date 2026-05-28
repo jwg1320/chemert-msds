@@ -75,12 +75,13 @@ const [password, setPassword] = useState("");
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           style={{
-            ...styles.input,
-            background: "#f8fafc",
-            border: "1px solid #cbd5e1",
-            borderRadius: 14,
-            padding: 14,
-            marginBottom: 16,
+              width: "100%",
+              boxSizing: "border-box",
+              background: "#f8fafc",
+              border: "1px solid #cbd5e1",
+              borderRadius: 14,
+              padding: 14,
+              marginBottom: 16,
           }}
         />
 
@@ -94,15 +95,16 @@ const [password, setPassword] = useState("");
             }
           }}
           style={{
-            width: "100%",
-            background: "#0f172a",
-            color: "white",
-            border: "none",
-            borderRadius: 14,
-            padding: 14,
-            fontSize: 16,
-            fontWeight: 700,
-            cursor: "pointer",
+              width: "100%",
+              boxSizing: "border-box",
+              background: "#0f172a",
+              color: "white",
+              border: "none",
+              borderRadius: 14,
+              padding: 14,
+              fontSize: 16,
+              fontWeight: 700,
+              cursor: "pointer",
           }}
         >
           접속
