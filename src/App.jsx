@@ -251,14 +251,39 @@ export default function App() {
 
 function TopSummary({ selected }) {
   const phValue = selected.ph?.[0]?.value || "정보 없음";
-  const phNote = selected.ph?.[0]?.note || "";
   const state = selected.stateCategory || selected.state || "정보 없음";
 
   return (
-    <div style={styles.summaryGrid}>
-      <SummaryBox title="pH" value={phValue} sub={phNote} />
-      <SummaryBox title="성상" value={state} sub={selected.state} />
-      <NfpaBox nfpa={selected.nfpa} />
+    <div>
+      {/* pH */}
+      <div
+        style={{
+          ...styles.summaryBox,
+          marginBottom: 10,
+        }}
+      >
+        <div style={styles.summaryTitle}>pH</div>
+
+        <div
+          style={{
+            fontSize: 22,
+            fontWeight: 800,
+          }}
+        >
+          {phValue}
+        </div>
+      </div>
+
+      {/* 성상 + NFPA */}
+      <div style={styles.summaryGrid2}>
+        <SummaryBox
+          title="성상"
+          value={state}
+          sub={selected.state}
+        />
+
+        <NfpaBox nfpa={selected.nfpa} />
+      </div>
     </div>
   );
 }
