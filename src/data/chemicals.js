@@ -21,7 +21,7 @@ export const chemicals = [
 
     exposure: {
       twa: { value: "0.5 ppm", source: "OSHA" },
-      stel: { value: "3 ppm", source: "ACGIH" },
+      stel: { value: "1 ppm", source: "OSHA" },
       ceiling: { value: "6 ppm", source: "NIOSH" },
       idlh: { value: "30 ppm", source: "NIOSH" },
     },
@@ -87,8 +87,8 @@ export const chemicals = [
   ],
 
   exposure: {
-    twa: { value: "0.2 mg/m³", source: "KOSHA" },
-    stel: { value: "0.6 mg/m³", source: "ACGIH" },
+    twa: { value: "1 mg/m³", source: "KOSHA" },
+    stel: { value: "3 mg/m³", source: "대표 참고값" },
     ceiling: { value: "설정 없음", source: "-" },
     idlh: { value: "15 mg/m³", source: "NIOSH" },
   },
@@ -969,7 +969,7 @@ export const chemicals = [
   exposure: {
     twa: { value: "0.1 ppm", source: "OSHA 대표값" },
     stel: { value: "제품 SDS 확인", source: "제조사 SDS" },
-    ceiling: { value: "제품 SDS 확인", source: "제조사 SDS" },
+    ceiling: { value: "0.5 ppm", source: "ACGIH 또는 대표 참고값" },
     idlh: { value: "25 ppm", source: "NIOSH" },
   },
 
@@ -1028,7 +1028,7 @@ export const chemicals = [
   exposure: {
     twa: { value: "0.5 ppm", source: "OSHA" },
     stel: { value: "1 ppm", source: "ACGIH" },
-    ceiling: { value: "1 ppm", source: "NIOSH" },
+    ceiling: { value: "0.5 ppm", source: "NIOSH" },
     idlh: { value: "10 ppm", source: "NIOSH" },
   },
 
@@ -1107,7 +1107,7 @@ export const chemicals = [
   exposure: {
     twa: { value: "0.1 ppm", source: "OSHA" },
     stel: { value: "설정 없음", source: "-" },
-    ceiling: { value: "0.3 ppm", source: "NIOSH" },
+    ceiling: { value: "0.1 ppm", source: "NIOSH" },
     idlh: { value: "5 ppm", source: "NIOSH" },
   },
 
@@ -1264,7 +1264,7 @@ export const chemicals = [
     twa: { value: "25 ppm", source: "NIOSH 대표값" },
     stel: { value: "설정 없음", source: "-" },
     ceiling: { value: "설정 없음", source: "-" },
-    idlh: { value: "800 ppm", source: "대표 참고값" },
+    idlh: { value: "제품 SDS 확인", source: "-" },
   },
 
   physical: {
