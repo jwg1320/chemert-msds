@@ -12,6 +12,7 @@ import {
   ArrowDown,
   Waves,
   Skull,
+  Diamond,
 } from "lucide-react";
 
 import { chemicals } from "./data/chemicals";
@@ -25,94 +26,55 @@ const levelColor = {
 export default function App() {
   const PASSWORD = "13114";
 
-const [isAuthed, setIsAuthed] = useState(
-  localStorage.getItem("ertchem_auth") === "true"
-);
-
-const [password, setPassword] = useState("");
+  const [isAuthed, setIsAuthed] = useState(
+    localStorage.getItem("ertchem_auth") === "true"
+  );
+  const [password, setPassword] = useState("");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(chemicals[0]);
+
   if (!isAuthed) {
-  return (
-    <div style={styles.page}>
-      <div
-        style={{
-          ...styles.detailCard,
-          maxWidth: 420,
-          margin: "80px auto",
-          textAlign: "center",
-        }}
-      >
-        <div style={{ marginBottom: 20 }}>
-          <ShieldCheck size={48} />
+    return (
+      <div style={styles.page}>
+        <div style={styles.loginCard}>
+          <div style={{ marginBottom: 20 }}>
+            <ShieldCheck size={48} />
+          </div>
+
+          <div style={styles.loginTitle}>ERT CHEM</div>
+
+          <div style={styles.loginSub}>
+            내부 전용 시스템입니다.
+            <br />
+            비밀번호를 입력하세요.
+          </div>
+
+          <input
+            type="password"
+            placeholder="비밀번호 입력"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={styles.loginInput}
+          />
+
+          <button
+            onClick={() => {
+              if (password === PASSWORD) {
+                localStorage.setItem("ertchem_auth", "true");
+                setIsAuthed(true);
+              } else {
+                alert("비밀번호가 틀렸습니다.");
+              }
+            }}
+            style={styles.loginButton}
+          >
+            접속
+          </button>
         </div>
-
-        <div
-          style={{
-            fontSize: 28,
-            fontWeight: 800,
-            marginBottom: 10,
-          }}
-        >
-          ERT CHEM
-        </div>
-
-        <div
-          style={{
-            color: "#64748b",
-            marginBottom: 24,
-            lineHeight: 1.6,
-          }}
-        >
-          내부 전용 시스템입니다.
-          <br />
-          비밀번호를 입력하세요.
-        </div>
-
-        <input
-          type="password"
-          placeholder="비밀번호 입력"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={{
-              width: "100%",
-              boxSizing: "border-box",
-              background: "#f8fafc",
-              border: "1px solid #cbd5e1",
-              borderRadius: 14,
-              padding: 14,
-              marginBottom: 16,
-          }}
-        />
-
-        <button
-          onClick={() => {
-            if (password === PASSWORD) {
-              localStorage.setItem("ertchem_auth", "true");
-              setIsAuthed(true);
-            } else {
-              alert("비밀번호가 틀렸습니다.");
-            }
-          }}
-          style={{
-              width: "100%",
-              boxSizing: "border-box",
-              background: "#0f172a",
-              color: "white",
-              border: "none",
-              borderRadius: 14,
-              padding: 14,
-              fontSize: 16,
-              fontWeight: 700,
-              cursor: "pointer",
-          }}
-        >
-          접속
-        </button>
       </div>
-    </div>
-  );
-}
+    );
+  }
+
   const filtered = useMemo(() => {
     if (!query) return chemicals;
 
@@ -123,6 +85,7 @@ const [password, setPassword] = useState("");
         ${c.formula}
         ${c.cas}
         ${(c.aliases || []).join(" ")}
+        ${c.process}
       `.toLowerCase();
 
       return text.includes(query.toLowerCase());
@@ -134,51 +97,53 @@ const [password, setPassword] = useState("");
   return (
     <div style={styles.page}>
       <div style={styles.container}>
-        <header style={styles.header}>
-          <div style={styles.titleWrap}>
-            <ShieldCheck size={28} />
-            <div>
-              <div style={styles.title}>ERT CHEM</div>
-              <div style={styles.subtitle}>반도체 화학물질 대응 플랫폼</div>
+        <div style={styles.stickyArea}>
+          <header style={styles.header}>
+            <div style={styles.titleWrap}>
+              <ShieldCheck size={24} />
+              <div>
+                <div style={styles.title}>ERT CHEM</div>
+                <div style={styles.subtitle}>반도체 화학물질 대응 플랫폼</div>
+              </div>
             </div>
-          </div>
 
-          <div style={styles.searchBox}>
-            <Search size={20} color="#64748b" />
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="HF / 불산 / CAS 검색"
-              style={styles.input}
-            />
-          </div>
-        </header>
+            <div style={styles.searchBox}>
+              <Search size={18} color="#64748b" />
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="HF / 불산 / CAS 검색"
+                style={styles.input}
+              />
+            </div>
+          </header>
 
-        <div style={styles.horizontalScroll}>
-          {filtered.map((chemical) => (
-            <button
-              key={chemical.id}
-              onClick={() => setSelected(chemical)}
-              style={{
-                ...styles.chemicalCard,
-                border:
-                  selected.id === chemical.id
-                    ? "2px solid #0f172a"
-                    : "1px solid #e2e8f0",
-              }}
-            >
-              <div style={styles.chemicalName}>{chemical.nameKo}</div>
-              <div style={styles.chemicalSub}>{chemical.formula}</div>
-              <div
+          <div style={styles.chemicalStickyList}>
+            {filtered.map((chemical) => (
+              <button
+                key={chemical.id}
+                onClick={() => setSelected(chemical)}
                 style={{
-                  ...styles.levelBadge,
-                  background: levelColor[chemical.hazardLevel] || "#64748b",
+                  ...styles.chemicalCard,
+                  border:
+                    selected.id === chemical.id
+                      ? "2px solid #0f172a"
+                      : "1px solid #e2e8f0",
                 }}
               >
-                {chemical.hazardLevel}
-              </div>
-            </button>
-          ))}
+                <div style={styles.chemicalName}>{chemical.nameKo}</div>
+                <div style={styles.chemicalSub}>{chemical.formula}</div>
+                <div
+                  style={{
+                    ...styles.levelBadge,
+                    background: levelColor[chemical.hazardLevel] || "#64748b",
+                  }}
+                >
+                  {chemical.hazardLevel}
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
 
         <div style={styles.detailCard}>
@@ -199,6 +164,8 @@ const [password, setPassword] = useState("");
             </div>
           </div>
 
+          <TopSummary selected={selected} />
+
           <Section title="현장 핵심 경고" icon={<AlertTriangle size={18} />}>
             <CriticalFlags flags={flags} />
           </Section>
@@ -210,6 +177,7 @@ const [password, setPassword] = useState("");
           <Section title="기본 정보" icon={<Activity size={18} />}>
             <InfoLine title="화학식" value={selected.formula} />
             <InfoLine title="상태" value={selected.state} />
+            <InfoLine title="성상분류" value={selected.stateCategory} />
             <InfoLine title="공정" value={selected.process} />
           </Section>
 
@@ -229,7 +197,10 @@ const [password, setPassword] = useState("");
 
           <Section title="인화·폭발 특성" icon={<Flame size={18} />}>
             <InfoLine title="인화점" value={selected.flammability?.flashPoint} />
-            <InfoLine title="자연발화" value={selected.flammability?.autoIgnition} />
+            <InfoLine
+              title="자연발화"
+              value={selected.flammability?.autoIgnition}
+            />
             <InfoLine title="LEL" value={selected.flammability?.lel} />
             <InfoLine title="UEL" value={selected.flammability?.uel} />
           </Section>
@@ -278,19 +249,85 @@ const [password, setPassword] = useState("");
   );
 }
 
+function TopSummary({ selected }) {
+  const phValue = selected.ph?.[0]?.value || "정보 없음";
+  const phNote = selected.ph?.[0]?.note || "";
+  const state = selected.stateCategory || selected.state || "정보 없음";
+
+  return (
+    <div style={styles.summaryGrid}>
+      <SummaryBox title="pH" value={phValue} sub={phNote} />
+      <SummaryBox title="성상" value={state} sub={selected.state} />
+      <NfpaBox nfpa={selected.nfpa} />
+    </div>
+  );
+}
+
+function SummaryBox({ title, value, sub }) {
+  return (
+    <div style={styles.summaryBox}>
+      <div style={styles.summaryTitle}>{title}</div>
+      <div style={styles.summaryValue}>{value}</div>
+      {sub && <div style={styles.summarySub}>{sub}</div>}
+    </div>
+  );
+}
+
+function NfpaBox({ nfpa }) {
+  return (
+    <div style={styles.nfpaBox}>
+      <div style={styles.summaryTitle}>
+        <Diamond size={14} /> NFPA
+      </div>
+
+      <div style={styles.nfpaRow}>
+        <span style={{ ...styles.nfpaChip, background: "#2563eb" }}>
+          H {nfpa?.health ?? "-"}
+        </span>
+        <span style={{ ...styles.nfpaChip, background: "#dc2626" }}>
+          F {nfpa?.flammability ?? "-"}
+        </span>
+        <span style={{ ...styles.nfpaChip, background: "#facc15", color: "#111827" }}>
+          I {nfpa?.instability ?? "-"}
+        </span>
+      </div>
+
+      <div style={styles.summarySub}>
+        {nfpa?.special ? `특수: ${nfpa.special}` : "특수: -"}
+      </div>
+    </div>
+  );
+}
+
 function getFlags(c) {
+  if (c.flags) {
+    let waterUse = c.neutralization?.waterUseJudge || c.neutralization?.waterUse || "주의";
+
+    if (c.flags.waterForbidden) waterUse = "금지";
+    else if (String(waterUse).includes("가능")) waterUse = "가능";
+    else if (String(waterUse).includes("금지")) waterUse = "금지";
+    else waterUse = "주의";
+
+    return {
+      waterUse,
+      lowArea: c.flags.lowArea || c.flags.heavierThanAir,
+      oxidizerAndFlammable: c.flags.oxidizerFlammable,
+      hfGeneration: c.flags.hfGeneration,
+      scba: c.flags.scba,
+    };
+  }
+
   const allText = JSON.stringify(c || {}).toLowerCase();
-
-  const has = (words) =>
-    words.some((w) => allText.includes(w.toLowerCase()));
-
+  const has = (words) => words.some((w) => allText.includes(w.toLowerCase()));
   const ghs = (c.ghsPictograms || []).join(" ");
 
   const isOxidizer = ghs.includes("산화성") || has(["산화성", "oxidizer"]);
-  const isFlammable = ghs.includes("인화성") || has(["인화성", "가연성", "폭발", "lel", "uel"]);
+  const isFlammable =
+    ghs.includes("인화성") || has(["인화성", "가연성", "폭발", "lel", "uel"]);
   const hfGeneration = has(["hf 생성", "HF 생성", "불산 생성"]);
   const scba = has(["공기호흡기", "SCBA"]);
   const lowArea = has(["공기보다 무거움", "저지대", "바닥", "pit", "PIT", "트렌치"]);
+
   const waterText = `${c.neutralization?.waterUse || ""} ${
     c.waterReactivity?.hazards?.join(" ") || ""
   } ${c.waterReactivity?.decon?.join(" ") || ""}`;
@@ -480,7 +517,7 @@ const styles = {
   page: {
     minHeight: "100vh",
     background: "#f1f5f9",
-    padding: 12,
+    padding: 10,
     fontFamily: "Pretendard, -apple-system, BlinkMacSystemFont, sans-serif",
     color: "#0f172a",
   },
@@ -490,43 +527,49 @@ const styles = {
     margin: "0 auto",
   },
 
+  stickyArea: {
+    position: "sticky",
+    top: 0,
+    zIndex: 100,
+    background: "#f1f5f9",
+    paddingTop: 6,
+    paddingBottom: 8,
+  },
+
   header: {
     background: "white",
-    borderRadius: 24,
-    padding: 18,
-    marginBottom: 14,
+    borderRadius: 20,
+    padding: 12,
+    marginBottom: 8,
     boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
-    position: "sticky",
-    top: 8,
-    zIndex: 100,
   },
 
   titleWrap: {
     display: "flex",
     alignItems: "center",
-    gap: 10,
-    marginBottom: 16,
+    gap: 8,
+    marginBottom: 10,
   },
 
   title: {
-    fontSize: 24,
+    fontSize: 21,
     fontWeight: 800,
   },
 
   subtitle: {
-    fontSize: 13,
+    fontSize: 12,
     color: "#64748b",
-    marginTop: 3,
+    marginTop: 2,
   },
 
   searchBox: {
     display: "flex",
     alignItems: "center",
-    gap: 10,
+    gap: 8,
     background: "#f8fafc",
     border: "1px solid #e2e8f0",
-    borderRadius: 16,
-    padding: "14px 16px",
+    borderRadius: 14,
+    padding: "11px 13px",
   },
 
   input: {
@@ -534,46 +577,47 @@ const styles = {
     outline: "none",
     background: "transparent",
     width: "100%",
-    fontSize: 16,
+    fontSize: 15,
   },
 
-  horizontalScroll: {
+  chemicalStickyList: {
     display: "flex",
-    gap: 12,
+    gap: 8,
     overflowX: "auto",
-    paddingBottom: 10,
-    marginBottom: 16,
+    paddingBottom: 4,
   },
 
   chemicalCard: {
-    minWidth: 120,
+    minWidth: 92,
     background: "white",
-    borderRadius: 20,
-    padding: 16,
+    borderRadius: 16,
+    padding: 10,
     cursor: "pointer",
     textAlign: "left",
     boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
   },
 
   chemicalName: {
-    fontSize: 18,
-    fontWeight: 700,
-    marginBottom: 5,
+    fontSize: 14,
+    fontWeight: 800,
+    marginBottom: 3,
+    whiteSpace: "nowrap",
   },
 
   chemicalSub: {
     color: "#64748b",
-    marginBottom: 10,
-    fontSize: 14,
+    marginBottom: 7,
+    fontSize: 12,
+    whiteSpace: "nowrap",
   },
 
   levelBadge: {
     color: "white",
     borderRadius: 999,
-    padding: "6px 10px",
-    fontSize: 12,
+    padding: "4px 8px",
+    fontSize: 10,
     width: "fit-content",
-    fontWeight: 700,
+    fontWeight: 800,
   },
 
   detailCard: {
@@ -587,22 +631,22 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     gap: 12,
-    marginBottom: 24,
+    marginBottom: 18,
   },
 
   bigName: {
-    fontSize: 32,
+    fontSize: 30,
     fontWeight: 800,
   },
 
   engName: {
     color: "#64748b",
-    marginTop: 6,
-    fontSize: 15,
+    marginTop: 5,
+    fontSize: 14,
   },
 
   cas: {
-    marginTop: 8,
+    marginTop: 7,
     fontSize: 13,
     color: "#94a3b8",
   },
@@ -614,6 +658,64 @@ const styles = {
     height: "fit-content",
     fontWeight: 700,
     whiteSpace: "nowrap",
+  },
+
+  summaryGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: 10,
+    marginBottom: 24,
+  },
+
+  summaryBox: {
+    background: "#f8fafc",
+    border: "1px solid #e2e8f0",
+    borderRadius: 16,
+    padding: 13,
+  },
+
+  nfpaBox: {
+    background: "#fef2f2",
+    border: "1px solid #fecaca",
+    borderRadius: 16,
+    padding: 13,
+  },
+
+  summaryTitle: {
+    display: "flex",
+    alignItems: "center",
+    gap: 4,
+    color: "#64748b",
+    fontSize: 12,
+    fontWeight: 800,
+    marginBottom: 7,
+  },
+
+  summaryValue: {
+    fontSize: 17,
+    fontWeight: 800,
+    lineHeight: 1.3,
+  },
+
+  summarySub: {
+    fontSize: 11,
+    color: "#64748b",
+    marginTop: 5,
+    lineHeight: 1.3,
+  },
+
+  nfpaRow: {
+    display: "flex",
+    gap: 5,
+    flexWrap: "wrap",
+  },
+
+  nfpaChip: {
+    color: "white",
+    borderRadius: 8,
+    padding: "5px 7px",
+    fontSize: 12,
+    fontWeight: 900,
   },
 
   section: {
@@ -779,5 +881,51 @@ const styles = {
     marginTop: 6,
     fontSize: 12,
     lineHeight: 1.5,
+  },
+
+  loginCard: {
+    background: "white",
+    borderRadius: 24,
+    padding: 24,
+    maxWidth: 420,
+    margin: "80px auto",
+    textAlign: "center",
+    boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
+  },
+
+  loginTitle: {
+    fontSize: 28,
+    fontWeight: 800,
+    marginBottom: 10,
+  },
+
+  loginSub: {
+    color: "#64748b",
+    marginBottom: 24,
+    lineHeight: 1.6,
+  },
+
+  loginInput: {
+    width: "100%",
+    boxSizing: "border-box",
+    background: "#f8fafc",
+    border: "1px solid #cbd5e1",
+    borderRadius: 14,
+    padding: 14,
+    marginBottom: 16,
+    fontSize: 16,
+  },
+
+  loginButton: {
+    width: "100%",
+    boxSizing: "border-box",
+    background: "#0f172a",
+    color: "white",
+    border: "none",
+    borderRadius: 14,
+    padding: 14,
+    fontSize: 16,
+    fontWeight: 700,
+    cursor: "pointer",
   },
 };
