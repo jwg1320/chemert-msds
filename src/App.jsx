@@ -172,14 +172,7 @@ export default function App() {
               <div style={styles.cas}>CAS No. {selected.cas}</div>
             </div>
 
-            <div
-              style={{
-                ...styles.bigBadge,
-                background: levelColor[selected.hazardLevel] || "#64748b",
-              }}
-            >
-              {selected.hazardLevel}
-            </div>
+            <NfpaDiamond nfpa={selected.nfpa} />
           </div>
 
           <TopSummary selected={selected} />
@@ -280,7 +273,7 @@ function TopSummary({ selected }) {
 
       <div style={styles.summaryGrid2}>
         <SummaryBox title="성상" value={state} sub={selected.state} />
-        <NfpaBox nfpa={selected.nfpa} />
+        <GhsBox items={selected.ghsPictograms || []} />
       </div>
     </div>
   );
@@ -298,25 +291,45 @@ function SummaryBox({ title, value, sub }) {
 
 function NfpaBox({ nfpa }) {
   return (
-    <div style={styles.nfpaBox}>
-      <div style={styles.summaryTitle}>
-        <Diamond size={14} /> NFPA
+    <div style={styles.ghsBox}>
+      <div style={styles.summaryTitle}>GHS</div>
+      <TagWrapSmall items={nfpa?.ghsItems || []} />
+    </div>
+  );
+}
+
+function NfpaDiamond({ nfpa }) {
+  return (
+    <div style={styles.nfpaDiamondWrap}>
+      <div style={{ ...styles.nfpaCell, ...styles.nfpaFire }}>
+        {nfpa?.flammability ?? "-"}
       </div>
 
-      <div style={styles.nfpaRow}>
-        <span style={{ ...styles.nfpaChip, background: "#2563eb" }}>
-          H {nfpa?.health ?? "-"}
-        </span>
-        <span style={{ ...styles.nfpaChip, background: "#dc2626" }}>
-          F {nfpa?.flammability ?? "-"}
-        </span>
-        <span style={{ ...styles.nfpaChip, background: "#facc15", color: "#111827" }}>
-          I {nfpa?.instability ?? "-"}
-        </span>
+      <div style={{ ...styles.nfpaCell, ...styles.nfpaHealth }}>
+        {nfpa?.health ?? "-"}
       </div>
 
-      <div style={styles.summarySub}>
-        {nfpa?.special ? `특수: ${nfpa.special}` : "특수: -"}
+      <div style={{ ...styles.nfpaCell, ...styles.nfpaInstability }}>
+        {nfpa?.instability ?? "-"}
+      </div>
+
+      <div style={{ ...styles.nfpaCell, ...styles.nfpaSpecial }}>
+        {nfpa?.special || ""}
+      </div>
+    </div>
+  );
+}
+
+function GhsBox({ items }) {
+  return (
+    <div style={styles.ghsBox}>
+      <div style={styles.summaryTitle}>GHS</div>
+      <div style={styles.ghsMiniWrap}>
+        {items.map((item, index) => (
+          <div key={index} style={styles.ghsMiniTag}>
+            {item}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -981,4 +994,81 @@ const styles = {
     fontWeight: 700,
     cursor: "pointer",
   },
+
+  nfpaDiamondWrap: {
+  position: "relative",
+  width: 82,
+  height: 82,
+  marginTop: 2,
+  flexShrink: 0,
+},
+
+nfpaCell: {
+  position: "absolute",
+  width: 38,
+  height: 38,
+  transform: "rotate(45deg)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: 17,
+  fontWeight: 900,
+  border: "2px solid white",
+  boxSizing: "border-box",
+},
+
+nfpaFire: {
+  top: 0,
+  left: 22,
+  background: "#dc2626",
+  color: "white",
+},
+
+nfpaHealth: {
+  top: 22,
+  left: 0,
+  background: "#2563eb",
+  color: "white",
+},
+
+nfpaInstability: {
+  top: 22,
+  right: 0,
+  background: "#facc15",
+  color: "#111827",
+},
+
+nfpaSpecial: {
+  bottom: 0,
+  left: 22,
+  background: "white",
+  color: "#111827",
+  border: "2px solid #cbd5e1",
+  fontSize: 12,
+},
+
+ghsBox: {
+  background: "#f8fafc",
+  border: "1px solid #e2e8f0",
+  borderRadius: 16,
+  padding: 13,
+  minWidth: 0,
+},
+
+ghsMiniWrap: {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: 6,
+},
+
+ghsMiniTag: {
+  background: "white",
+  border: "1px solid #e2e8f0",
+  borderRadius: 999,
+  padding: "5px 8px",
+  fontSize: 11,
+  fontWeight: 700,
+  lineHeight: 1.2,
+},
+  
 };
