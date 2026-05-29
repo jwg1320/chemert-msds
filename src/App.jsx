@@ -843,6 +843,14 @@ function getWarningStyle(value = "") {
 }
 
 function getDispersionLabel(selected) {
+  const savedType =
+    selected?.physical?.diffusionType ||
+    selected?.diffusion?.type;
+
+  if (savedType) {
+  return savedType;
+  }
+  
   const volatility = selected?.odor?.volatilityGrade || "";
   const density = selected?.physical?.density || "";
   const state = `${selected?.state || ""} ${selected?.stateCategory || ""}`;
