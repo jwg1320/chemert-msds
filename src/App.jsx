@@ -259,7 +259,8 @@ export default function App() {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 8,
+                    justifyContent: "space-between",
+                    width: "100%",
                   }}
                 >
                   <span>냄새 정보</span>
@@ -268,7 +269,7 @@ export default function App() {
                     onClick={() => setShowOdorGuide(!showOdorGuide)}
                     style={styles.infoButton}
                   >
-                    ⓘ
+                    {showOdorGuide ? "닫기" : "설명"}
                   </button>
                 </div>
               }
@@ -1362,14 +1363,14 @@ odorValue: {
 },
 
 infoButton: {
-  border: "none",
-  background: "#e2e8f0",
-  borderRadius: "50%",
-  width: 22,
-  height: 22,
+  border: "1px solid #cbd5e1",
+  background: "#ffffff",
+  borderRadius: 8,
+  padding: "4px 10px",
   cursor: "pointer",
-  fontWeight: 700,
   fontSize: 12,
+  fontWeight: 700,
+  color: "#475569",
 },
 
 odorGuide: {
