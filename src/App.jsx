@@ -375,9 +375,15 @@ export default function App() {
                   휘발성 등급
                 </div>
 
-                <div style={styles.odorValue}>
-                  {selected.odor?.volatilityGrade ||
-                    "-"}
+                <div
+                  style={{
+                    ...styles.odorBadge,
+                    ...getVolatilityStyle(
+                      selected.odor?.volatilityGrade || ""
+                    ),
+                  }}
+                >
+                  {selected.odor?.volatilityGrade || "-"}
                 </div>
               </div>
 
@@ -386,9 +392,15 @@ export default function App() {
                   후각경보유형
                 </div>
 
-                <div style={styles.odorValue}>
-                  {selected.odor?.warningType ||
-                    "-"}
+                <div
+                  style={{
+                    ...styles.odorBadge,
+                    ...getWarningStyle(
+                      selected.odor?.warningType || ""
+                    ),
+                  }}
+                >
+                  {selected.odor?.warningType || "-"}
                 </div>
               </div>
             </div>
@@ -709,6 +721,73 @@ function WaterJudge({ value }) {
       </div>
     </div>
   );
+}
+
+function getVolatilityStyle(value = "") {
+  if (value.includes("상시기체")) {
+    return {
+      background: "#f3e8ff",
+      border: "1px solid #7c3aed",
+      color: "#6b21a8",
+    };
+  }
+
+  if (value.includes("고휘발성")) {
+    return {
+      background: "#fee2e2",
+      border: "1px solid #dc2626",
+      color: "#b91c1c",
+    };
+  }
+
+  if (value.includes("저휘발성")) {
+    return {
+      background: "#fef3c7",
+      border: "1px solid #f59e0b",
+      color: "#92400e",
+    };
+  }
+
+  if (value.includes("비휘발성")) {
+    return {
+      background: "#dcfce7",
+      border: "1px solid #16a34a",
+      color: "#166534",
+    };
+  }
+
+  return {};
+}
+
+function getWarningStyle(value = "") {
+  if (value.includes("조기선행")) {
+    return {
+      background: "#dcfce7",
+      border: "1px solid #16a34a",
+      color: "#166534",
+    };
+  }
+
+  if (
+    value.includes("마비") ||
+    value.includes("위험")
+  ) {
+    return {
+      background: "#fee2e2",
+      border: "1px solid #dc2626",
+      color: "#991b1b",
+    };
+  }
+
+  if (value.includes("인지불가")) {
+    return {
+      background: "#f1f5f9",
+      border: "1px solid #64748b",
+      color: "#334155",
+    };
+  }
+
+  return {};
 }
 
 function Section({ title, icon, children }) {
@@ -1383,6 +1462,14 @@ odorGuide: {
   fontSize: 13,
   lineHeight: 1.8,
   color: "#334155",
+},
+
+odorBadge: {
+  padding: "8px 10px",
+  borderRadius: 999,
+  fontSize: 13,
+  fontWeight: 700,
+  textAlign: "center",
 },
 
 };
