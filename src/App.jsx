@@ -38,6 +38,32 @@ export default function App() {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(chemicals[0]);
   const [showOdorGuide, setShowOdorGuide] = useState(false);
+  const filtered = useMemo(() => {
+    if (!query) return chemicals;
+
+    return chemicals.filter((c) => {
+      const text = `
+        ${c.nameKo}
+        ${c.nameEn}
+        ${c.formula}
+        ${c.cas}
+        ${(c.aliases || []).join(" ")}
+
+        ${c.process}
+        ${c.stateCategory || ""}
+        ${c.state || ""}
+
+        ${c.odor?.keywords || ""}
+        ${c.odor?.profile || ""}
+        ${c.odor?.warningType || ""}
+        ${c.odor?.volatilityGrade || ""}
+
+        ${(c.mainHazards || []).join(" ")}
+      `.toLowerCase();
+
+      return text.includes(query.toLowerCase());
+    });
+  }, [query]);
 
   if (!isAuthed) {
     return (
@@ -90,33 +116,6 @@ export default function App() {
       </div>
     );
   }
-
-  const filtered = useMemo(() => {
-    if (!query) return chemicals;
-
-    return chemicals.filter((c) => {
-      const text = `
-        ${c.nameKo}
-        ${c.nameEn}
-        ${c.formula}
-        ${c.cas}
-        ${(c.aliases || []).join(" ")}
-
-        ${c.process}
-        ${c.stateCategory || ""}
-        ${c.state || ""}
-
-        ${c.odor?.keywords || ""}
-        ${c.odor?.profile || ""}
-        ${c.odor?.warningType || ""}
-        ${c.odor?.volatilityGrade || ""}
-
-        ${(c.mainHazards || []).join(" ")}
-      `.toLowerCase();
-
-      return text.includes(query.toLowerCase());
-    });
-  }, [query]);
 
   const flags = getFlags(selected);
 
