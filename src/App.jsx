@@ -782,9 +782,25 @@ function getVolatilityStyle(value = "") {
 function getWarningStyle(value = "") {
   if (value.includes("조기선행")) {
     return {
-      background: "#ff6b15",
-      border: "1px solid #f38a59",
-      color: "#552a06",
+      background: "#dcfce7",
+      border: "1px solid #16a34a",
+      color: "#166534",
+    };
+  }
+
+  if (value.includes("지연")) {
+    return {
+      background: "#fef9c3",
+      border: "1px solid #eab308",
+      color: "#854d0e",
+    };
+  }
+
+  if (value.includes("인지불가")) {
+    return {
+      background: "#ffedd5",
+      border: "1px solid #f97316",
+      color: "#9a3412",
     };
   }
 
@@ -796,14 +812,6 @@ function getWarningStyle(value = "") {
       background: "#fee2e2",
       border: "1px solid #dc2626",
       color: "#991b1b",
-    };
-  }
-
-  if (value.includes("인지불가")) {
-    return {
-      background: "#f1f5f9",
-      border: "1px solid #64748b",
-      color: "#334155",
     };
   }
 
