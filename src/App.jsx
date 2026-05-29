@@ -934,20 +934,6 @@ function getDispersionStyle(selected) {
   };
 }
 
-  if (label.includes("미미")) {
-    return {
-      background: "#f1f5f9",
-      border: "1px solid #94a3b8",
-      color: "#334155",
-    };
-  }
-
-  return {
-    background: "#fef3c7",
-    border: "1px solid #eab308",
-    color: "#854d0e",
-  };
-
 
 function Section({ title, icon, children }) {
   return (
