@@ -762,9 +762,9 @@ function getVolatilityStyle(value = "") {
 function getWarningStyle(value = "") {
   if (value.includes("조기선행")) {
     return {
-      background: "#dcfce7",
+      background: "#ff6b15",
       border: "1px solid #f38a59",
-      color: "#fa2828",
+      color: "#552a06",
     };
   }
 
