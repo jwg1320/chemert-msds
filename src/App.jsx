@@ -763,8 +763,8 @@ function getWarningStyle(value = "") {
   if (value.includes("조기선행")) {
     return {
       background: "#dcfce7",
-      border: "1px solid #16a34a",
-      color: "#166534",
+      border: "1px solid #f38a59",
+      color: "#fa2828",
     };
   }
 
