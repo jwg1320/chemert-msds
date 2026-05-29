@@ -37,6 +37,7 @@ export default function App() {
   const [password, setPassword] = useState("");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(chemicals[0]);
+  const [showOdorGuide, setShowOdorGuide] = useState(false);
 
   if (!isAuthed) {
     return (
@@ -253,9 +254,115 @@ export default function App() {
           </Section>
 
           <Section
-            title="냄새 정보"
-            icon={<Wind size={18} />}
-          >
+              title={
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                  }}
+                >
+                  <span>냄새 정보</span>
+
+                  <button
+                    onClick={() => setShowOdorGuide(!showOdorGuide)}
+                    style={styles.infoButton}
+                  >
+                    ⓘ
+                  </button>
+                </div>
+              }
+              icon={<Wind size={18} />}
+            >
+             {showOdorGuide && (
+                <div style={styles.odorGuide}>
+                  <strong>
+                    ① 휘발성등급 (증기압 기반 위험도)
+                  </strong>
+
+                  <br /><br />
+
+                  <b>상시기체</b>
+                  <br />
+                  상온·상압에서 기체 상태인 물질로,
+                  미세 누출로도 팹 전체로 냄새가
+                  확산될 확률 100%
+                  <br />
+                  예) 암모니아, 포스핀, 실란
+
+                  <br /><br />
+
+                  <b>고휘발성</b>
+                  <br />
+                  액체 상태로 누출되어도
+                  매우 빠르게 기화하여
+                  증기 구름을 형성
+                  <br />
+                  예) 아세톤, HMDS, nBA, 사염화규소
+
+                  <br /><br />
+
+                  <b>저휘발성</b>
+                  <br />
+                  초기에는 국소 냄새만 발생하나
+                  표면적 증가 또는 온도 상승 시
+                  증기량 급증 가능
+                  <br />
+                  예) PR, NCE2, LTO520
+
+                  <br /><br />
+
+                  <b>비휘발성</b>
+                  <br />
+                  상온 기화 거의 없음
+                  냄새보다 접촉 위험 주의
+                  <br />
+                  예) 황산, TMAH, 수산화나트륨
+
+                  <hr style={{ margin: "16px 0" }} />
+
+                  <strong>
+                    ② 후각경보유형
+                  </strong>
+
+                  <br /><br />
+
+                  <b>후각 조기선행형</b>
+                  <br />
+                  사람이 냄새를 맡는 농도가
+                  독성 허용농도(TWA)보다 훨씬 낮아
+                  위험농도 도달 전 냄새로
+                  조기 인지가 가능한 물질
+                  <br />
+                  예) 암모니아, 수산화암모늄, 아세톤
+
+                  <br /><br />
+
+                  <b>후각 마비 / 위험형</b>
+                  <br />
+                  냄새 인지 시 이미 위험하거나
+                  후각 마비를 유발
+                  <br />
+                  SCBA 착용 권고
+                  <br />
+                  예) 황화수소, 포스핀, 아르신,
+                  게르만, 불산, NCE2
+
+                  <br /><br />
+
+                  <b>후각 인지불가</b>
+                  <br />
+                  무취 물질
+                  <br />
+                  후각 의존 금지
+                  <br />
+                  센서 및 검지기 의존
+                  <br />
+                  예) 질소, 일산화탄소,
+                  삼불화질소, Coolant, DSP300, 황산
+                </div>
+              )}
+
             <InfoLine
               title="냄새 프로필"
               value={selected.odor?.profile}
@@ -1252,6 +1359,28 @@ odorTitle: {
 odorValue: {
   fontSize: 16,
   fontWeight: 800,
+},
+
+infoButton: {
+  border: "none",
+  background: "#e2e8f0",
+  borderRadius: "50%",
+  width: 22,
+  height: 22,
+  cursor: "pointer",
+  fontWeight: 700,
+  fontSize: 12,
+},
+
+odorGuide: {
+  background: "#f8fafc",
+  border: "1px solid #cbd5e1",
+  borderRadius: 14,
+  padding: 16,
+  marginBottom: 14,
+  fontSize: 13,
+  lineHeight: 1.8,
+  color: "#334155",
 },
 
 };
