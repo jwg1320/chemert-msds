@@ -273,8 +273,8 @@ function getChemicalTheme(value = "") {
     text.includes("acid")
   ) {
     return {
-      border: "#FFB000",
-      bg: "#fae5a4",
+      border: "#f5d48d",
+      bg: "#eee2bd",
     };
   }
 
@@ -285,8 +285,8 @@ function getChemicalTheme(value = "") {
     text.includes("base")
   ) {
     return {
-      border: "#002060",
-      bg: "#356ee7",
+      border: "#2369f7",
+      bg: "#d1ddf8",
     };
   }
 
@@ -296,8 +296,8 @@ function getChemicalTheme(value = "") {
     text.includes("organic")
   ) {
     return {
-      border: "#f54545",
-      bg: "#fa9494",
+      border: "#fd7777",
+      bg: "#f8dada",
     };
   }
 
