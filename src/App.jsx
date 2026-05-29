@@ -300,21 +300,35 @@ function NfpaBox({ nfpa }) {
 
 function NfpaDiamond({ nfpa }) {
   return (
-    <div style={styles.nfpaDiamondWrap}>
-      <div style={{ ...styles.nfpaCell, ...styles.nfpaFire }}>
-        {nfpa?.flammability ?? "-"}
+    <div style={styles.nfpaContainer}>
+      <div style={styles.nfpaDiamondWrap}>
+        <div style={{ ...styles.nfpaCell, ...styles.nfpaFire }}>
+          <span style={styles.nfpaText}>
+            {nfpa?.flammability ?? "-"}
+          </span>
+        </div>
+
+        <div style={{ ...styles.nfpaCell, ...styles.nfpaHealth }}>
+          <span style={styles.nfpaText}>
+            {nfpa?.health ?? "-"}
+          </span>
+        </div>
+
+        <div style={{ ...styles.nfpaCell, ...styles.nfpaInstability }}>
+          <span style={styles.nfpaText}>
+            {nfpa?.instability ?? "-"}
+          </span>
+        </div>
+
+        <div style={{ ...styles.nfpaCell, ...styles.nfpaSpecial }}>
+          <span style={styles.nfpaText}>
+            {nfpa?.special || ""}
+          </span>
+        </div>
       </div>
 
-      <div style={{ ...styles.nfpaCell, ...styles.nfpaHealth }}>
-        {nfpa?.health ?? "-"}
-      </div>
-
-      <div style={{ ...styles.nfpaCell, ...styles.nfpaInstability }}>
-        {nfpa?.instability ?? "-"}
-      </div>
-
-      <div style={{ ...styles.nfpaCell, ...styles.nfpaSpecial }}>
-        {nfpa?.special || ""}
+      <div style={styles.nfpaLabel}>
+        NFPA
       </div>
     </div>
   );
@@ -997,54 +1011,87 @@ const styles = {
 
   nfpaDiamondWrap: {
   position: "relative",
-  width: 82,
-  height: 82,
-  marginTop: 2,
-  flexShrink: 0,
+  width: 68,
+  height: 68,
 },
 
 nfpaCell: {
   position: "absolute",
-  width: 38,
-  height: 38,
+
+  width: 30,
+  height: 30,
+
   transform: "rotate(45deg)",
+
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  fontSize: 17,
-  fontWeight: 900,
-  border: "2px solid white",
+
+  border: "2px solid #000",
+
   boxSizing: "border-box",
+},
+
+nfpaText: {
+  transform: "rotate(-45deg)",
+
+  fontSize: 14,
+  fontWeight: 900,
+
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+
+  width: "100%",
+  height: "100%",
 },
 
 nfpaFire: {
   top: 0,
-  left: 22,
+  left: 19,
+  background: "#dc2626",
+  color: "white",
+},
+
+nfpaFire: {
+  top: 0,
+  left: 19,
   background: "#dc2626",
   color: "white",
 },
 
 nfpaHealth: {
-  top: 22,
+  top: 19,
   left: 0,
   background: "#2563eb",
   color: "white",
 },
 
 nfpaInstability: {
-  top: 22,
+  top: 19,
   right: 0,
   background: "#facc15",
   color: "#111827",
 },
 
 nfpaSpecial: {
-  bottom: 0,
-  left: 22,
-  background: "white",
+  top: 38,
+  left: 19,
+  background: "#ffffff",
   color: "#111827",
-  border: "2px solid #cbd5e1",
-  fontSize: 12,
+},
+
+nfpaContainer: {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+},
+
+nfpaLabel: {
+  marginTop: 10,
+  fontSize: 11,
+  fontWeight: 700,
+  color: "#64748b",
 },
 
 ghsBox: {
