@@ -264,28 +264,99 @@ export default function App() {
   );
 }
 
+function getChemicalTheme(value = "") {
+  const text = value.toLowerCase();
+
+  // 산
+  if (
+    text.includes("산") ||
+    text.includes("acid")
+  ) {
+    return {
+      border: "#FFB000",
+      bg: "#FFD34D",
+    };
+  }
+
+  // 알칼리
+  if (
+    text.includes("알칼리") ||
+    text.includes("염기") ||
+    text.includes("base")
+  ) {
+    return {
+      border: "#002060",
+      bg: "#0A2E7A",
+    };
+  }
+
+  // 유기
+  if (
+    text.includes("유기") ||
+    text.includes("organic")
+  ) {
+    return {
+      border: "#C00000",
+      bg: "#FF2020",
+    };
+  }
+
+  return null;
+}
+
 function TopSummary({ selected }) {
   const phValue = selected.ph?.[0]?.value || "정보 없음";
   const state = selected.stateCategory || selected.state || "정보 없음";
+  const stateTheme =
+  getChemicalTheme(state);
+  const phTheme =
+    getChemicalTheme(
+      selected.ph?.[0]?.value || ""
+    );
 
   return (
     <div style={styles.summaryArea}>
-      <div style={styles.phWideBox}>
+      <div
+          style={{
+            ...styles.phWideBox,
+
+            ...(phTheme && {
+              background: phTheme.bg,
+              border:
+                "2px solid " + phTheme.border,
+            }),
+          }}
+>
         <div style={styles.summaryTitle}>pH</div>
         <div style={styles.phValue}>{phValue}</div>
       </div>
 
       <div style={styles.summaryGrid2}>
-        <SummaryBox title="성상" value={state} sub={selected.state} />
+        <SummaryBox
+            title="성상"
+            value={state}
+            sub={selected.state}
+            theme={stateTheme}
+          />
         <GhsBox items={selected.ghsPictograms || []} />
       </div>
     </div>
   );
 }
 
-function SummaryBox({ title, value, sub }) {
+function SummaryBox({ title, value, sub, theme }) {
   return (
-    <div style={styles.summaryBox}>
+    <div
+        style={{
+          ...styles.summaryBox,
+
+          ...(theme && {
+            background: theme.bg,
+            border:
+              "2px solid " + theme.border,
+          }),
+        }}
+      >
       <div style={styles.summaryTitle}>{title}</div>
       <div style={styles.summaryValue}>{value}</div>
       {sub && <div style={styles.summarySub}>{sub}</div>}
