@@ -273,8 +273,8 @@ function getChemicalTheme(value = "") {
     text.includes("acid")
   ) {
     return {
-      border: "#f5d48d",
-      bg: "#eee2bd",
+      border: "#fdc44a",
+      bg: "#ffe28b",
     };
   }
 
