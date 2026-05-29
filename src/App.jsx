@@ -582,7 +582,7 @@ const styles = {
     top: 0,
     zIndex: 100,
     background: "#f1f5f9",
-    paddingTop: 6,
+    paddingTop: 8,
     paddingBottom: 8,
   },
 
