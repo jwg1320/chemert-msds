@@ -166,7 +166,11 @@ export default function App() {
 
         <div style={styles.detailCard}>
           <div style={styles.topInfo}>
-            <div>
+            <div
+              style={{
+                paddingTop: 8,
+              }}
+            >
               <div style={styles.bigName}>{selected.nameKo}</div>
               <div style={styles.engName}>{selected.nameEn}</div>
               <div style={styles.cas}>CAS No. {selected.cas}</div>
@@ -582,7 +586,7 @@ const styles = {
     top: 0,
     zIndex: 100,
     background: "#f1f5f9",
-    paddingTop: 8,
+    paddingTop: 6,
     paddingBottom: 8,
   },
 
