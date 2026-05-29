@@ -716,7 +716,7 @@ function Section({ title, icon, children }) {
     <div style={styles.section}>
       <div style={styles.sectionTitle}>
         {icon}
-        <span>{title}</span>
+        <div style={{ flex: 1 }}>{title}</div>
       </div>
       {children}
     </div>
@@ -1027,6 +1027,7 @@ const styles = {
     fontSize: 18,
     fontWeight: 700,
     marginBottom: 14,
+    width: "100%",
   },
 
   infoLine: {
