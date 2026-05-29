@@ -274,7 +274,7 @@ function getChemicalTheme(value = "") {
   ) {
     return {
       border: "#fdc44a",
-      bg: "#ffe28b",
+      bg: "#f8f18a",
     };
   }
 
