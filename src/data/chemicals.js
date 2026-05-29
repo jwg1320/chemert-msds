@@ -33,6 +33,12 @@ export const chemicals = [
       "special": "",
       "code": "H4 F0 I1"
     },
+    "odor": {
+      "profile": "자극적이고 찔러대는 매캐한 냄새 (신맛을 띤 강한 자극취)",
+      "keywords": "자극취, 매캐한냄새, 신취, 불소취",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
+    },
     "exposure": {
       "twa": {
         "value": "0.5 ppm",
@@ -139,6 +145,12 @@ export const chemicals = [
       "instability": 2,
       "special": "W",
       "code": "H3 F0 I2 W"
+    },
+    "odor": {
+      "profile": "상온에서 무취 (고온 가열 또는 흄 발생 시 자극적인 가스취)",
+      "keywords": "무취, 자극취, 황산흄, 가열시자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
     },
     "exposure": {
       "twa": {
@@ -249,6 +261,12 @@ export const chemicals = [
       "special": "",
       "code": "H3 F0 I1"
     },
+    "odor": {
+      "profile": "눈물과 기침을 유발하는 강력하고 자극적인 매캐한 냄새",
+      "keywords": "자극취, 매캐한냄새, 염산취, 눈물유발",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
+    },
     "exposure": {
       "twa": {
         "value": "설정 없음",
@@ -355,6 +373,12 @@ export const chemicals = [
       "instability": 0,
       "special": "OX",
       "code": "H4 F0 I0 OX"
+    },
+    "odor": {
+      "profile": "질소산화물 분해로 인한 자극적이고 질식할 것 같은 매캐한 불쾌취",
+      "keywords": "자극취, 매캐한냄새, 질소산화물취, 불쾌취",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
     },
     "exposure": {
       "twa": {
@@ -469,6 +493,12 @@ export const chemicals = [
       "special": "",
       "code": "H3 F1 I0"
     },
+    "odor": {
+      "profile": "코를 찌르는 강렬하고 특이한 소변/암모니아 자극취",
+      "keywords": "암모니아취, 소변냄새, 찌르는냄새, 자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 조기선행형 (독성농도 도달 전 후각인지 가능)"
+    },
     "exposure": {
       "twa": {
         "value": "25 ppm",
@@ -579,6 +609,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H3 F1 I0"
+    },
+    "odor": {
+      "profile": "약간의 암모니아 또는 생선 비린내 같은 아민취 (저농도는 거의 무취)",
+      "keywords": "아민취, 비린내, 암모니아취, 저농도무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -692,6 +728,12 @@ export const chemicals = [
       "special": "W",
       "code": "H2 F4 I3 W"
     },
+    "odor": {
+      "profile": "불쾌하고 불쾌감을 주는 특이한 불쾌취 (반응 시 메케한 냄새)",
+      "keywords": "불쾌취, 특이취, 자극취, 자연발화성",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
+    },
     "exposure": {
       "twa": {
         "value": "5 ppm",
@@ -803,6 +845,12 @@ export const chemicals = [
       "instability": 2,
       "special": "W",
       "code": "H4 F4 I2 W"
+    },
+    "odor": {
+      "profile": "썩은 생선 냄새 또는 마늘 탄 냄새 (극독성 감지 핵심 지표)",
+      "keywords": "썩은생선, 마늘냄새, 마늘탄냄새, 극독성자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
     },
     "exposure": {
       "twa": {
@@ -916,6 +964,12 @@ export const chemicals = [
       "special": "",
       "code": "H4 F4 I2"
     },
+    "odor": {
+      "profile": "약한 마늘 냄새 (무색이며 냄새가 약해 흡입 위험성 매우 높음)",
+      "keywords": "마늘냄새, 약한마늘취, 희미한냄새, 후각인터록주의",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
+    },
     "exposure": {
       "twa": {
         "value": "0.05 ppm",
@@ -1027,6 +1081,12 @@ export const chemicals = [
       "instability": 3,
       "special": "W",
       "code": "H4 F4 I3 W"
+    },
+    "odor": {
+      "profile": "특이하고 역겨운 달콤한 냄새 (또는 썩은 나무/고기 냄새)",
+      "keywords": "역겨운단내, 달콤한냄새, 썩은나무, 썩은고기",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
     },
     "exposure": {
       "twa": {
@@ -1141,6 +1201,12 @@ export const chemicals = [
       "special": "W",
       "code": "H3 F0 I2 W"
     },
+    "odor": {
+      "profile": "물/습기와 반응하여 발생하는 불화수소 특유의 자극적인 신취",
+      "keywords": "신취, 불산취, 자극취, 가수분해산성취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "설정 없음 (공정 확인)",
@@ -1253,6 +1319,12 @@ export const chemicals = [
       "instability": 3,
       "special": "W, OX",
       "code": "H4 F0 I3 W, OX"
+    },
+    "odor": {
+      "profile": "매우 자극적이고 질식할 것 같은 달콤하면서도 매캐한 냄새",
+      "keywords": "달콤한매캘취, 자극취, 질식취, 산화성가스",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
     },
     "exposure": {
       "twa": {
@@ -1369,6 +1441,12 @@ export const chemicals = [
       "special": "OX",
       "code": "H2 F0 I0 OX"
     },
+    "odor": {
+      "profile": "상온에서 완벽한 무취 (냄새로 누출 감지 불가능)",
+      "keywords": "무취, 후각인지불가, 센서의존필수",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "10 ppm",
@@ -1478,6 +1556,12 @@ export const chemicals = [
       "instability": 3,
       "special": "W, OX",
       "code": "H4 F0 I3 W, OX"
+    },
+    "odor": {
+      "profile": "매우 자극적이고 부식성 있는 독특한 자극취 (오존과 유사)",
+      "keywords": "자극취, 오존냄새, 부식성취, 날카로운냄새",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
     },
     "exposure": {
       "twa": {
@@ -1591,6 +1675,12 @@ export const chemicals = [
       "special": "OX",
       "code": "H3 F0 I0 OX"
     },
+    "odor": {
+      "profile": "수영장 소독약 냄새보다 훨씬 강렬하고 찔러대는 자극취",
+      "keywords": "소독약냄새, 수영장냄새, 찌르는냄새, 자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
+    },
     "exposure": {
       "twa": {
         "value": "0.5 ppm",
@@ -1697,6 +1787,12 @@ export const chemicals = [
       "instability": 2,
       "special": "OX",
       "code": "H4 F0 I2 OX"
+    },
+    "odor": {
+      "profile": "전기 스파크 발생 시 나는 듯한 날카롭고 풀 비린내 같은 자극취",
+      "keywords": "풀비린내, 날카로운냄새, 스파크취, 오존취",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
     },
     "exposure": {
       "twa": {
@@ -1805,6 +1901,12 @@ export const chemicals = [
       "special": "",
       "code": "H0 F4 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취, 무색 (감각으로 절대 누출 인지 불가)",
+      "keywords": "무취, 무색무취, 후각인지불가, 가연성폭발주의",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "단순 질식성",
@@ -1910,6 +2012,12 @@ export const chemicals = [
       "special": "OX",
       "code": "H2 F0 I0 OX"
     },
+    "odor": {
+      "profile": "약간 달콤한 향기가 나는 기체 (마취성 기체)",
+      "keywords": "단내, 달콤한향, 마취성가스",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "25 ppm",
@@ -2014,6 +2122,12 @@ export const chemicals = [
       "instability": 2,
       "special": "W",
       "code": "H3 F4 I2 W"
+    },
+    "odor": {
+      "profile": "염화수소 분해로 인한 날카롭고 자극적인 산성 매캐한 냄새",
+      "keywords": "산성매캐한냄새, 염산취, 자극취, 발연성",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -2122,6 +2236,12 @@ export const chemicals = [
       "special": "W",
       "code": "H3 F4 I2 W"
     },
+    "odor": {
+      "profile": "습기와 즉각 반응하여 발생하는 강력하고 찔러대는 염산취",
+      "keywords": "염산취, 찌르는냄새, 자극취, 습기반응",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "5 ppm",
@@ -2229,6 +2349,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F2 I1"
     },
+    "odor": {
+      "profile": "약간의 알코올 향 또는 달콤하고 자극적인 에스테르 냄새",
+      "keywords": "알코올향, 에스테르취, 달콤한냄새, 자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "10 ppm",
@@ -2330,6 +2456,12 @@ export const chemicals = [
       "instability": 1,
       "special": "W",
       "code": "H4 F0 I1 W"
+    },
+    "odor": {
+      "profile": "질식할 것 같고 찔러대는 매캐한 불산/염산 계열의 자극취",
+      "keywords": "매캐한냄새, 불산취, 염산취, 질식취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -2433,6 +2565,12 @@ export const chemicals = [
       "special": "",
       "code": "H1 F0 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취 (고농도 체류 시에도 감각 인지 불가)",
+      "keywords": "무취, 불연성가스, 후각인지불가",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "1000 ppm",
@@ -2532,6 +2670,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H1 F0 I0"
+    },
+    "odor": {
+      "profile": "완벽한 무취 (질식성 가스)",
+      "keywords": "무취, 질식성가스, 후각인지불가",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
     },
     "exposure": {
       "twa": {
@@ -2633,6 +2777,12 @@ export const chemicals = [
       "instability": 1,
       "special": "",
       "code": "H3 F0 I1"
+    },
+    "odor": {
+      "profile": "무취 (액체/고체 자체는 냄새가 없으나 에어로졸 유출 시 자극취)",
+      "keywords": "무취, 에어로졸자극취, 염기성흄",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
     },
     "exposure": {
       "twa": {
@@ -2739,6 +2889,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F0 I0"
     },
+    "odor": {
+      "profile": "거의 무취 또는 약간의 약한 특이취",
+      "keywords": "무취, 약한특이취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "설정 없음 (공정 확인)",
@@ -2840,6 +2996,12 @@ export const chemicals = [
       "instability": "-",
       "special": "-",
       "code": "H1 F1 I0"
+    },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취, 고체무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -2943,6 +3105,12 @@ export const chemicals = [
       "instability": 1,
       "special": "",
       "code": "H3 F0 I1"
+    },
+    "odor": {
+      "profile": "일반 가정용 락스(소독제) 특유의 강한 염소취",
+      "keywords": "락스냄새, 소독제냄새, 염소취",
+      "volatilityGrade": "",
+      "warningType": "후각 조기선행형 (독성농도 도달 전 후각인지 가능)"
     },
     "exposure": {
       "twa": {
@@ -3049,6 +3217,12 @@ export const chemicals = [
       "special": "OX",
       "code": "H3 F0 I1 OX"
     },
+    "odor": {
+      "profile": "약간 찔러대는 듯한 특이한 신취 (저농도는 무취)",
+      "keywords": "신취, 특이신취, 저농도무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "1 ppm",
@@ -3153,6 +3327,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F1 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취 (달콤한 맛이 나나 기화가 잘 안 되어 냄새 없음)",
+      "keywords": "무취, 달콤한맛",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "50 ppm",
@@ -3254,6 +3434,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H0 F1 I0"
+    },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -3357,6 +3543,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H2 F3 I0"
+    },
+    "odor": {
+      "profile": "병원 소독용 알코올 또는 문구용 마카펜 특유의 강한 알코올 취",
+      "keywords": "알코올취, 소독약냄새, 마카펜냄새, 휘발취",
+      "volatilityGrade": "",
+      "warningType": "후각 조기선행형 (독성농도 도달 전 후각인지 가능)"
     },
     "exposure": {
       "twa": {
@@ -3462,6 +3654,12 @@ export const chemicals = [
       "special": "SA",
       "code": "H0 F0 I0 SA"
     },
+    "odor": {
+      "profile": "완벽한 무취 (누출 시 무증상 질식 위험 극도로 높음)",
+      "keywords": "무취, 무색무취, 단순질식위험, 밀폐공간주의",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "단순 질식성",
@@ -3562,6 +3760,12 @@ export const chemicals = [
       "special": "SA",
       "code": "H0 F0 I0 SA"
     },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "단순 질식성",
@@ -3660,6 +3864,12 @@ export const chemicals = [
       "instability": 0,
       "special": "SA",
       "code": "H0 F0 I0 SA"
+    },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취, 불활성질식",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
     },
     "exposure": {
       "twa": {
@@ -3761,6 +3971,12 @@ export const chemicals = [
       "instability": 0,
       "special": "OX",
       "code": "H0 F0 I0 OX"
+    },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
     },
     "exposure": {
       "twa": {
@@ -3864,6 +4080,12 @@ export const chemicals = [
       "special": "SA",
       "code": "H2 F0 I0 SA"
     },
+    "odor": {
+      "profile": "무취 (고농도 흡입 시 코끝이 찡한 탄산수 느낌의 자극)",
+      "keywords": "무취, 코찡함, 탄산취, 고농도자극",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "5000 ppm",
@@ -3963,6 +4185,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H3 F4 I0"
+    },
+    "odor": {
+      "profile": "완벽한 무취, 무색 (자각 증상 없는 죽음의 가스취)",
+      "keywords": "무취, 무색무취, 자각증상없음, 극독성질식",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
     },
     "exposure": {
       "twa": {
@@ -4069,6 +4297,12 @@ export const chemicals = [
       "special": "-",
       "code": "H4 F4 I0"
     },
+    "odor": {
+      "profile": "구린내, 썩은 달걀 냄새 (고농도 시 후각 마비로 무취 인지 주의)",
+      "keywords": "구린내, 썩은달걀, 똥냄새, 후각마비주의",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
+    },
     "exposure": {
       "twa": {
         "value": "1 ppm",
@@ -4173,6 +4407,12 @@ export const chemicals = [
       "special": "-",
       "code": "H3 F0 I0"
     },
+    "odor": {
+      "profile": "성냥 탈 때 나는 매캐하고 찔러대는 불쾌한 황 자극취",
+      "keywords": "성냥탄냄새, 황자극취, 불쾌취, 매캐한냄새",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
+    },
     "exposure": {
       "twa": {
         "value": "2 ppm",
@@ -4276,6 +4516,12 @@ export const chemicals = [
       "special": "",
       "code": "H1 F0 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "10 mg/m³",
@@ -4377,6 +4623,12 @@ export const chemicals = [
       "instability": 1,
       "special": "",
       "code": "H3 F0 I1"
+    },
+    "odor": {
+      "profile": "약간의 매캐한 불산 자극취 및 암모니아 혼합취",
+      "keywords": "불산취, 암모니아취, 혼합자극취, 매캐한냄새",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -4481,6 +4733,12 @@ export const chemicals = [
       "special": "",
       "code": "H3 F0 I0"
     },
+    "odor": {
+      "profile": "상온에서 무취 (분무되거나 흄 발생 시 약간의 자극취)",
+      "keywords": "무취, 흄발생시자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "1 mg/m³",
@@ -4583,6 +4841,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H3 F2 I0"
+    },
+    "odor": {
+      "profile": "강력하고 시큼한 식초 고유의 자극취",
+      "keywords": "식초냄새, 시큼한냄새, 자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 조기선행형 (독성농도 도달 전 후각인지 가능)"
     },
     "exposure": {
       "twa": {
@@ -4687,6 +4951,12 @@ export const chemicals = [
       "special": "-",
       "code": "H2 F0 I1"
     },
+    "odor": {
+      "profile": "약간의 매캐한 불소계 특이취",
+      "keywords": "불소계특이취, 매캐한냄새",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "HF 기준 적용 검토",
@@ -4789,6 +5059,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H2 F3 I0"
+    },
+    "odor": {
+      "profile": "달콤한 듯하면서도 톡 쏘는 강한 휘발유/페인트 시너 냄새",
+      "keywords": "휘발유냄새, 페인트냄새, 시너냄새, 달콤한석유취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -4894,6 +5170,12 @@ export const chemicals = [
       "special": "",
       "code": "H3 F1 I1"
     },
+    "odor": {
+      "profile": "썩은 달걀 냄새 (습기나 산과 반응 시 황화수소 방출)",
+      "keywords": "썩은달걀, 황화수소취, 습기반응",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
+    },
     "exposure": {
       "twa": {
         "value": "H2S 기준 적용 검토",
@@ -4998,6 +5280,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F0 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "1 mg/m³",
@@ -5099,6 +5387,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H3 F0 I0"
+    },
+    "odor": {
+      "profile": "약간의 메마른 철 냄새 또는 약한 염산 취",
+      "keywords": "철냄새, 약한염산취, 메마른취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -5203,6 +5497,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F0 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "5 mg/m³",
@@ -5305,6 +5605,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F1 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "설정 없음",
@@ -5406,6 +5712,12 @@ export const chemicals = [
       "instability": 0,
       "special": "OX",
       "code": "H1 F0 I0 OX"
+    },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -5510,6 +5822,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F0 I0"
     },
+    "odor": {
+      "profile": "성냥 탈 때 나는 듯한 자극적인 이산화황/황화 취",
+      "keywords": "성냥탄냄새, 이산화황취, 황화취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "5 mg/m³",
@@ -5612,6 +5930,12 @@ export const chemicals = [
       "special": "-",
       "code": "H1 F1 I0"
     },
+    "odor": {
+      "profile": "무취 또는 미미한 숯/흙 냄새",
+      "keywords": "무취, 숯냄새, 흙냄새",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "분진 기준 적용",
@@ -5712,6 +6036,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H2 F0 I0"
+    },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -5815,6 +6145,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F1 I0"
     },
+    "odor": {
+      "profile": "약간의 에테르와 유사한 달콤하고 희미한 클로로포름 냄새",
+      "keywords": "에테르취, 클로로포름냄새, 달콤한향",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "50 ppm",
@@ -5915,6 +6251,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H1 F1 I0"
+    },
+    "odor": {
+      "profile": "거의 무취 또는 희미한 에테르 계열의 달콤한 향",
+      "keywords": "무취, 에테르향, 달콤한향, 희미한유기취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -6017,6 +6359,12 @@ export const chemicals = [
       "special": "-",
       "code": "H1 F0 I0"
     },
+    "odor": {
+      "profile": "거의 무취 또는 약간의 희미한 유기 가스 향",
+      "keywords": "무취, 희미한유기취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "1000 ppm",
@@ -6118,6 +6466,12 @@ export const chemicals = [
       "special": "",
       "code": "H1 F0 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "10 mg/m³",
@@ -6215,6 +6569,12 @@ export const chemicals = [
       "special": "",
       "code": "H1 F0 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "10 mg/m³",
@@ -6311,6 +6671,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H2 F1 I0"
+    },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
     },
     "exposure": {
       "twa": {
@@ -6412,6 +6778,12 @@ export const chemicals = [
       "instability": 3,
       "special": "OX",
       "code": "H2 F0 I3 OX"
+    },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -6516,6 +6888,12 @@ export const chemicals = [
       "special": "",
       "code": "H3 F1 I0"
     },
+    "odor": {
+      "profile": "찌르는 듯한 강력한 암모니아 자극취",
+      "keywords": "암모니아취, 찌르는냄새, 소변냄새, 자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 조기선행형 (독성농도 도달 전 후각인지 가능)"
+    },
     "exposure": {
       "twa": {
         "value": "25 ppm",
@@ -6618,6 +6996,12 @@ export const chemicals = [
       "instability": "-",
       "special": "-",
       "code": "H2 F3 I0"
+    },
+    "odor": {
+      "profile": "강렬하고 톡 쏘는 아세톤 및 THF 혼합 유기용제 냄새",
+      "keywords": "아세톤냄새, THF냄새, 유기용제취, 톡쏘는냄새",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -6722,6 +7106,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F3 I1"
     },
+    "odor": {
+      "profile": "에테르와 유사한 톡 쏘는 강렬한 과일 향 및 용제 취",
+      "keywords": "에테르취, 과일향, 톡쏘는냄새, 유기용제취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "200 ppm",
@@ -6825,6 +7215,12 @@ export const chemicals = [
       "instability": "-",
       "special": "-",
       "code": "H3 F2 I4 OX"
+    },
+    "odor": {
+      "profile": "식초보다 훨씬 강렬하고 찔러대는 부식성 신취",
+      "keywords": "식초냄새, 강력한신취, 부식성자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 조기선행형 (독성농도 도달 전 후각인지 가능)"
     },
     "exposure": {
       "twa": {
@@ -6932,6 +7328,12 @@ export const chemicals = [
       "special": "",
       "code": "H3 F4 I0"
     },
+    "odor": {
+      "profile": "자극적이고 눈물이 핑 도는 특유의 메케한 박제/방부제 냄새",
+      "keywords": "방부제냄새, 박제냄새, 매케한냄새, 눈물유발",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
+    },
     "exposure": {
       "twa": {
         "value": "0.75 ppm",
@@ -7034,6 +7436,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H2 F3 I0"
+    },
+    "odor": {
+      "profile": "아세톤과 유사하면서도 약간 더 시큼하고 강한 용제 냄새",
+      "keywords": "아세톤냄새, 시큼한용제취, 휘발취",
+      "volatilityGrade": "",
+      "warningType": "후각 조기선행형 (독성농도 도달 전 후각인지 가능)"
     },
     "exposure": {
       "twa": {
@@ -7138,6 +7546,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F3 I0"
     },
+    "odor": {
+      "profile": "벤젠/페인트 시너 특유의 강렬하고 달콤한 석유 화학 취",
+      "keywords": "페인트냄새, 시너냄새, 석유화학취, 달콤한향",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "20 ppm",
@@ -7240,6 +7654,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F1 I0"
     },
+    "odor": {
+      "profile": "순수 물질은 무취이나 가열/분해 시 마늘 또는 썩은 양파 냄새",
+      "keywords": "무취, 가열시마늘냄새, 썩은양파냄새",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "250 ppm",
@@ -7340,6 +7760,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H2 F1 I0"
+    },
+    "odor": {
+      "profile": "희미하고 온화한 아민/유기용제 냄새 (자극적이지 않음)",
+      "keywords": "아민취, 유기용제취, 온화한냄새",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -7442,6 +7868,12 @@ export const chemicals = [
       "special": "",
       "code": "H2 F2 I0"
     },
+    "odor": {
+      "profile": "희미한 암모니아 또는 생선 비린내 같은 아민취",
+      "keywords": "암모니아취, 비린내, 아민취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "10 ppm",
@@ -7543,6 +7975,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H2 F2 I0"
+    },
+    "odor": {
+      "profile": "희미한 생선 비린내 같은 특이 아민취",
+      "keywords": "비린내, 특이아민취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -7647,6 +8085,12 @@ export const chemicals = [
       "special": "OX",
       "code": "H3 F0 I3 OX"
     },
+    "odor": {
+      "profile": "상온에서 무취 (가열 분해 시 자극적인 염소 가스취)",
+      "keywords": "무취, 가열시염소취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "1 mg/m³",
@@ -7750,6 +8194,12 @@ export const chemicals = [
       "instability": 4,
       "special": "",
       "code": "H1 F3 I4"
+    },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -7856,6 +8306,12 @@ export const chemicals = [
       "special": "",
       "code": "H1 F3 I0"
     },
+    "odor": {
+      "profile": "에탄올(술)과 유사하나 약간 더 날카롭고 자극적인 알코올 냄새",
+      "keywords": "알코올취, 술냄새, 날카로운알코올취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "200 ppm",
@@ -7957,6 +8413,12 @@ export const chemicals = [
       "instability": 0,
       "special": "",
       "code": "H1 F3 I0"
+    },
+    "odor": {
+      "profile": "향긋하면서도 코를 찌르는 특유의 매니큐어 리무버 휘발 취",
+      "keywords": "매니큐어리무버, 아세톤취, 향긋한톡쏘는냄새",
+      "volatilityGrade": "",
+      "warningType": "후각 조기선행형 (독성농도 도달 전 후각인지 가능)"
     },
     "exposure": {
       "twa": {
@@ -8060,6 +8522,12 @@ export const chemicals = [
       "instability": 0,
       "special": "OX",
       "code": "H4 F0 I0 OX"
+    },
+    "odor": {
+      "profile": "염소보다 훨씬 무겁고 숨이 막히는 강렬하고 불쾌한 자극적 질식취",
+      "keywords": "질식취, 불쾌한자극취, 염소보다강한취, 무거운냄새",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
     },
     "exposure": {
       "twa": {
@@ -8165,6 +8633,12 @@ export const chemicals = [
       "special": "OX",
       "code": "H3 F0 I0 OX"
     },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "0.01 mg/m³",
@@ -8267,6 +8741,12 @@ export const chemicals = [
       "instability": 0,
       "special": "OX",
       "code": "H2 F0 I0 OX"
+    },
+    "odor": {
+      "profile": "완벽한 무취",
+      "keywords": "무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -8373,6 +8853,12 @@ export const chemicals = [
       "instability": 0,
       "special": "설정 없음 (공정 확인)",
       "code": "H3 F0 I0"
+    },
+    "odor": {
+      "profile": "금속성의 메마른 무취 액체",
+      "keywords": "철냄새, 메마른취, 무취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -8485,6 +8971,12 @@ export const chemicals = [
       "special": "W",
       "code": "H3 F0 I2 W"
     },
+    "odor": {
+      "profile": "오염물 분해로 인한 탁하고 매캐한 황 화합물 자극취",
+      "keywords": "매캐한냄새, 황화합물취, 탁한자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "1 mg/m³",
@@ -8594,6 +9086,12 @@ export const chemicals = [
       "instability": 0,
       "special": "설정 없음 (공정 확인)",
       "code": "H3 F0 I0"
+    },
+    "odor": {
+      "profile": "상온 무취 또는 약간의 시큼한 유기물 혼합취",
+      "keywords": "무취, 시큼한혼합취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -8707,6 +9205,12 @@ export const chemicals = [
       "special": "-",
       "code": "H2 F3 I1"
     },
+    "odor": {
+      "profile": "에스테르 및 아세톤계 혼합 유기용제(PGMEA) 특유의 강한 시너 냄새",
+      "keywords": "시너냄새, 유기용제취, 아세톤냄새, 에스테르취, PGMEA취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "제품별 상이 (약 100 ppm)",
@@ -8815,6 +9319,12 @@ export const chemicals = [
       "special": "-",
       "code": "H3 F3 I1"
     },
+    "odor": {
+      "profile": "유기 규소취 및 수분 반응 시 발생하는 톡 쏘는 암모니아 자극취",
+      "keywords": "유기규소취, 암모니아취, 톡쏘는냄새, 자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "10 ppm",
@@ -8921,6 +9431,12 @@ export const chemicals = [
       "special": "-",
       "code": "H0 F1 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취 (고체 플라스틱 펠렛 재질)",
+      "keywords": "무취, 고체플라스틱",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "설정 없음",
@@ -9023,6 +9539,12 @@ export const chemicals = [
       "instability": 1,
       "special": "-",
       "code": "H2 F3 I1"
+    },
+    "odor": {
+      "profile": "아미노실란 계열 특유의 톡 쏘는 생선 비린내 및 아민 자극취",
+      "keywords": "비린내, 아민취, 자극취, 아미노실란취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -9133,6 +9655,12 @@ export const chemicals = [
       "special": "-",
       "code": "H2 F3 I0"
     },
+    "odor": {
+      "profile": "바나나 또는 사과가 썩은 듯한 달콤하면서도 강렬한 과일 향 용제취",
+      "keywords": "바나나냄새, 썩은사과향, 과일향용제취, 달콤한향",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "150 ppm",
@@ -9238,6 +9766,12 @@ export const chemicals = [
       "special": "-",
       "code": "H2 F3 I0"
     },
+    "odor": {
+      "profile": "알코올, 에테르, 케톤류가 섞인 탁하고 매캐한 혼합 유기용제 냄새",
+      "keywords": "혼합유기용제취, 매캐한냄새, 알코올취, 에테르취, 케톤취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "설정 없음",
@@ -9338,6 +9872,12 @@ export const chemicals = [
       "instability": 2,
       "special": "W",
       "code": "H3 F0 I2 W"
+    },
+    "odor": {
+      "profile": "공기 중 습기와 반응하여 발생하는 강력하고 찔러대는 염산 매캐한 취",
+      "keywords": "매캐한냄새, 염산취, 찌르는냄새, 자극취, 습기반응",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
     },
     "exposure": {
       "twa": {
@@ -9443,6 +9983,12 @@ export const chemicals = [
       "instability": 0,
       "special": "-",
       "code": "H3 F1 I0"
+    },
+    "odor": {
+      "profile": "불산, 질산, 초산이 혼합되어 코를 찌르는 시큼하고 부식성 있는 산 자극취",
+      "keywords": "시큼한냄새, 산자극취, 부식성취, 혼산취",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
     },
     "exposure": {
       "twa": {
@@ -9550,6 +10096,12 @@ export const chemicals = [
       "special": "W",
       "code": "H3 F0 I2 W"
     },
+    "odor": {
+      "profile": "습기와 격렬히 반응하여 눈물과 기침을 유발하는 염화수소 질식취",
+      "keywords": "염화수소취, 질식취, 눈물유발, 습기반응",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
+    },
     "exposure": {
       "twa": {
         "value": "0.5 mg/m³",
@@ -9652,6 +10204,12 @@ export const chemicals = [
       "instability": 1,
       "special": "W",
       "code": "H4 F0 I1 W"
+    },
+    "odor": {
+      "profile": "가수분해로 인해 발생하는 불화수소($HF$) 특유의 찔러대는 신취",
+      "keywords": "찔러대는신취, 불산취, 자극취, 가수분해",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
     },
     "exposure": {
       "twa": {
@@ -9761,6 +10319,12 @@ export const chemicals = [
       "special": "-",
       "code": "H4 F4 I3"
     },
+    "odor": {
+      "profile": "역겨우면서도 자극적인 찔러대는 마늘 탄 불쾌취",
+      "keywords": "마늘냄새, 마늘탄냄새, 역겨운냄새, 불쾌취",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
+    },
     "exposure": {
       "twa": {
         "value": "0.2 ppm",
@@ -9868,6 +10432,12 @@ export const chemicals = [
       "special": "-",
       "code": "H3 F4 I0"
     },
+    "odor": {
+      "profile": "강렬한 생선 비린내와 암모니아가 섞인 듯한 톡 쏘는 아민취",
+      "keywords": "비린내, 암모니아취, 톡쏘는냄새, 아민취",
+      "volatilityGrade": "",
+      "warningType": "후각 조기선행형 (독성농도 도달 전 후각인지 가능)"
+    },
     "exposure": {
       "twa": {
         "value": "5 ppm",
@@ -9969,6 +10539,12 @@ export const chemicals = [
       "instability": 2,
       "special": "W",
       "code": "H4 F0 I2 W"
+    },
+    "odor": {
+      "profile": "습기와 반응하여 염산취를 동반하는 찔러대고 목이 메는 자극취",
+      "keywords": "염산취, 자극취, 목이메는냄새, 습기반응",
+      "volatilityGrade": "",
+      "warningType": "후각 마비/위험형 (인지순간 이미 독성노출 또는 후각마비)"
     },
     "exposure": {
       "twa": {
@@ -10076,6 +10652,12 @@ export const chemicals = [
       "special": "-",
       "code": "H1 F2 I0"
     },
+    "odor": {
+      "profile": "거의 무취 또는 희미하고 달콤한 에테르 계열 유기 가스 향",
+      "keywords": "무취, 에테르향, 유기가스향, 달콤한향",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
+    },
     "exposure": {
       "twa": {
         "value": "1000 ppm (제조사 권고)",
@@ -10180,6 +10762,12 @@ export const chemicals = [
       "instability": 1,
       "special": "-",
       "code": "H3 F3 I1"
+    },
+    "odor": {
+      "profile": "희미하고 독특한 플루오르올레핀 계열의 유기 가스취",
+      "keywords": "유기가스취, 희미한유기취, 특이취",
+      "volatilityGrade": "",
+      "warningType": "후각 지연형 (MSDS 및 물리센서 크로스체크 필요)"
     },
     "exposure": {
       "twa": {
@@ -10287,6 +10875,12 @@ export const chemicals = [
       "special": "-",
       "code": "H1 F0 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취 (고온 분해 전까지 후각 인지 불가)",
+      "keywords": "무취, 후각인지불가, 고온분해주의",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "설정 없음",
@@ -10393,6 +10987,12 @@ export const chemicals = [
       "special": "-",
       "code": "H1 F0 I0"
     },
+    "odor": {
+      "profile": "완벽한 무취 (불소계 퍼플루오로폴리에테르의 안정적인 성상)",
+      "keywords": "무취, 불소계무취, 안정적성상",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
+    },
     "exposure": {
       "twa": {
         "value": "설정 없음",
@@ -10496,6 +11096,12 @@ export const chemicals = [
       "instability": 2,
       "special": "W",
       "code": "H3 F0 I2 W"
+    },
+    "odor": {
+      "profile": "상온에서 거의 무취이나 유기물 오염 시 약간의 매캐한 황산 흄 취",
+      "keywords": "무취, 황산흄취, 매캐한냄새, 오염시자극취",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
     },
     "exposure": {
       "twa": {
@@ -10601,6 +11207,12 @@ export const chemicals = [
       "instability": 0,
       "special": "-",
       "code": "H0 F1 I0"
+    },
+    "odor": {
+      "profile": "완벽한 무취 (수처리용 아민계 고분자 응집제 규격)",
+      "keywords": "무취, 아민계고분자",
+      "volatilityGrade": "",
+      "warningType": "후각 인지불가 (무취 물질로 가스센서에만 의존필수)"
     },
     "exposure": {
       "twa": {

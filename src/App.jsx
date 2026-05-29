@@ -193,6 +193,7 @@ export default function App() {
             <InfoLine title="화학식" value={selected.formula} />
             <InfoLine title="상태" value={selected.state} />
             <InfoLine title="성상분류" value={selected.stateCategory} />
+            <InfoLine title="냄새 키워드" value={selected.odor?.keywords} />
             <InfoLine title="공정" value={selected.process} />
           </Section>
 
@@ -249,6 +250,40 @@ export default function App() {
               title="중화제 필요성"
               value={selected.neutralization?.neutralizerNeed}
             />
+          </Section>
+
+          <Section
+            title="냄새 정보"
+            icon={<Wind size={18} />}
+          >
+            <InfoLine
+              title="냄새 프로필"
+              value={selected.odor?.profile}
+            />
+
+            <div style={styles.odorGrid}>
+              <div style={styles.odorBox}>
+                <div style={styles.odorTitle}>
+                  휘발성 등급
+                </div>
+
+                <div style={styles.odorValue}>
+                  {selected.odor?.volatilityGrade ||
+                    "-"}
+                </div>
+              </div>
+
+              <div style={styles.odorBox}>
+                <div style={styles.odorTitle}>
+                  후각경보유형
+                </div>
+
+                <div style={styles.odorValue}>
+                  {selected.odor?.warningType ||
+                    "-"}
+                </div>
+              </div>
+            </div>
           </Section>
 
           <Section title="권장 보호구" icon={<ShieldCheck size={18} />}>
@@ -1193,4 +1228,30 @@ ghsMiniTag: {
   lineHeight: 1.2,
 },
   
+odorGrid: {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  gap: 10,
+  marginTop: 12,
+},
+
+odorBox: {
+  background: "#f8fafc",
+  border: "1px solid #e2e8f0",
+  borderRadius: 14,
+  padding: 14,
+},
+
+odorTitle: {
+  fontSize: 12,
+  color: "#64748b",
+  marginBottom: 6,
+  fontWeight: 700,
+},
+
+odorValue: {
+  fontSize: 16,
+  fontWeight: 800,
+},
+
 };
