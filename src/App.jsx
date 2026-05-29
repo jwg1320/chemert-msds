@@ -101,7 +101,17 @@ export default function App() {
         ${c.formula}
         ${c.cas}
         ${(c.aliases || []).join(" ")}
+
         ${c.process}
+        ${c.stateCategory || ""}
+        ${c.state || ""}
+
+        ${c.odor?.keywords || ""}
+        ${c.odor?.profile || ""}
+        ${c.odor?.warningType || ""}
+        ${c.odor?.volatilityGrade || ""}
+
+        ${(c.mainHazards || []).join(" ")}
       `.toLowerCase();
 
       return text.includes(query.toLowerCase());
