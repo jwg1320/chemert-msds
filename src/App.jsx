@@ -411,7 +411,7 @@ export default function App() {
 
                 <div style={styles.odorBox}>
                   <div style={styles.odorTitle}>
-                    확산 특성
+                    확산 특성 TEST
                   </div>
 
                   <div
@@ -447,7 +447,6 @@ export default function App() {
                 </div>
               </div>
 
-            </div>
           </Section>
 
           <Section title="권장 보호구" icon={<ShieldCheck size={18} />}>
@@ -850,7 +849,7 @@ function getDispersionLabel(selected) {
   if (savedType) {
   return savedType;
   }
-  
+
   const volatility = selected?.odor?.volatilityGrade || "";
   const density = selected?.physical?.density || "";
   const state = `${selected?.state || ""} ${selected?.stateCategory || ""}`;
