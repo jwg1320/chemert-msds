@@ -351,19 +351,11 @@ export default function App() {
 
                   <b>후각 지연형</b>
                   <br />
-                  유출 초기에는 FFU(공조) 영향이나
-                  낮은 기화속도로 인해 냄새가
-                  잘 감지되지 않다가,
-                  액체가 넓게 퍼지거나
-                  공정 열원에 의해 기화량이 증가하면서
-                  뒤늦게 냄새가 급격히 올라오는 유형
+                  유출 초기에는 냄새가 미약하거나 없지만
+                  시간 경과 후 급격히 증가하는 유형
                   <br />
-                  냄새를 인지한 시점에는
-                  이미 독성 허용농도(TWA)를
-                  초과했거나 인화성 위험범위에
-                  도달했을 가능성이 높아
-                  후각만 신뢰하면
-                  초기 골든타임을 놓칠 수 있음
+                  냄새 인지 시 이미 독성 또는
+                  인화성 위험범위에 도달했을 가능성이 높음
                   <br />
                   예) PR, HMDS, nBA, LTO520, 과산화수소
 
@@ -394,30 +386,51 @@ export default function App() {
                 </div>
               )}
 
-            <InfoLine
-              title="냄새 프로필"
-              value={selected.odor?.profile}
-            />
+              <InfoLine
+                title="냄새 프로필"
+                value={selected.odor?.profile}
+              />
 
-            <div style={styles.odorGrid}>
-              <div style={styles.odorBox}>
-                <div style={styles.odorTitle}>
-                  휘발성 등급
+              <div style={styles.odorGrid}>
+                <div style={styles.odorBox}>
+                  <div style={styles.odorTitle}>
+                    휘발성 등급
+                  </div>
+
+                  <div
+                    style={{
+                      ...styles.odorBadge,
+                      ...getVolatilityStyle(
+                        selected.odor?.volatilityGrade || ""
+                      ),
+                    }}
+                  >
+                    {selected.odor?.volatilityGrade || "-"}
+                  </div>
                 </div>
 
-                <div
-                  style={{
-                    ...styles.odorBadge,
-                    ...getVolatilityStyle(
-                      selected.odor?.volatilityGrade || ""
-                    ),
-                  }}
-                >
-                  {selected.odor?.volatilityGrade || "-"}
+                <div style={styles.odorBox}>
+                  <div style={styles.odorTitle}>
+                    확산 특성
+                  </div>
+
+                  <div
+                    style={{
+                      ...styles.odorBadge,
+                      ...getDispersionStyle(selected),
+                    }}
+                  >
+                    {getDispersionLabel(selected)}
+                  </div>
                 </div>
               </div>
 
-              <div style={styles.odorBox}>
+              <div
+                style={{
+                  ...styles.odorBox,
+                  marginTop: 10,
+                }}
+              >
                 <div style={styles.odorTitle}>
                   후각경보유형
                 </div>
@@ -433,6 +446,7 @@ export default function App() {
                   {selected.odor?.warningType || "-"}
                 </div>
               </div>
+
             </div>
           </Section>
 
@@ -826,6 +840,119 @@ function getWarningStyle(value = "") {
   }
 
   return {};
+}
+
+function getDispersionLabel(selected) {
+  const volatility = selected?.odor?.volatilityGrade || "";
+  const density = selected?.physical?.density || "";
+  const state = `${selected?.state || ""} ${selected?.stateCategory || ""}`;
+  const text = `${density} ${state}`.toLowerCase();
+
+  if (volatility.includes("비휘발성")) {
+    return "🚫 증기 확산 영향 미미";
+  }
+
+  if (volatility.includes("상시기체")) {
+    if (
+      text.includes("가벼움") ||
+      text.includes("lighter") ||
+      text.includes("수소") ||
+      text.includes("암모니아")
+    ) {
+      return "⬆️ 상부 확산형";
+    }
+
+    if (
+      text.includes("무거움") ||
+      text.includes("heavier") ||
+      selected?.flags?.heavierThanAir
+    ) {
+      return "⬇️ 저지대 체류형";
+    }
+
+    return "↔️ 공간 확산형";
+  }
+
+  if (
+    selected?.flags?.heavierThanAir ||
+    text.includes("공기보다 무거움") ||
+    text.includes("증기밀도 > 1")
+  ) {
+    return "⬇️ 저지대 체류형";
+  }
+
+  if (
+    text.includes("공기보다 가벼움") ||
+    text.includes("증기밀도 < 1")
+  ) {
+    return "⬆️ 상부 확산형";
+  }
+
+  if (
+    volatility.includes("고휘발성") ||
+    volatility.includes("저휘발성")
+  ) {
+    return "↔️ 공간 확산형";
+  }
+
+  return "확인 필요";
+}
+
+function getDispersionStyle(selected) {
+  const label = getDispersionLabel(selected);
+
+  if (label.includes("저지대")) {
+    return {
+      background: "#fee2e2",
+      border: "1px solid #dc2626",
+      color: "#991b1b",
+    };
+  }
+
+  if (label.includes("상부")) {
+    return {
+      background: "#dbeafe",
+      border: "1px solid #2563eb",
+      color: "#1e40af",
+    };
+  }
+
+  if (label.includes("공간")) {
+    return {
+      background: "#fef3c7",
+      border: "1px solid #eab308",
+      color: "#854d0e",
+    };
+  }
+
+  if (label.includes("미미")) {
+    return {
+      background: "#f1f5f9",
+      border: "1px solid #94a3b8",
+      color: "#334155",
+    };
+  }
+
+  return {
+    background: "#f8fafc",
+    border: "1px solid #cbd5e1",
+    color: "#475569",
+  };
+}
+
+  if (label.includes("미미")) {
+    return {
+      background: "#f1f5f9",
+      border: "1px solid #94a3b8",
+      color: "#334155",
+    };
+  }
+
+  return {
+    background: "#fef3c7",
+    border: "1px solid #eab308",
+    color: "#854d0e",
+  };
 }
 
 function Section({ title, icon, children }) {
