@@ -274,7 +274,7 @@ function getChemicalTheme(value = "") {
   ) {
     return {
       border: "#FFB000",
-      bg: "#FFD34D",
+      bg: "#fae5a4",
     };
   }
 
@@ -286,7 +286,7 @@ function getChemicalTheme(value = "") {
   ) {
     return {
       border: "#002060",
-      bg: "#0A2E7A",
+      bg: "#356ee7",
     };
   }
 
@@ -296,8 +296,8 @@ function getChemicalTheme(value = "") {
     text.includes("organic")
   ) {
     return {
-      border: "#C00000",
-      bg: "#FF2020",
+      border: "#f54545",
+      bg: "#fa9494",
     };
   }
 
