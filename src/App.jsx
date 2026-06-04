@@ -512,7 +512,6 @@ function TopSummary({ selected }) {
         <div style={styles.phValue}>{phValue}</div>
       </div>
 
-
       <GhsBox items={selected.ghsPictograms || []} />
     </div>
   );
@@ -1188,12 +1187,6 @@ const styles = {
     minWidth: 0,
   },
 
-  summaryGrid2: {
-    display: "grid",
-    gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
-    gap: 10,
-  },
-
   summaryArea: {
     marginBottom: 24,
   },
@@ -1647,8 +1640,8 @@ odorBadge: {
 },
 
 ghsMiniImage: {
-  width: 40,
-  height: 40,
+  width: 55,
+  height: 55,
   objectFit: "contain",
 },
 
