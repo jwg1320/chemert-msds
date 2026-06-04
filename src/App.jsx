@@ -195,10 +195,6 @@ export default function App() {
             <CriticalFlags flags={flags} />
           </Section>
 
-          <Section title="GHS 경고표지" icon={<BadgeAlert size={18} />}>
-            <TagWrap items={selected.ghsPictograms || []} />
-          </Section>
-
           <Section title="기본 정보" icon={<Activity size={18} />}>
             <InfoLine title="화학식" value={selected.formula} />
             <InfoLine title="상태" value={selected.state} />
@@ -598,15 +594,46 @@ function GhsBox({ items }) {
   return (
     <div style={styles.ghsBox}>
       <div style={styles.summaryTitle}>GHS</div>
+
       <div style={styles.ghsMiniWrap}>
         {items.map((item, index) => (
-          <div key={index} style={styles.ghsMiniTag}>
-            {item}
+          <div key={index} style={styles.ghsMiniItem}>
+            <img
+              src={`/ghs/${getGhsImage(item)}`}
+              alt={item}
+              title={item}
+              style={styles.ghsMiniImage}
+            />
+            <div style={styles.ghsMiniLabel}>
+              {cleanGhsLabel(item)}
+            </div>
           </div>
         ))}
       </div>
     </div>
   );
+}
+
+function cleanGhsLabel(value = "") {
+  return String(value)
+    .replace(/[^\uAC00-\uD7A3A-Za-z0-9\s]/g, "")
+    .trim();
+}
+
+function getGhsImage(value = "") {
+  const text = String(value);
+
+  if (text.includes("급성독성")) return "skull.png";
+  if (text.includes("부식")) return "corrosion.png";
+  if (text.includes("건강유해")) return "health.png";
+  if (text.includes("인화")) return "flammable.png";
+  if (text.includes("산화")) return "oxidizer.png";
+  if (text.includes("고압가스")) return "gas.png";
+  if (text.includes("폭발")) return "explosive.png";
+  if (text.includes("환경")) return "environment.png";
+  if (text.includes("경고")) return "exclamation.png";
+
+  return "exclamation.png";
 }
 
 function getFlags(c) {
@@ -1548,7 +1575,9 @@ ghsBox: {
 ghsMiniWrap: {
   display: "flex",
   flexWrap: "wrap",
-  gap: 6,
+  gap: 8,
+  justifyContent: "center",
+  alignItems: "flex-start",
 },
 
 ghsMiniTag: {
@@ -1560,7 +1589,14 @@ ghsMiniTag: {
   fontWeight: 700,
   lineHeight: 1.2,
 },
-  
+
+ghsMiniItem: {
+  width: 52,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+},
+
 odorGrid: {
   display: "grid",
   gridTemplateColumns: "1fr 1fr",
@@ -1615,6 +1651,21 @@ odorBadge: {
   fontSize: 13,
   fontWeight: 700,
   textAlign: "center",
+},
+
+ghsMiniImage: {
+  width: 40,
+  height: 40,
+  objectFit: "contain",
+},
+
+ghsMiniLabel: {
+  marginTop: 3,
+  fontSize: 10,
+  fontWeight: 700,
+  color: "#475569",
+  textAlign: "center",
+  lineHeight: 1.15,
 },
 
 };
