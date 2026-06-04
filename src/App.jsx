@@ -1102,8 +1102,6 @@ const styles = {
   chemicalCard: {
     minWidth: 92,
     background: "white",
-    color: "#0f172a",
-    WebkitTextFillColor: "#0f172a",
     borderRadius: 16,
     padding: 10,
     cursor: "pointer",
@@ -1112,19 +1110,21 @@ const styles = {
   },
 
   chemicalName: {
-    color: "#0f172a",
-    WebkitTextFillColor: "#0f172a",
     fontSize: 14,
     fontWeight: 800,
     marginBottom: 3,
+    whiteSpace: "nowrap",
+    color: "#0f172a",
+    WebkitTextFillColor: "#0f172a",
   },
 
   chemicalSub: {
     color: "#64748b",
-    WebkitTextFillColor: "#64748b",
     marginBottom: 7,
     fontSize: 12,
     whiteSpace: "nowrap",
+    color: "#64748b",
+    WebkitTextFillColor: "#64748b",
   },
 
   levelBadge: {
