@@ -512,15 +512,8 @@ function TopSummary({ selected }) {
         <div style={styles.phValue}>{phValue}</div>
       </div>
 
-      <div style={styles.summaryGrid2}>
-        <SummaryBox
-            title="성상"
-            value={state}
-            sub={selected.state}
-            theme={stateTheme}
-          />
-        <GhsBox items={selected.ghsPictograms || []} />
-      </div>
+
+      <GhsBox items={selected.ghsPictograms || []} />
     </div>
   );
 }
